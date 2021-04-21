@@ -1,0 +1,82 @@
+{
+  "users": [
+    {
+      "id": 0,
+      "name": "null",
+      "email": "null"
+    },
+    {
+      "email": "frank.demmy@gmail.com",
+      "name": "Logan Demmy",
+      "id": 1
+    }
+  ],
+  "cockatils": [
+    {
+      "id": 0,
+      "userId": 0,
+      "name": "default",
+      "cocktailstyleId": 0
+    }
+  ],
+  "ingredients": [
+    {
+      "id": 0,
+      "name": "default",
+      "catagoryId": 0
+    }
+  ],
+  "cocktailingredients": [
+    {
+      "id": 0,
+      "ingredientId": 0,
+      "cocktailId": 0
+    }
+  ],
+  "catagories": [
+    {
+      "id": 0,
+      "name": "default"
+    }
+  ],
+  "menus": [
+    {
+      "id": 0,
+      "name": "default",
+      "date": "date",
+      "seasonId": 1
+    }
+  ],
+  "seasons": [
+    {
+      "id": 1,
+      "name": "Winter"
+    },
+    {
+      "id": 2,
+      "name": "Spring"
+    },
+    {
+      "id": 3,
+      "name": "Summer"
+    },
+    {
+      "id": 4,
+      "name": "Autumn"
+    }
+  ],
+  "cocktailmenus": [
+    {
+      "id": 0,
+      "menuId": 0,
+      "cocktailId": 0
+    }
+  ],
+  "cocktailstyles": [
+    {
+      "id": 0,
+      "name": "default",
+      "imgage": "imagelink"
+    }
+  ]
+}
