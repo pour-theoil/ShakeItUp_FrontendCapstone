@@ -38,7 +38,7 @@ export const addMenu = (obj) => {
 }
 
 export const getCocktails = (id) => {
-    return fetch(`${url}/cocktailmenus?menuId=${id}&_expand=cocktailId`)
+    return fetch(`${url}/cocktailmenus?menuId=${id}&_expand=cocktail`)
     .then(response => response.json())
 }
 
@@ -46,3 +46,4 @@ export const getAllSeasons = () => {
     return fetch(`${url}/seasons`)
     .then(response => response.json())
 }
+

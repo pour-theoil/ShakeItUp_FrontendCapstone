@@ -16,12 +16,18 @@
       "id": 2
     }
   ],
-  "cockatils": [
+  "cocktails": [
     {
       "id": 0,
       "userId": 0,
       "name": "default",
       "cocktailstyleId": 0
+    },
+    {
+      "id": 1,
+      "userId": 1,
+      "name": "sour",
+      "cocktailstyleId": 1
     }
   ],
   "ingredients": [
@@ -47,7 +53,6 @@
       "alcoholic": false
     }
   ],
-  "cocktailingredients": [],
   "types": [
     {
       "id": 1,
@@ -87,6 +92,13 @@
       "Notes": "",
       "abv": "This is going to be great",
       "id": 1
+    },
+    {
+      "name": "Test menu 2",
+      "seasonId": "2",
+      "Notes": "",
+      "abv": "Keep it coming",
+      "id": 2
     }
   ],
   "seasons": [
@@ -112,6 +124,11 @@
       "id": 0,
       "menuId": 0,
       "cocktailId": 0
+    },
+    {
+      "id": 1,
+      "menuId": 1,
+      "cocktailId": 1
     }
   ],
   "cocktailstyles": [
