@@ -20,10 +20,6 @@ export const ApplicationViews = () => {
                 <EditIngredientForm />
             </Route>
 
-            <Route exact path="/ingredients/:ingredientId(\d+)/edit">
-                <EditIngredientForm />
-            </Route>
-            
             <Route path='/ingredients/create'>
                 <IngredientEntry />
             </Route>

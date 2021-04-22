@@ -17,7 +17,7 @@ export const EditIngredientForm = () => {
     }
 
     const handleFieldChange = evt => {
-        const stateToChange = { ...ingredient }
+        const stateToChange = { ...ingredient}
         stateToChange[evt.target.id] = evt.target.value;
         setIngredient(stateToChange)
     }
@@ -32,6 +32,7 @@ export const EditIngredientForm = () => {
             abv: ingredient.abv,
             alcoholic: ingredient.alcoholic
         }
+        console.log(ingredient)
         updateIngredient(editedIngredient)
             .then(() => history.push('/ingredients'))
     }

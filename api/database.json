@@ -26,31 +26,28 @@
   ],
   "ingredients": [
     {
-      "id": 1,
-      "name": "default",
-      "typeId": 1,
-      "alcoholic": true,
-      "abv": 20
-    },
-    {
       "id": 2,
-      "name": "Twinkie",
-      "typeId": "1",
-      "abv": "44444",
+      "name": "Lemon",
+      "typeId": "2",
+      "abv": "0",
       "alcoholic": false
     },
     {
+      "name": "Bourbon",
+      "typeId": "1",
       "alcoholic": false,
+      "abv": "40",
       "id": 3
-    }
-  ],
-  "cocktailingredients": [
+    },
     {
-      "id": 1,
-      "ingredientId": 1,
-      "cocktailId": 1
+      "id": 4,
+      "name": "Ginnn",
+      "typeId": "1",
+      "abv": "44",
+      "alcoholic": false
     }
   ],
+  "cocktailingredients": [],
   "types": [
     {
       "id": 1,

@@ -16,7 +16,7 @@ export const IngredientList = () => {
 
     const deleteSetIngredient = (id) => {
         deleteIngredient(id)
-        .then(() => getAllIngredients())
+        .then(() => getIngredients())
     }
 
     useEffect(() => {

@@ -20,9 +20,11 @@ export const IngredientEntry = () => {
 
     const handleInputChange = (event) => {
         const newIngredient = {...ingredient}
-        let selectedValue = event.target.selectedValue
+        let selectedValue = event.target.value
+        // if (event.target.id.includes("Id")) {
+		// 	selectedValue = parseInt(selectedValue)
+		// }
         newIngredient[event.target.id] = selectedValue
-        console.log(newIngredient)
         setIngredient(newIngredient)
     }
 
@@ -39,6 +41,7 @@ export const IngredientEntry = () => {
     
 
     const handleCancelSave = (click) => {
+        click.preventDefault()
         history.push('/ingredients')
     }
 
