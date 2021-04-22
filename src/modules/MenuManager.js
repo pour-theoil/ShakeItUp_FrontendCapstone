@@ -13,7 +13,7 @@ export const deleteMenu = (menuId) => {
 }
 
 export const getMenuById = (id) => {
-    return fetch(`${url}/menus/${id}`)
+    return fetch(`${url}/menus?id=${id}&_expand=season`)
     .then(response => response.json())
 }
 
@@ -47,3 +47,9 @@ export const getAllSeasons = () => {
     .then(response => response.json())
 }
 
+export const deleteMenuCocktail = (id) => {
+    return fetch(`${url}/cocktailmenus/${id}`, {
+        method: "DELETE"
+    })
+    .then(response => response.json())
+}

@@ -6,8 +6,10 @@ export const MenuEntry = () => {
     const [menu, setMenu] = useState({
         name: "",
         seasonId: 0,
-        Notes: ""
+        Notes: "", 
+        date: Date.now()
     })
+
     const [seasons, setSeasons] = useState([]) 
     
     const getSeasons = () => {
@@ -75,9 +77,9 @@ export const MenuEntry = () => {
 					</select>
                 </div>
                 <div className="menuform-group">  
-                    <label htmlFor="abv">Notes</label>
+                    <label htmlFor="notes">Notes</label>
                     <input  type="text" 
-                            id="abv" 
+                            id="notes" 
                             required
                             onChange={handleInputChange} 
                             className="form-control"

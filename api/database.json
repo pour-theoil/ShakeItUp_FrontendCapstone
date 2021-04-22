@@ -22,12 +22,6 @@
       "userId": 0,
       "name": "default",
       "cocktailstyleId": 0
-    },
-    {
-      "id": 1,
-      "userId": 1,
-      "name": "sour",
-      "cocktailstyleId": 1
     }
   ],
   "ingredients": [
@@ -81,15 +75,10 @@
   ],
   "menus": [
     {
-      "id": 0,
-      "name": "default",
-      "date": "date",
-      "seasonId": 1
-    },
-    {
       "name": "Test Menu #1",
       "seasonId": "1",
       "Notes": "",
+      "date": 1619109525670,
       "abv": "This is going to be great",
       "id": 1
     },
@@ -97,8 +86,33 @@
       "name": "Test menu 2",
       "seasonId": "2",
       "Notes": "",
+      "date": 1619109525670,
       "abv": "Keep it coming",
       "id": 2
+    },
+    {
+      "name": "New Menu",
+      "seasonId": "3",
+      "Notes": "",
+      "date": 1619109525670,
+      "abv": "For fun",
+      "id": 3
+    },
+    {
+      "name": "Twinkie time",
+      "seasonId": "1",
+      "Notes": "",
+      "date": 1619109525670,
+      "abv": "Testing time",
+      "id": 4
+    },
+    {
+      "name": "Twinkie",
+      "seasonId": "1",
+      "Notes": "",
+      "date": 1619110505487,
+      "notes": "No notes",
+      "id": 5
     }
   ],
   "seasons": [
@@ -119,18 +133,7 @@
       "name": "Autumn"
     }
   ],
-  "cocktailmenus": [
-    {
-      "id": 0,
-      "menuId": 0,
-      "cocktailId": 0
-    },
-    {
-      "id": 1,
-      "menuId": 1,
-      "cocktailId": 1
-    }
-  ],
+  "cocktailmenus": [],
   "cocktailstyles": [
     {
       "id": 0,
