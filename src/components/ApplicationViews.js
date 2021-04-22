@@ -6,6 +6,7 @@ import { IngredientEntry } from './ingredients/IngredientsForm'
 import { ShakeItUpList } from './shakeitup/ShakeItUpList'
 import { MenuList } from './menus/MenuList'
 import { MenuEntry } from './menus/MenuForm'
+import { MenuDetails } from './menus/MenuDetails'
 
 export const ApplicationViews = () => {
     return (
@@ -31,7 +32,7 @@ export const ApplicationViews = () => {
             </Route>
 
             <Route exact path="/menus/:menuId(\d+)">
-                
+                <MenuDetails />
             </Route>
 
             <Route path='/menus/create'>
