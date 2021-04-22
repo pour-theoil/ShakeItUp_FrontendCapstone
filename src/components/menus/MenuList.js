@@ -13,7 +13,14 @@ export const MenuList = () => {
             setMenus(menus)
         })
     }
-    console.log("Loging", menus)
+
+    const timeconverter = (time) => {
+        console.log(time)
+        let myDate = new Date(time)
+        let shortend = myDate.toLocaleDateString()
+        return shortend;
+    }
+
     useEffect(() => {
         getMenus()
     },[])
@@ -23,7 +30,8 @@ export const MenuList = () => {
             <section className="menus">
                 <div className="menus-card">
                     {menus.map(menu => <MenuEntry   menu={menu}
-                                                    key={menu.id} />)}
+                                                    key={menu.id}
+                                                    timeconverter={timeconverter} />)}
                 </div>
                 <div className="create-event">
                     <button type="button"
