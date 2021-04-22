@@ -9,6 +9,11 @@
       "email": "frank.demmy@gmail.com",
       "name": "Logan Demmy",
       "id": 1
+    },
+    {
+      "email": "pspfleg@gmail.com",
+      "name": "Paige Pfleger",
+      "id": 2
     }
   ],
   "cockatils": [
@@ -21,22 +26,52 @@
   ],
   "ingredients": [
     {
-      "id": 0,
-      "name": "default",
-      "catagoryId": 0
+      "id": 2,
+      "name": "Lemon",
+      "typeId": "2",
+      "abv": "0",
+      "alcoholic": false
+    },
+    {
+      "name": "Bourbon",
+      "typeId": "1",
+      "alcoholic": false,
+      "abv": "40",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "name": "Ginnn",
+      "typeId": "1",
+      "abv": "44",
+      "alcoholic": false
     }
   ],
-  "cocktailingredients": [
+  "cocktailingredients": [],
+  "types": [
     {
-      "id": 0,
-      "ingredientId": 0,
-      "cocktailId": 0
-    }
-  ],
-  "catagories": [
+      "id": 1,
+      "name": "Spirit"
+    },
     {
-      "id": 0,
-      "name": "default"
+      "id": 2,
+      "name": "Modifier"
+    },
+    {
+      "id": 3,
+      "name": "Acid"
+    },
+    {
+      "id": 4,
+      "name": "Sweetener"
+    },
+    {
+      "id": 5,
+      "name": "Pantry"
+    },
+    {
+      "id": 6,
+      "name": "Bitters"
     }
   ],
   "menus": [

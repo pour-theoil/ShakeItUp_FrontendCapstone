@@ -30,7 +30,7 @@ export const Login = () => {
             .then(exists => {
                 if (exists) {
                     // The user id is saved under the key shakeitup_user_user in session Storage. Change below if needed!
-                    sessionStorage.setItem("shakeitup_user_user", exists.id)
+                    sessionStorage.setItem("shakeitup_user", exists.id)
                     history.push("/")
                 } else {
                     setExistDialog(true)
