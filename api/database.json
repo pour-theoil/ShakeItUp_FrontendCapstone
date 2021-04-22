@@ -28,22 +28,246 @@
     {
       "id": 2,
       "name": "Lemon",
-      "typeId": "2",
+      "typeId": "3",
       "abv": "0",
       "alcoholic": false
     },
     {
+      "id": 3,
       "name": "Bourbon",
       "typeId": "1",
-      "alcoholic": false,
       "abv": "40",
-      "id": 3
+      "alcoholic": false
     },
     {
       "id": 4,
       "name": "Gin",
       "typeId": "1",
       "abv": "44",
+      "alcoholic": false
+    },
+    {
+      "id": 5,
+      "name": "Vodka",
+      "typeId": "1",
+      "abv": "44",
+      "alcoholic": false
+    },
+    {
+      "id": 6,
+      "name": "Rum",
+      "typeId": "1",
+      "abv": "44",
+      "alcoholic": false
+    },
+    {
+      "id": 7,
+      "name": "Scotch",
+      "typeId": "1",
+      "abv": "44",
+      "alcoholic": false
+    },
+    {
+      "id": 8,
+      "name": "Campari",
+      "typeId": "2",
+      "abv": "27",
+      "alcoholic": false
+    },
+    {
+      "id": 9,
+      "name": "Cointreau",
+      "typeId": "2",
+      "abv": "40",
+      "alcoholic": false
+    },
+    {
+      "id": 10,
+      "name": "Melletti",
+      "typeId": "2",
+      "abv": "27",
+      "alcoholic": false
+    },
+    {
+      "id": 11,
+      "name": "Chartruese",
+      "typeId": "2",
+      "abv": "54",
+      "alcoholic": false
+    },
+    {
+      "id": 12,
+      "name": "Citric",
+      "typeId": "3",
+      "abv": "0",
+      "alcoholic": false
+    },
+    {
+      "id": 13,
+      "name": "Malic",
+      "typeId": "3",
+      "abv": "0",
+      "alcoholic": false
+    },
+    {
+      "id": 14,
+      "name": "Tartaric",
+      "typeId": "3",
+      "abv": "0",
+      "alcoholic": false
+    },
+    {
+      "id": 15,
+      "name": "Lime",
+      "typeId": "3",
+      "abv": "27",
+      "alcoholic": false
+    },
+    {
+      "id": 16,
+      "name": "Simple Syrup",
+      "typeId": "4",
+      "abv": "0",
+      "alcoholic": false
+    },
+    {
+      "id": 17,
+      "name": "Honey",
+      "typeId": "4",
+      "abv": "0",
+      "alcoholic": false
+    },
+    {
+      "id": 18,
+      "name": "Cinnomon Syrup",
+      "typeId": "4",
+      "abv": "0",
+      "alcoholic": false
+    },
+    {
+      "id": 19,
+      "name": "Demerara",
+      "typeId": "4",
+      "abv": "0",
+      "alcoholic": false
+    },
+    {
+      "id": 20,
+      "name": "Maple Syrup",
+      "typeId": "4",
+      "abv": "0",
+      "alcoholic": false
+    },
+    {
+      "id": 21,
+      "name": "Citrus Cordial",
+      "typeId": "4",
+      "abv": "0",
+      "alcoholic": false
+    },
+    {
+      "id": 22,
+      "name": "Raspberry Cordial",
+      "typeId": "4",
+      "abv": "0",
+      "alcoholic": false
+    },
+    {
+      "id": 23,
+      "name": "Mint",
+      "typeId": "5",
+      "abv": "0",
+      "alcoholic": false
+    },
+    {
+      "id": 24,
+      "name": "Rosemarry",
+      "typeId": "5",
+      "abv": "0",
+      "alcoholic": false
+    },
+    {
+      "id": 25,
+      "name": "Thyme",
+      "typeId": "5",
+      "abv": "0",
+      "alcoholic": false
+    },
+    {
+      "id": 26,
+      "name": "Basil",
+      "typeId": "5",
+      "abv": "0",
+      "alcoholic": false
+    },
+    {
+      "id": 27,
+      "name": "Nutmeg",
+      "typeId": "5",
+      "abv": "0",
+      "alcoholic": false
+    },
+    {
+      "id": 28,
+      "name": "Cardammon",
+      "typeId": "5",
+      "abv": "0",
+      "alcoholic": false
+    },
+    {
+      "id": 29,
+      "name": "Lemon Verbena",
+      "typeId": "5",
+      "abv": "0",
+      "alcoholic": false
+    },
+    {
+      "id": 30,
+      "name": "Sorrel",
+      "typeId": "5",
+      "abv": "0",
+      "alcoholic": false
+    },
+    {
+      "id": 31,
+      "name": "Angostura",
+      "typeId": "6",
+      "abv": "47",
+      "alcoholic": false
+    },
+    {
+      "id": 32,
+      "name": "Orange",
+      "typeId": "6",
+      "abv": "47",
+      "alcoholic": false
+    },
+    {
+      "id": 33,
+      "name": "Peychauds",
+      "typeId": "6",
+      "abv": "47",
+      "alcoholic": false
+    },
+    {
+      "id": 34,
+      "name": "Oaxacan",
+      "typeId": "6",
+      "abv": "47",
+      "alcoholic": false
+    },
+    {
+      "id": 31,
+      "name": "Allspice",
+      "typeId": "6",
+      "abv": "47",
+      "alcoholic": false
+    },
+    {
+      "id": 31,
+      "name": "Chocolate",
+      "typeId": "6",
+      "abv": "47",
       "alcoholic": false
     }
   ],
