@@ -28,20 +28,53 @@
     {
       "id": 1,
       "name": "default",
-      "categoryId": 1
+      "typeId": 1,
+      "alcoholic": true,
+      "abv": 20
+    },
+    {
+      "id": 2,
+      "name": "Twinkie",
+      "typeId": "1",
+      "abv": "44444",
+      "alcoholic": false
+    },
+    {
+      "alcoholic": false,
+      "id": 3
     }
   ],
   "cocktailingredients": [
     {
       "id": 1,
       "ingredientId": 1,
-      "cocktailId":1
+      "cocktailId": 1
     }
   ],
-  "categories": [
+  "types": [
     {
       "id": 1,
-      "name": "default"
+      "name": "Spirit"
+    },
+    {
+      "id": 2,
+      "name": "Modifier"
+    },
+    {
+      "id": 3,
+      "name": "Acid"
+    },
+    {
+      "id": 4,
+      "name": "Sweetener"
+    },
+    {
+      "id": 5,
+      "name": "Pantry"
+    },
+    {
+      "id": 6,
+      "name": "Bitters"
     }
   ],
   "menus": [
