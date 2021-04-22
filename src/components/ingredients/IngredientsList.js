@@ -10,7 +10,6 @@ export const IngredientList = () => {
     const getIngredients = () => {
         getAllIngredients()
         .then(ingredients => {
-            console.log(ingredients)
             setIngredients(ingredients)})
     } 
 

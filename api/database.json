@@ -41,7 +41,7 @@
     },
     {
       "id": 4,
-      "name": "Ginnn",
+      "name": "Gin",
       "typeId": "1",
       "abv": "44",
       "alcoholic": false
@@ -80,6 +80,13 @@
       "name": "default",
       "date": "date",
       "seasonId": 1
+    },
+    {
+      "name": "Test Menu #1",
+      "seasonId": "1",
+      "Notes": "",
+      "abv": "This is going to be great",
+      "id": 1
     }
   ],
   "seasons": [
