@@ -15,8 +15,6 @@ export const MenuDetails = () => {
         .then(menuObj => setMenu(menuObj))
     }
 
-    console.log("this is the", menu)
-
     const removeCocktailFromMenu = (id) => {
         deleteMenuCocktail(id)
         .then(() => getMenuCocktails())

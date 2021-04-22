@@ -3,7 +3,7 @@ import { Route } from 'react-router-dom'
 import { EditIngredientForm } from './ingredients/IngredientEditForm'
 import { IngredientList } from './ingredients/IngredientsList'
 import { IngredientEntry } from './ingredients/IngredientsForm'
-import { ShakeItUpList } from './shakeitup/ShakeItUpList'
+import { BuilderList } from './builder/BuilderList'
 import { MenuList } from './menus/MenuList'
 import { MenuEntry } from './menus/MenuForm'
 import { MenuDetails } from './menus/MenuDetails'
@@ -12,7 +12,7 @@ export const ApplicationViews = () => {
     return (
         <>
             <Route exact path="/">
-                <ShakeItUpList />
+                <BuilderList />
             </Route>
 
             <Route exact path="/ingredients">
