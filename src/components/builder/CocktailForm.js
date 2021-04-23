@@ -11,7 +11,7 @@ export const EditCocktailForm = () => {
     const [menus, setMenus] = useState([])
     const [ingredients, setIngredients] = useState([])
     const {cocktailId} = useParams()
-    const { history } = useHistory()
+    const history  = useHistory()
     
     //set state of the cocktail object
     const [cocktail, setCocktail] = useState({
@@ -66,7 +66,7 @@ export const EditCocktailForm = () => {
             updateCocktail(cocktail)
             .then(()=> {
                 addCocktailMenu(cocktailmenu)})
-            // .then(()=> history.push('/'))
+            .then(()=> history.push('/'))
         }
 
     }
@@ -75,7 +75,7 @@ export const EditCocktailForm = () => {
     const handleCancelSave = (click) => {
         click.preventDefault()
         deleteCocktail(cocktailId)
-        // .then(()=> history.push('/'))
+        .then(()=> history.push('/'))
     }
 
     //Get available menus

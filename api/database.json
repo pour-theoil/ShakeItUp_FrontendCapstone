@@ -16,7 +16,16 @@
       "id": 2
     }
   ],
-  "cocktails": [],
+  "cocktails": [
+    {
+      "id": 1,
+      "name": "Logan Demmy"
+    },
+    {
+      "name": "",
+      "id": 2
+    }
+  ],
   "ingredients": [
     {
       "id": 2,
@@ -350,8 +359,65 @@
       "name": "Autumn"
     }
   ],
-  "cocktailmenus": [],
-  "cocktailingredients": [],
+  "cocktailmenus": [
+    {
+      "cocktailId": "1",
+      "menuId": "1",
+      "id": 1
+    },
+    {
+      "cocktailId": "1",
+      "menuId": "1",
+      "id": 2
+    }
+  ],
+  "cocktailingredients": [
+    {
+      "cocktailId": 1,
+      "ingredientId": 4,
+      "id": 1
+    },
+    {
+      "cocktailId": 1,
+      "ingredientId": 8,
+      "id": 2
+    },
+    {
+      "cocktailId": 1,
+      "ingredientId": 14,
+      "id": 3
+    },
+    {
+      "cocktailId": 1,
+      "ingredientId": 7,
+      "id": 4
+    },
+    {
+      "cocktailId": 2,
+      "ingredientId": 4,
+      "id": 5
+    },
+    {
+      "cocktailId": 2,
+      "ingredientId": 18,
+      "id": 6
+    },
+    {
+      "cocktailId": 2,
+      "ingredientId": 9,
+      "id": 7
+    },
+    {
+      "cocktailId": 2,
+      "ingredientId": 29,
+      "id": 8
+    },
+    {
+      "cocktailId": 2,
+      "ingredientId": 8,
+      "id": 9
+    }
+  ],
   "cocktailstyles": [
     {
       "id": 0,
