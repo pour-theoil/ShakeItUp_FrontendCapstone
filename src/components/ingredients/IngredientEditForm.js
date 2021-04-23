@@ -9,7 +9,7 @@ export const EditIngredientForm = () => {
     const [types, setTypes] = useState([])
 
     const { ingredientId } = useParams()
-    const { history } = useHistory()
+    const history = useHistory()
 
     const getTypes = () => {
         getAllTypes()
