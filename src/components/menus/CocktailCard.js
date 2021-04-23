@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { getAllIngredients } from '../../modules/BuilderManager'
 
 export const CocktailCard = ({ cocktail, removeCocktailFromMenu }) => {
+    
+    //create a state variable for the ingredients associated with the specific cocktail. Then join them into a string.
     const [ingredients, setIngredients] = useState([])
     const getIngredients = () =>{
         console.log(cocktail.id)
