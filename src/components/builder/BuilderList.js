@@ -22,7 +22,7 @@ export const BuilderList = () => {
                 setCocktail(cocktailobj)
                 ingredientArray.forEach(ingredient => {
                     const cocktailingredients = {
-                        cocktialId: cocktailobj.id,
+                        cocktailId: cocktailobj.id,
                         ingredientId: ingredient.id
                     }
                     

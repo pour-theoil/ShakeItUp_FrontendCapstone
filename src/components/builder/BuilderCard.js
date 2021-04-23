@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { getRandomId } from '../../modules/BuilderManager'
-import { addCocktailIngredient } from '../../modules/BuilderManager'
 
 export const BuilderCard = ({type, reload, ingredientArray, index}) => {
     const [ingredient, setIngredient] = useState({})
