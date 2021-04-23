@@ -3,12 +3,13 @@ import { useParams, useHistory } from 'react-router-dom'
 import { updateCocktail, deleteCocktail } from '../../modules/CocktailManager'
 import { getAllMenus } from '../../modules/MenuManager'
 import { getAllIngredients, addCocktailMenu } from '../../modules/BuilderManager'
+import { IngredientCard} from './IngredientCard'
  
 
 export const EditCocktailForm = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [menus, setMenus] = useState([])
-    const [ingredient, setIngredients] = useState([])
+    const [ingredients, setIngredients] = useState([])
     const {cocktailId} = useParams()
     const { history } = useHistory()
     
@@ -48,11 +49,13 @@ export const EditCocktailForm = () => {
 
     //query for the ingredients from the cocktailingredients table
     const getIngredients = () =>{
-        getAllIngredients()
+        console.log(cocktail.id)
+        getAllIngredients(cocktailId)
         .then(ingredients => setIngredients(ingredients))
         
     }
     
+    console.log("what ingredients", ingredients)
     //save the menu and the cocktail states after they have been updated
     const handleSaveEvent = (click) => {
         click.preventDefault()
@@ -111,6 +114,8 @@ export const EditCocktailForm = () => {
                     ))}
                 </select>
             </div>
+            {ingredients.map(ingredient => <IngredientCard  key={ingredient.id}
+                                                            ingredient={ingredient} />)}
             </fieldset>
             <button className="article-btn"
             onClick={handleSaveEvent}>
