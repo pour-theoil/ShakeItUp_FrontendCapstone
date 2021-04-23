@@ -7,12 +7,17 @@ import { BuilderList } from './builder/BuilderList'
 import { MenuList } from './menus/MenuList'
 import { MenuEntry } from './menus/MenuForm'
 import { MenuDetails } from './menus/MenuDetails'
+import { EditCocktailForm } from './builder/CocktailForm' 
 
 export const ApplicationViews = () => {
     return (
         <>
             <Route exact path="/">
                 <BuilderList />
+            </Route>
+
+            <Route exact path="/cocktail/:cocktailId(\d+)/add">
+                <EditCocktailForm />
             </Route>
 
             <Route exact path="/ingredients">

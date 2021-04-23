@@ -22,9 +22,6 @@ export const MenuEntry = () => {
     const handleInputChange = (event) => {
         const newMenu = {...menu}
         let selectedValue = event.target.value
-        // if (event.target.id.includes("Id")) {
-		// 	selectedValue = parseInt(selectedValue)
-		// }
         newMenu[event.target.id] = selectedValue
         setMenu(newMenu)
     }

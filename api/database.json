@@ -22,6 +22,72 @@
       "userId": 0,
       "name": "default",
       "cocktailstyleId": 0
+    },
+    {
+      "name": "",
+      "id": 1
+    },
+    {
+      "name": "",
+      "id": 2
+    },
+    {
+      "name": "",
+      "id": 3
+    },
+    {
+      "name": "",
+      "id": 4
+    },
+    {
+      "name": "",
+      "id": 5
+    },
+    {
+      "name": "",
+      "id": 6
+    },
+    {
+      "name": "",
+      "id": 7
+    },
+    {
+      "name": "",
+      "id": 8
+    },
+    {
+      "name": "",
+      "id": 9
+    },
+    {
+      "name": "",
+      "id": 10
+    },
+    {
+      "name": "",
+      "id": 11
+    },
+    {
+      "name": "",
+      "id": 12
+    },
+    {
+      "name": "",
+      "id": 13
+    },
+    {
+      "id": 14,
+      "name": "Twinkie",
+      "menuId": "1"
+    },
+    {
+      "id": 15,
+      "name": "Lemon",
+      "menuId": "1"
+    },
+    {
+      "id": 16,
+      "name": "f75"
     }
   ],
   "ingredients": [
@@ -257,14 +323,14 @@
       "alcoholic": false
     },
     {
-      "id": 31,
+      "id": 35,
       "name": "Allspice",
       "typeId": "6",
       "abv": "47",
       "alcoholic": false
     },
     {
-      "id": 31,
+      "id": 36,
       "name": "Chocolate",
       "typeId": "6",
       "abv": "47",
@@ -357,7 +423,570 @@
       "name": "Autumn"
     }
   ],
-  "cocktailmenus": [],
+  "cocktailmenus": [
+    {
+      "cocktailId": "16",
+      "menuId": "1",
+      "id": 1
+    }
+  ],
+  "cocktailingredients": [
+    {
+      "cocktialId": 1,
+      "ingredientId": 7,
+      "id": 1
+    },
+    {
+      "cocktialId": 1,
+      "ingredientId": 10,
+      "id": 2
+    },
+    {
+      "cocktialId": 1,
+      "ingredientId": 13,
+      "id": 3
+    },
+    {
+      "cocktialId": 1,
+      "ingredientId": 17,
+      "id": 4
+    },
+    {
+      "cocktialId": 1,
+      "ingredientId": 29,
+      "id": 5
+    },
+    {
+      "cocktialId": 1,
+      "ingredientId": 31,
+      "id": 6
+    },
+    {
+      "cocktialId": 2,
+      "ingredientId": 4,
+      "id": 7
+    },
+    {
+      "cocktialId": 2,
+      "ingredientId": 9,
+      "id": 8
+    },
+    {
+      "cocktialId": 2,
+      "ingredientId": 14,
+      "id": 9
+    },
+    {
+      "cocktialId": 2,
+      "ingredientId": 20,
+      "id": 10
+    },
+    {
+      "cocktialId": 2,
+      "ingredientId": 23,
+      "id": 11
+    },
+    {
+      "cocktialId": 2,
+      "ingredientId": 31,
+      "id": 12
+    },
+    {
+      "cocktialId": 3,
+      "ingredientId": 3,
+      "id": 13
+    },
+    {
+      "cocktialId": 3,
+      "ingredientId": 10,
+      "id": 14
+    },
+    {
+      "cocktialId": 3,
+      "ingredientId": 12,
+      "id": 15
+    },
+    {
+      "cocktialId": 3,
+      "ingredientId": 22,
+      "id": 16
+    },
+    {
+      "cocktialId": 3,
+      "ingredientId": 30,
+      "id": 17
+    },
+    {
+      "cocktialId": 3,
+      "ingredientId": 31,
+      "id": 18
+    },
+    {
+      "cocktialId": 4,
+      "ingredientId": 4,
+      "id": 19
+    },
+    {
+      "cocktialId": 4,
+      "ingredientId": 11,
+      "id": 20
+    },
+    {
+      "cocktialId": 4,
+      "ingredientId": 15,
+      "id": 21
+    },
+    {
+      "cocktialId": 4,
+      "ingredientId": 22,
+      "id": 22
+    },
+    {
+      "cocktialId": 4,
+      "ingredientId": 23,
+      "id": 23
+    },
+    {
+      "cocktialId": 4,
+      "ingredientId": 34,
+      "id": 24
+    },
+    {
+      "cocktialId": 5,
+      "ingredientId": 4,
+      "id": 25
+    },
+    {
+      "cocktialId": 5,
+      "ingredientId": 10,
+      "id": 26
+    },
+    {
+      "cocktialId": 5,
+      "ingredientId": 14,
+      "id": 27
+    },
+    {
+      "cocktialId": 5,
+      "ingredientId": 20,
+      "id": 28
+    },
+    {
+      "cocktialId": 5,
+      "ingredientId": 26,
+      "id": 29
+    },
+    {
+      "cocktialId": 5,
+      "ingredientId": 33,
+      "id": 30
+    },
+    {
+      "cocktialId": 6,
+      "ingredientId": 4,
+      "id": 31
+    },
+    {
+      "cocktialId": 6,
+      "ingredientId": 11,
+      "id": 32
+    },
+    {
+      "cocktialId": 6,
+      "ingredientId": 2,
+      "id": 33
+    },
+    {
+      "cocktialId": 6,
+      "ingredientId": 18,
+      "id": 34
+    },
+    {
+      "cocktialId": 6,
+      "ingredientId": 27,
+      "id": 35
+    },
+    {
+      "cocktialId": 6,
+      "ingredientId": 32,
+      "id": 36
+    },
+    {
+      "cocktialId": 7,
+      "ingredientId": 6,
+      "id": 37
+    },
+    {
+      "cocktialId": 7,
+      "ingredientId": 9,
+      "id": 38
+    },
+    {
+      "cocktialId": 7,
+      "ingredientId": 14,
+      "id": 39
+    },
+    {
+      "cocktialId": 7,
+      "ingredientId": 22,
+      "id": 40
+    },
+    {
+      "cocktialId": 7,
+      "ingredientId": 23,
+      "id": 41
+    },
+    {
+      "cocktialId": 7,
+      "ingredientId": 36,
+      "id": 42
+    },
+    {
+      "cocktialId": 8,
+      "ingredientId": 6,
+      "id": 43
+    },
+    {
+      "cocktialId": 8,
+      "ingredientId": 10,
+      "id": 44
+    },
+    {
+      "cocktialId": 8,
+      "ingredientId": 14,
+      "id": 45
+    },
+    {
+      "cocktialId": 8,
+      "ingredientId": 19,
+      "id": 46
+    },
+    {
+      "cocktialId": 8,
+      "ingredientId": 30,
+      "id": 47
+    },
+    {
+      "cocktialId": 8,
+      "ingredientId": 31,
+      "id": 48
+    },
+    {
+      "cocktialId": 9,
+      "ingredientId": 6,
+      "id": 49
+    },
+    {
+      "cocktialId": 9,
+      "ingredientId": 11,
+      "id": 50
+    },
+    {
+      "cocktialId": 9,
+      "ingredientId": 12,
+      "id": 51
+    },
+    {
+      "cocktialId": 9,
+      "ingredientId": 16,
+      "id": 52
+    },
+    {
+      "cocktialId": 9,
+      "ingredientId": 29,
+      "id": 53
+    },
+    {
+      "cocktialId": 9,
+      "ingredientId": 32,
+      "id": 54
+    },
+    {
+      "cocktialId": 10,
+      "ingredientId": 3,
+      "id": 55
+    },
+    {
+      "cocktialId": 10,
+      "ingredientId": 8,
+      "id": 56
+    },
+    {
+      "cocktialId": 10,
+      "ingredientId": 15,
+      "id": 57
+    },
+    {
+      "cocktialId": 10,
+      "ingredientId": 17,
+      "id": 58
+    },
+    {
+      "cocktialId": 10,
+      "ingredientId": 30,
+      "id": 59
+    },
+    {
+      "cocktialId": 10,
+      "ingredientId": 32,
+      "id": 60
+    },
+    {
+      "cocktialId": 11,
+      "ingredientId": 4,
+      "id": 61
+    },
+    {
+      "cocktialId": 11,
+      "ingredientId": 9,
+      "id": 62
+    },
+    {
+      "cocktialId": 11,
+      "ingredientId": 15,
+      "id": 63
+    },
+    {
+      "cocktialId": 11,
+      "ingredientId": 16,
+      "id": 64
+    },
+    {
+      "cocktialId": 11,
+      "ingredientId": 29,
+      "id": 65
+    },
+    {
+      "cocktialId": 11,
+      "ingredientId": 36,
+      "id": 66
+    },
+    {
+      "cocktialId": 12,
+      "ingredientId": 6,
+      "id": 67
+    },
+    {
+      "cocktialId": 12,
+      "ingredientId": 10,
+      "id": 68
+    },
+    {
+      "cocktialId": 12,
+      "ingredientId": 12,
+      "id": 69
+    },
+    {
+      "cocktialId": 12,
+      "ingredientId": 21,
+      "id": 70
+    },
+    {
+      "cocktialId": 12,
+      "ingredientId": 23,
+      "id": 71
+    },
+    {
+      "cocktialId": 12,
+      "ingredientId": 34,
+      "id": 72
+    },
+    {
+      "cocktialId": 13,
+      "ingredientId": 3,
+      "id": 73
+    },
+    {
+      "cocktialId": 13,
+      "ingredientId": 9,
+      "id": 74
+    },
+    {
+      "cocktialId": 13,
+      "ingredientId": 15,
+      "id": 75
+    },
+    {
+      "cocktialId": 13,
+      "ingredientId": 16,
+      "id": 76
+    },
+    {
+      "cocktialId": 13,
+      "ingredientId": 24,
+      "id": 77
+    },
+    {
+      "cocktialId": 13,
+      "ingredientId": 33,
+      "id": 78
+    },
+    {
+      "cocktialId": 13,
+      "ingredientId": 4,
+      "id": 79
+    },
+    {
+      "cocktialId": 13,
+      "ingredientId": 8,
+      "id": 80
+    },
+    {
+      "cocktialId": 13,
+      "ingredientId": 15,
+      "id": 81
+    },
+    {
+      "cocktialId": 13,
+      "ingredientId": 17,
+      "id": 82
+    },
+    {
+      "cocktialId": 13,
+      "ingredientId": 24,
+      "id": 83
+    },
+    {
+      "cocktialId": 13,
+      "ingredientId": 35,
+      "id": 84
+    },
+    {
+      "cocktialId": 13,
+      "ingredientId": 3,
+      "id": 85
+    },
+    {
+      "cocktialId": 13,
+      "ingredientId": 11,
+      "id": 86
+    },
+    {
+      "cocktialId": 13,
+      "ingredientId": 15,
+      "id": 87
+    },
+    {
+      "cocktialId": 13,
+      "ingredientId": 22,
+      "id": 88
+    },
+    {
+      "cocktialId": 13,
+      "ingredientId": 30,
+      "id": 89
+    },
+    {
+      "cocktialId": 13,
+      "ingredientId": 36,
+      "id": 90
+    },
+    {
+      "cocktialId": 13,
+      "ingredientId": 36,
+      "id": 91
+    },
+    {
+      "cocktialId": 13,
+      "ingredientId": 30,
+      "id": 92
+    },
+    {
+      "cocktialId": 14,
+      "ingredientId": 5,
+      "id": 93
+    },
+    {
+      "cocktialId": 14,
+      "ingredientId": 11,
+      "id": 94
+    },
+    {
+      "cocktialId": 14,
+      "ingredientId": 13,
+      "id": 95
+    },
+    {
+      "cocktialId": 14,
+      "ingredientId": 21,
+      "id": 96
+    },
+    {
+      "cocktialId": 14,
+      "ingredientId": 25,
+      "id": 97
+    },
+    {
+      "cocktialId": 14,
+      "ingredientId": 34,
+      "id": 98
+    },
+    {
+      "cocktialId": 15,
+      "ingredientId": 5,
+      "id": 99
+    },
+    {
+      "cocktialId": 15,
+      "ingredientId": 11,
+      "id": 100
+    },
+    {
+      "cocktialId": 15,
+      "ingredientId": 13,
+      "id": 101
+    },
+    {
+      "cocktialId": 15,
+      "ingredientId": 21,
+      "id": 102
+    },
+    {
+      "cocktialId": 15,
+      "ingredientId": 27,
+      "id": 103
+    },
+    {
+      "cocktialId": 15,
+      "ingredientId": 36,
+      "id": 104
+    },
+    {
+      "cocktialId": 16,
+      "ingredientId": 5,
+      "id": 105
+    },
+    {
+      "cocktialId": 16,
+      "ingredientId": 8,
+      "id": 106
+    },
+    {
+      "cocktialId": 16,
+      "ingredientId": 15,
+      "id": 107
+    },
+    {
+      "cocktialId": 16,
+      "ingredientId": 16,
+      "id": 108
+    },
+    {
+      "cocktialId": 16,
+      "ingredientId": 29,
+      "id": 109
+    },
+    {
+      "cocktialId": 16,
+      "ingredientId": 35,
+      "id": 110
+    },
+    {
+      "cocktialId": 16,
+      "ingredientId": 35,
+      "id": 111
+    }
+  ],
   "cocktailstyles": [
     {
       "id": 0,
