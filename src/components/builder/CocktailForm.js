@@ -12,20 +12,25 @@ export const EditCocktailForm = () => {
     const {cocktailId} = useParams()
     const { history } = useHistory()
     
-    
+    //set state of the cocktail object
     const [cocktail, setCocktail] = useState({
         id: cocktailId
     })
+
+    //set state for the menu relationship
     const [cocktailmenu, setCocktailMenu] = useState({
         cocktailId: cocktailId,
         menuId: 0
     }
     )
+    
+    //Get menus to populate the drop down of the app
     const getMenus = () => {
         getAllMenus()
         .then(menus => setMenus(menus))
     }
 
+    //Handle changes for the cocktail state
     const handleCocktailChange = (event) => {
         const newCocktail = {...cocktail}
         let selectedValue = event.target.value
@@ -33,6 +38,7 @@ export const EditCocktailForm = () => {
         setCocktail(newCocktail)
     }
 
+    //Handle changes for the menu state
     const handleMenuChange = (event) => {
         const newCocktailMenu = {...cocktailmenu}
         let selectedValue = event.target.value
@@ -40,12 +46,14 @@ export const EditCocktailForm = () => {
         setCocktailMenu(newCocktailMenu)
     }
 
+    //query for the ingredients from the cocktailingredients table
     const getIngredients = () =>{
         getAllIngredients()
         .then(ingredients => setIngredients(ingredients))
         
     }
     
+    //save the menu and the cocktail states after they have been updated
     const handleSaveEvent = (click) => {
         click.preventDefault()
         if (cocktail.name === "" || cocktail.menuId === 0) {
@@ -60,16 +68,19 @@ export const EditCocktailForm = () => {
 
     }
     
+    //Delete the cocktail object
     const handleCancelSave = (click) => {
         click.preventDefault()
         deleteCocktail(cocktailId)
         // .then(()=> history.push('/'))
     }
 
+    //Get available menus
     useEffect(()=>{
         getMenus()
     },[])
 
+    //Get ingredients for the cocktail
     useEffect(()=>{
         getIngredients()
     },[])
