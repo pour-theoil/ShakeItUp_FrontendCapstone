@@ -1,13 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { getRandomId } from '../../modules/BuilderManager'
+import { addCocktailIngredient } from '../../modules/BuilderManager'
 
-export const BuilderCard = ({type, reload}) => {
+export const BuilderCard = ({type, reload, ingredientArray, index}) => {
     const [ingredient, setIngredient] = useState({})
+    
+  
     const newIngredient = () => {
         getRandomId(type).then(setIngredient)
     }
+
+    const updateIngredientArray = () => {
+        ingredientArray[index] = ingredient
+    }
+    
     useEffect(() => {
-        newIngredient()
+        if(ingredient.id) {
+            updateIngredientArray()
+        } 
+    },[ingredient])
+
+    useEffect(() => {
+        if (reload) {
+            newIngredient()
+        }
     },[reload])
     return (
         <div className="ingredientcard">
@@ -16,4 +32,4 @@ export const BuilderCard = ({type, reload}) => {
             </div>
         </div>
     )
-}
+} 
