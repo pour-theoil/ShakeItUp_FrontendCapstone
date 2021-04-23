@@ -24,6 +24,10 @@
     {
       "name": "",
       "id": 2
+    },
+    {
+      "id": 3,
+      "name": "Bitter and Boozy"
     }
   ],
   "ingredients": [
@@ -369,6 +373,11 @@
       "cocktailId": "1",
       "menuId": "1",
       "id": 2
+    },
+    {
+      "cocktailId": "3",
+      "menuId": "1",
+      "id": 3
     }
   ],
   "cocktailingredients": [
@@ -416,6 +425,36 @@
       "cocktailId": 2,
       "ingredientId": 8,
       "id": 9
+    },
+    {
+      "cocktailId": 3,
+      "ingredientId": 3,
+      "id": 10
+    },
+    {
+      "cocktailId": 3,
+      "ingredientId": 9,
+      "id": 11
+    },
+    {
+      "cocktailId": 3,
+      "ingredientId": 5,
+      "id": 12
+    },
+    {
+      "cocktailId": 3,
+      "ingredientId": 2,
+      "id": 13
+    },
+    {
+      "cocktailId": 3,
+      "ingredientId": 6,
+      "id": 14
+    },
+    {
+      "cocktailId": 3,
+      "ingredientId": 30,
+      "id": 15
     }
   ],
   "cocktailstyles": [
