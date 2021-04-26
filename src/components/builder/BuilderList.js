@@ -15,12 +15,12 @@ export const BuilderList = () => {
     const [array, setArray] = useState([])
     const ingredientArray = [array]
 
-    console.log(array)
     const handleInputChange = (event) => {
         const newArray = [...array]
         let selectedValue = event.target.value
         newArray.push(selectedValue)
         setArray(newArray)
+        event.target.value = 0
     }
 
     const [types, setTypes] = useState([])
