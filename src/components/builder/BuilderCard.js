@@ -6,17 +6,18 @@ export const BuilderCard = ({type, reload, ingredientArray, index}) => {
     const [ingredient, setIngredient] = useState({})
     const [locked, setLocked] = useState(true)
     
-  
+    //Generate a random ingredient based on the type chosen
     const newIngredient = () => {
         if (locked) {
             getRandomId(type).then(setIngredient)
         }
     }
-
+    //Array of ingredients to be saved.
     const updateIngredientArray = () => {
         ingredientArray[index] = ingredient
     }
 
+    console.log(ingredient)
     const handleInputChange = () => {
         let newlocked = locked
         if (newlocked) {
@@ -31,17 +32,18 @@ export const BuilderCard = ({type, reload, ingredientArray, index}) => {
         } 
     },[ingredient])
 
-    let cardId = `inplock-${index}`
-
     useEffect(() => {
         if (reload) {
             newIngredient()
         }
     },[reload])
+
+
     return (
         <div className="ingredient-card">
             <div>
                 <h3>{ingredient?.name}</h3>
+                <h6>({ingredient.type?.name})</h6>
                 <input className="inplock" onClick={handleInputChange} type="checkbox"/>
                             <label className="btn-lock" htmlFor="inplock">
                             <svg width="20" height="20" viewBox="0 0 50 50">
