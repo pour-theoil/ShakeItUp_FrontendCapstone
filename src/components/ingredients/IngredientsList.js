@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { getAllIngredients, deleteIngredient} from '../../modules/IngredientManager'
 import { useHistory } from 'react-router-dom'
 import { IngredientCard } from './IngredientCard'
+import { Container, Button, Row } from 'react-bootstrap'
+import './ingredients.css'
 
 export const IngredientList = () => {
     const [ ingredients, setIngredients ] = useState([])
@@ -24,19 +26,20 @@ export const IngredientList = () => {
     
     return (
         <>
-            <section className="ingredients">
-                <div className="ingredient-card">
+            <Container>
+                <Container>
                     {ingredients.map( ingredient => <IngredientCard ingredient={ingredient}
                                                                 key={ingredient.id}
                                                                 deleteSetIngredient={deleteSetIngredient}
                                                                  />)}
-                </div>
-                <div className="create-event">
-                    <button type="button"
-                            className="article-btn"
-                            onClick={() => {history.push('/ingredients/create')}}> + Ingredient</button>
-                </div>
-            </section>
+                </Container>
+                <Row className="create-event">
+                    <Button type="button"
+                            variant="outline-primary"
+                            id="addingredient"
+                            onClick={() => {history.push('/ingredients/create')}}> + Ingredient</Button>
+                </Row>
+            </Container>
         </>
     )
 }

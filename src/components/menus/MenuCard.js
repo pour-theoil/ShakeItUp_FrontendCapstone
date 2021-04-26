@@ -1,17 +1,16 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Card } from 'react-bootstrap'
 
 export const MenuEntry = ({menu, timeconverter}) => {
     
 
     return(
-        <>
-            <Link to={`/menus/${menu.id}`}>
-                <article className="menu">
-                    <h2 className="menu-title">{menu.name}</h2>
-                    <p className="menu-details">Started on:{timeconverter(menu.date)}</p>
-                </article>
-            </Link>
-        </>
+        <Card>
+            
+                <Card.Title>{menu.name}</Card.Title>
+                <Card.Subtitle>Started on:{timeconverter(menu.date)}</Card.Subtitle>
+                <Link to={`/menus/${menu.id}`}>Details</Link> 
+        </Card>
     )
 }

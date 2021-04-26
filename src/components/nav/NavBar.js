@@ -1,22 +1,21 @@
 import React from "react"
-import { Link } from "react-router-dom"
-import "./NavBar.css"
+import { Nav } from 'react-bootstrap'
 
 export const NavBar = () => {
     return (
-        <ul className="navbar">
-            <li className="navbar__item active">
-                <Link className="navbar__link" to="/">Shake It UP</Link>
-            </li>
-            <li className="navbar__item">
-                <Link className="navbar__link" to="/menus">Menus</Link>
-            </li>
-            <li className="navbar__item">
-                <Link className="navbar__link" to="/ingredients">Ingredients</Link>
-            </li>
-            <li className="navbar__item">
-                <Link className="navbar__link" to="/">Log Out</Link>
-            </li>
-        </ul>
+        <Nav fill variant="tabs" defaultActiveKey="/">
+            <Nav.Item>
+                <Nav.Link href="/">Shake It UP</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link href="/menus">Menus</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link href="/ingredients">Ingredients</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+                <Nav.Link href="/">Log Out</Nav.Link>
+            </Nav.Item>
+        </Nav>
     )
 }

@@ -4,6 +4,7 @@ import { BuilderCard } from "./BuilderCard";
 import { addCocktail } from '../../modules/CocktailManager'
 import { addCocktailIngredient } from '../../modules/BuilderManager'
 import { getAllTypes } from '../../modules/IngredientManager'
+import { Container, Form, Button } from 'react-bootstrap'
 
 export const BuilderList = () => {
     const [reload, setReload] = useState(false);
@@ -66,7 +67,7 @@ export const BuilderList = () => {
         setReload(false)
     }, [reload])
     return (
-        <>
+        <Container>
             <h1>Cocktail Builder</h1>
             {array.map((number, index) => <BuilderCard
                 key={index}
@@ -75,19 +76,19 @@ export const BuilderList = () => {
                 type={number}
                 reload={reload}
             />)}
-            <div className="ingredientform-group">
-                <label htmlFor="typeId">Add Ingredient</label>
-                <select name="typeId" id="typeId" onChange={handleInputChange} className="form-control" >
+            <Form.Group>
+                <Form.Label>Add Ingredient</Form.Label>
+                <Form.Control as="select" name="typeId" id="typeId" onChange={handleInputChange} className="form-control" >
                     <option value="0">Type</option>
                     {types.map(t => (
                         <option key={t.id} value={t.id}>
                             {t.name}
                         </option>
                     ))}
-                </select>
-            </div>
-            <button onClick={() => setReload(true)}>Shake it UP!!! &#x27f3;</button>
-            <button onClick={handleSaveCocktail}>Save Your Creation</button>
-        </>
+                </Form.Control>
+            </Form.Group>
+            <Button onClick={() => setReload(true)}>Shake it UP!!! &#x27f3;</Button>
+            <Button onClick={handleSaveCocktail}>Save Your Creation</Button>
+        </Container>
     )
 }
