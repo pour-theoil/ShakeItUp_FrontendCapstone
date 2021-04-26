@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { updateIngredient, getIngredientById } from '../../modules/IngredientManager'
 import { getAllTypes } from '../../modules/IngredientManager'
+import { Form, Button, Row, Container } from "react-bootstrap";
 
 export const EditIngredientForm = () => {
     const [ingredient, setIngredient] = useState({})
@@ -55,13 +56,13 @@ export const EditIngredientForm = () => {
     }, [ingredientId])
 
     return (
-        <>
-            <form>
-                <fieldset>
-                    <h2>Edit Ingredient</h2>
-                    <div className="ingredientform-group">
-                        <label htmlFor="name">Ingredient Name</label>
-                        <input type="text"
+        <Container>
+            <h2>Edit Ingredient</h2>
+
+            <Form>
+                    <Form.Group >
+                        <Form.Label>Ingredient Name:</Form.Label>
+                        <Form.Control type="text"
                             id="name"
                             onChange={handleFieldChange}
                             autoFocus
@@ -69,19 +70,19 @@ export const EditIngredientForm = () => {
                             className="form-control"
                             placeholder="Name"
                             value={ingredient.name} />
-                    </div>
-                    <div className="ingredientform-group">
-                        <label htmlFor="type">Ingredient Type</label>
-                        <select value={ingredient.typeId} name="typeId" id="typeId" onChange={handleFieldChange} className="form-control" >
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label htmlFor="type">Ingredient Type</Form.Label>
+                        <Form.Control as="select" value={ingredient.typeId} name="typeId" id="typeId" onChange={handleFieldChange} className="form-control" >
                             <option value="0">Type</option>
                             {types.map(t => (
                                 <option key={t.id} value={t.id}>
                                     {t.name}
                                 </option>
                             ))}
-                        </select>
-                    </div>
-                    <div className="ingredientform-group">
+                        </Form.Control>
+                    </Form.Group>
+                    <Form.Group>
                         <label htmlFor="abv">ABV of Ingredient</label>
                         <input type="text"
                             id="abv"
@@ -91,20 +92,21 @@ export const EditIngredientForm = () => {
                             placeholder="abv"
                             value={ingredient.abv} />
                         <label htmlFor="abv">%</label>
-                    </div>
-                    <div>
-                    <button
-                        type="button" disabled={isLoading}
+                    </Form.Group>
+                    <Row>
+                    <Button
+                        disabled={isLoading}
+                        variant="outline-secondary"
                         onClick={updateExistingIngredient}
-                        className="article-btn"
-                    >Submit</button>
-                    </div>
-                    <button className="article-btn"
+                    >Submit</Button>
+                    <Button 
+                        variant="outline-danger"
                         onClick={handleCancelSave}>
                         Cancel
-                    </button>
-                </fieldset>
-            </form>
-        </>
+                    </Button>
+                    </Row>
+                
+            </Form>
+        </Container>
     )
 }

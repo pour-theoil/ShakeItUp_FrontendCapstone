@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { addMenu, getAllSeasons } from '../../modules/MenuManager'
+import { Form, Button, Row, Container } from "react-bootstrap";
 
 export const MenuEntry = () => {
     const [menu, setMenu] = useState({
@@ -48,12 +49,12 @@ export const MenuEntry = () => {
     },[])
 
     return (
-        <form className="menuform">
+        <Container>
             <h3 className="menuform-name"> New Menu</h3>
-            <fieldset>
-                <div className="menuform-group">
-                    <label htmlFor="name">Menu Name</label>
-                    <input  type="text" 
+            <Form>
+                <Form.Group>
+                    <Form.Label>Menu Name</Form.Label>
+                    <Form.Control  type="text" 
                             id="name" 
                             onChange={handleInputChange} 
                             autoFocus 
@@ -61,37 +62,37 @@ export const MenuEntry = () => {
                             className="form-control"
                             placeholder="Name"
                             value={menu.name} />
-                </div>
-                <div className="menuform-group">   
-                    <label htmlFor="seasonId">Menu Season</label>
-                    <select value={menu.seasonId} name="seasonId" id="seasonId" onChange={handleInputChange} className="form-control" >
+                </Form.Group>
+                <Form.Group>   
+                    <Form.Label>Menu Season</Form.Label>
+                    <Form.Control as="select" value={menu.seasonId} name="seasonId" id="seasonId" onChange={handleInputChange} className="form-control" >
 						<option value="0">Season</option>
 						{seasons.map(t => (
 							<option key={t.id} value={t.id}>
 								{t.name}
 							</option>
 						))}
-					</select>
-                </div>
-                <div className="menuform-group">  
-                    <label htmlFor="notes">Notes</label>
-                    <input  type="text" 
+					</Form.Control>
+                </Form.Group>
+                <Form.Group>  
+                    <Form.Label>Notes</Form.Label>
+                    <Form.Control  type="text" 
                             id="notes" 
                             required
                             onChange={handleInputChange} 
                             className="form-control"
                             placeholder="notes"
                             value={menu.notes} />
-                </div>
-                </fieldset>
-                <button className="article-btn"
+                </Form.Group>
+                </Form>
+                <Button className="article-btn"
 				onClick={handleSaveEvent}>
 				Save Entry
-            </button>
-            <button className="article-btn"
+                </Button>
+                <Button className="article-btn"
 				onClick={handleCancelSave}>
 				Cancel
-            </button>
-        </form>
+                </Button>
+        </Container>
     )
 }

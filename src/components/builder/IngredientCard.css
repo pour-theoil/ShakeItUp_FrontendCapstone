@@ -40,24 +40,24 @@
     transform-origin: 14px 20px;
     transition: all 0.2s ease;
   }
-  .inpLock {
+  #inpLock {
     display: none;
   }
-  .inpLock:checked + label {
+  #inpLock:checked + label {
     background: #20cca5;
   }
-  .inpLock:checked + label svg {
+  #inpLock:checked + label svg {
     opacity: 1;
   }
-  .inpLock:checked + label svg .bling {
+  #inpLock:checked + label svg .bling {
     animation: bling 0.3s linear forwards;
     animation-delay: 0.2s;
   }
-  .inpLock:checked + label svg .lock {
+  #inpLock:checked + label svg .lock {
     stroke-dasharray: 48;
     animation: locked 0.3s linear forwards;
   }
-  .inpLock:checked + label svg .lockb {
+  #inpLock:checked + label svg .lockb {
     transform: rotate(0);
     transform-origin: 14px 22px;
   }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { getAllMenus, deleteMenu } from '../../modules/MenuManager'
 import { useHistory } from 'react-router-dom'
 import { MenuEntry } from './MenuCard'
+import { Container, Button, Row } from 'react-bootstrap'
 
 export const MenuList = () => {
     const [menus, setMenus] = useState([])
@@ -27,18 +28,18 @@ export const MenuList = () => {
 
     return (
         <>
-            <section className="menus">
-                <div className="menus-card">
+            <Container>
+                <Container>
                     {menus.map(menu => <MenuEntry   menu={menu}
                                                     key={menu.id}
                                                     timeconverter={timeconverter} />)}
-                </div>
-                <div className="create-event">
-                    <button type="button"
-                            className="article-btn"
-                            onClick={() => {history.push('/menus/create')}}> + Menu</button>
-                </div>
-            </section>
+                </Container>
+                <Row>
+                    <Button 
+                            variant="outline-primary"
+                            onClick={() => {history.push('/menus/create')}}> + Menu</Button>
+                </Row>
+            </Container>
         </>
     )
 }

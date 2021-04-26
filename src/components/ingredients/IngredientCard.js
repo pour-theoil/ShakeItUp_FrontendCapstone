@@ -1,15 +1,22 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Card, Row, Col, Button } from 'react-bootstrap'
 
 export const IngredientCard = ({ingredient, deleteSetIngredient}) => {
     return(
         <>
-            <article className="ingredient">
-                <h2 className="ingredient-title">{ingredient.name}</h2>
-                <p className="ingredient-category">{ingredient.categoryId}</p>
-                <Link to={`/ingredients/${ingredient.id}/edit`}><button className="article-btn">Edit</button></Link>
-                <button type="button" className="article-btn"onClick={() => deleteSetIngredient(ingredient.id)}>Delete</button>
-            </article>
+            <Card>
+                <Row>
+                    <Col xs={8}>
+                        <Card.Title>{ingredient.name}</Card.Title>
+                        <Card.Subtitle>{ingredient.categoryId}</Card.Subtitle>
+                    </Col>
+                    <Col>
+                        <Link to={`/ingredients/${ingredient.id}/edit`}><Button variant="outline-secondary" size="sm" block>Edit</Button></Link>
+                        <Button variant="outline-danger" onClick={() => deleteSetIngredient(ingredient.id)} size="sm" block>Delete</Button>
+                    </Col>
+                </Row>
+            </Card>
         </>
     )
 }

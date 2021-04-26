@@ -4,6 +4,7 @@ import { updateCocktail, deleteCocktail } from '../../modules/CocktailManager'
 import { getAllMenus } from '../../modules/MenuManager'
 import { getAllIngredients, addCocktailMenu } from '../../modules/BuilderManager'
 import { IngredientCard} from './IngredientCard'
+import { Form, Button, Row, Col, Container } from "react-bootstrap";
  
 
 export const EditCocktailForm = () => {
@@ -89,12 +90,12 @@ export const EditCocktailForm = () => {
     },[])
 
     return(
-        <form className="cocktailform">
+        <Container className="cocktailform">
         <h3 className="cocktailform-name"> New Cocktail</h3>
-        <fieldset>
-            <div className="cocktailform-group">
-                <label htmlFor="name">Cocktail Name</label>
-                <input  type="text" 
+        <Row>
+            <Form.Group className="cocktailform-group">
+                <Form.Label htmlFor="name">Cocktail Name</Form.Label>
+                <Form.Control  type="text" 
                         id="name" 
                         onChange={handleCocktailChange} 
                         autoFocus 
@@ -102,30 +103,34 @@ export const EditCocktailForm = () => {
                         className="form-control"
                         placeholder="Name"
                         value={cocktail.name} />
-            </div>
-            <div className="cocktailform-group">   
-                <label htmlFor="menuId">Select Menu</label>
-                <select value={cocktailmenu.menuId} name="menuId" id="menuId" onChange={handleMenuChange} className="form-control" >
+            </Form.Group>
+            <Form.Group className="cocktailform-group">   
+                <Form.Label htmlFor="menuId">Select Menu</Form.Label>
+                <Form.Control as="select" value={cocktailmenu.menuId} name="menuId" id="menuId" onChange={handleMenuChange} className="form-control" >
                     <option value="0">Menu</option>
                     {menus.map(t => (
                         <option key={t.id} value={t.id}>
                             {t.name}
                         </option>
                     ))}
-                </select>
-            </div>
+                </Form.Control>
+            </Form.Group>
+            
             {ingredients.map(ingredient => <IngredientCard  key={ingredient.id}
                                                             ingredient={ingredient} />)}
-            </fieldset>
-            <button className="article-btn"
+            
+        </Row>
+        <Col>
+            <Button className="article-btn"
             onClick={handleSaveEvent}>
             Save Entry
-        </button>
-        <button className="article-btn"
+            </Button>
+        </Col>
+        <Button className="article-btn"
             onClick={handleCancelSave}>
             Cancel
-        </button>
-    </form>
+        </Button>
+    </Container>
     )
 
 }

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getAllIngredients } from '../../modules/BuilderManager'
+import { Card, Button } from 'react-bootstrap'
 
 export const CocktailCard = ({ cocktail, removeCocktailFromMenu }) => {
     
@@ -20,11 +21,11 @@ export const CocktailCard = ({ cocktail, removeCocktailFromMenu }) => {
     },[])
     return(
         <>
-                <article className="cocktail">
-                    <h2 className="cocktail-name">{cocktail.cocktail.name}</h2>
-                    <p className="cocktail-ingredients">{ingredients.join(", ")}</p>
-                </article>
-                <button type="button" className="article-btn"onClick={() => removeCocktailFromMenu(cocktail.id)}>Delete</button>
+                <Card>
+                    <Card.Title>{cocktail.cocktail.name}</Card.Title>
+                    <Card.Subtitle>{ingredients.join(", ")}</Card.Subtitle>
+                    <Button type="Button" className="article-btn"onClick={() => removeCocktailFromMenu(cocktail.id)}>Delete</Button>
+                </Card>
         </>
     )
 }
