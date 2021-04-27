@@ -117,7 +117,8 @@ export const EditCocktailForm = () => {
             </Form.Group>
             
             {ingredients.map(ingredient => <IngredientCard  key={ingredient.id}
-                                                            ingredient={ingredient} />)}
+                ingredient={ingredient} />)}
+            
             
         </Row>
         <Col>
