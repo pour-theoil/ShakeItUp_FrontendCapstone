@@ -16,11 +16,14 @@ export const BuilderList = () => {
     //relate to the tpes of ingredients
     const [array, setArray] = useState([])
     const ingredientArray = [array]
+    const [shake, setShake] = useState(false)
 
     const handleInputChange = (event) => {
         const newArray = [...array]
         let selectedValue = event.target.value
         newArray.push(selectedValue)
+        newArray.sort()
+        newArray.reverse()
         setArray(newArray)
         event.target.value = 0
     }
@@ -49,6 +52,11 @@ export const BuilderList = () => {
             })
     }
 
+    const handleToggle = () => {
+       setShake(true)
+    };
+
+
     useEffect(() => {
         if (cocktail.id) {
             history.push(`/cocktail/${cocktail.id}/add`)
@@ -62,7 +70,7 @@ export const BuilderList = () => {
     useEffect(()=>{
         setReload(true)
     },[array])
-
+    console.log(shake)
 
     useEffect(() => {
         setReload(false)
@@ -70,15 +78,19 @@ export const BuilderList = () => {
     return (
         <Container className="justified-content-center">
             <h2 className="cocktailform-name">Cocktail Builder</h2>
-            <Button onClick={() => setReload(true)}>Shake it UP!!! &#x27f3;</Button>
-                <div className="shakerbox">
+            <Button onClick={() => {
+                handleToggle()
+                setReload(true)
+                                    }}>Shake it UP!!! &#x27f3;</Button>
+                <div className={`shakerbox${ shake ? '-active': ""}`} isActive={shake} onAnimationEnd={()=>setShake(false)}>
                         <img
                         src={shaker}
-                       
+
                         className="imagetop"
                         alt="React"
                     />
                     <div className="cocktail-shaker">
+                        <div className="messageBottom shake">
 
                         {array.map((number, index) => <BuilderCard
                         key={index}
@@ -87,7 +99,9 @@ export const BuilderList = () => {
                         type={number}
                         reload={reload}
                         />)}
+                        </div>
                     </div>
+                                </div>
                         <Form.Group classname="ontop">
                             <Form.Control as="select" name="typeId" id="typeId" onChange={handleInputChange} className="form-control" >
                                 <option value="0">+ Add Ingredient</option>
@@ -98,7 +112,6 @@ export const BuilderList = () => {
                                 ))}
                             </Form.Control>
                         </Form.Group>
-                </div>
             
             
             <Button className="savebutton" onClick={handleSaveCocktail}>Save Your Creation</Button>

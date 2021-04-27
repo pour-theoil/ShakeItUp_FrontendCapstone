@@ -19,7 +19,7 @@ export const BuilderCard = ({type, reload, ingredientArray, index}) => {
         ingredientArray[index] = ingredient
     }
 
-    console.log(ingredient)
+    
     const handleInputChange = () => {
         let newlocked = locked
         if (newlocked) {

@@ -1,10 +1,10 @@
 
 /* css for the ingredient card */
 .card-margin{
-  margin: .1em;
+  margin-top: .35em;
   padding: .25em;
   background-color: #ff5b5b !important;
-  border: black dotted 1px;
+  
 }
 
 .cocktailform-name{
@@ -34,16 +34,21 @@
   border-top: black solid 1em;
   text-align: center !important;
   position: relative;
-  top: 0;
-  left: 0;
+  bottom: 0px;
   z-index: 2;
   min-height: 27em;
   border-radius: 2em;
   background-color: aliceblue;
 }
 
+.messageBottom {
+bottom:0px;
+overflow:auto;
+position:absolute;
+width:100%;
+}
+
 .shakerbox{
-  
   margin-top: .5em;
 }
 .shakerbox img {
@@ -52,6 +57,18 @@
   left: -0.2em;
   width: auto;
   z-index: 3;
+}
+
+.shakerbox-active img {
+  position: absolute;
+  height: 28em;
+  left: -0.2em;
+  width: auto;
+  z-index: 3;
+}
+
+.shakerbox-active{
+  margin-top: .5em;
 }
 
 #typeId {
@@ -185,16 +202,16 @@
 
 /* Cocktail shaker shake */
 
-img:hover {
+.shakerbox-active{
   /* Start the shake animation and make the animation last for 0.5 seconds */
-  animation: shake 0.5s;
+  animation: shake 0.1s;
 
   /* When the animation is finished, start again */
-  animation-iteration-count: 10;
+  animation-iteration-count: 4;
 }
 
 @keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
+  0% { transform: translate(10px, 10px) rotate(0deg); }
   10% { transform: translate(-1px, -2px) rotate(-1deg); }
   20% { transform: translate(-3px, 0px) rotate(1deg); }
   30% { transform: translate(3px, 2px) rotate(0deg); }
