@@ -23,15 +23,32 @@ export const IngredientList = () => {
     useEffect(() => {
         getIngredients()
     }, [])
+
+    const colorArray = ['Secondary', 'Success', 'Danger', 'Warning', 'Info']
+
+	let colorCount = 0;
+
+	const cyleBackgroundColor = () => {
+		const variant = colorArray[colorCount];
+		colorCount < colorArray.length - 1 ? colorCount++ : colorCount = 0;
+		return variant.toLowerCase()
+	}
     
     return (
         <>
             <Container>
                 <Container>
-                    {ingredients.map( ingredient => <IngredientCard ingredient={ingredient}
-                                                                key={ingredient.id}
-                                                                deleteSetIngredient={deleteSetIngredient}
-                                                                 />)}
+                    {ingredients.map( ingredient => {
+                                                const mybackgroun = cyleBackgroundColor()
+                                                return (
+                                                    <IngredientCard ingredient={ingredient}
+                                                                    bgcolor={mybackgroun}
+                                                                    key={ingredient.id}
+                                                                    deleteSetIngredient={deleteSetIngredient}
+                                                                     />)}
+
+                                                )
+                    }
                 </Container>
                 <Row className="create-event">
                     <Button type="button"

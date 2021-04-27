@@ -1,4 +1,25 @@
 /* css for the ingredient card */
+.card-margin{
+  margin: 1em;
+  padding: .5em;
+  background-color: #ff5b5b !important;
+}
+
+.cocktailform-name{
+  margin-top: 3em !important;
+  color: aliceblue;
+  text-align: center;
+}
+
+.cocktailform-group {
+  display: flex;
+  justify-content: center;
+}
+
+.cocktailform {
+  background-color: #ff5b5b;
+  padding: 1em;
+}
 
 /* css for the lock box */
 .btn-lock {

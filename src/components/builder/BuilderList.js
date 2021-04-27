@@ -68,7 +68,7 @@ export const BuilderList = () => {
     }, [reload])
     return (
         <Container>
-            <h1>Cocktail Builder</h1>
+            <h2 className="cocktailform-name">Cocktail Builder</h2>
             {array.map((number, index) => <BuilderCard
                 key={index}
                 index={index}

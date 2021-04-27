@@ -8,11 +8,12 @@ import { MenuList } from './menus/MenuList'
 import { MenuEntry } from './menus/MenuForm'
 import { MenuDetails } from './menus/MenuDetails'
 import { EditCocktailForm } from './builder/CocktailForm' 
+import { Container } from 'react-bootstrap'
 
 export const ApplicationViews = () => {
     return (
-        <>
-            <Route exact path="/">
+        <Container>
+            <Route exact path="/home">
                 <BuilderList />
             </Route>
 
@@ -44,6 +45,6 @@ export const ApplicationViews = () => {
                 <MenuEntry />
             </Route>
 
-        </>
+        </Container>
     )
 }

@@ -1,8 +1,16 @@
+main {
+   background-color: black;
+}
+
+.container--login {
+  margin-top: 10em;
+}
 .dialog {
   min-width: 15rem;
   min-height: 5rem;
 }
 
 .form--login {
-  color: whitesmoke;
+  color: purple;
+  background-color: black;
 }
