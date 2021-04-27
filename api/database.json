@@ -100,6 +100,34 @@
     {
       "name": "",
       "id": 22
+    },
+    {
+      "name": "",
+      "id": 23
+    },
+    {
+      "name": "",
+      "id": 24
+    },
+    {
+      "name": "",
+      "id": 25
+    },
+    {
+      "name": "",
+      "id": 26
+    },
+    {
+      "name": "",
+      "id": 27
+    },
+    {
+      "name": "",
+      "id": 28
+    },
+    {
+      "name": "",
+      "id": 29
     }
   ],
   "ingredients": [
@@ -817,6 +845,114 @@
       "cocktailId": 22,
       "ingredientId": 23,
       "id": 72
+    },
+    {
+      "cocktailId": 23,
+      "ingredientId": 6,
+      "id": 73
+    },
+    {
+      "cocktailId": 23,
+      "ingredientId": 9,
+      "id": 74
+    },
+    {
+      "cocktailId": 23,
+      "ingredientId": 15,
+      "id": 75
+    },
+    {
+      "cocktailId": 24,
+      "ingredientId": 5,
+      "id": 76
+    },
+    {
+      "cocktailId": 24,
+      "ingredientId": 6,
+      "id": 77
+    },
+    {
+      "cocktailId": 24,
+      "ingredientId": 6,
+      "id": 78
+    },
+    {
+      "cocktailId": 24,
+      "ingredientId": 9,
+      "id": 79
+    },
+    {
+      "cocktailId": 25,
+      "ingredientId": 5,
+      "id": 80
+    },
+    {
+      "cocktailId": 26,
+      "ingredientId": 7,
+      "id": 81
+    },
+    {
+      "cocktailId": 26,
+      "ingredientId": 3,
+      "id": 82
+    },
+    {
+      "cocktailId": 26,
+      "ingredientId": 10,
+      "id": 83
+    },
+    {
+      "cocktailId": 26,
+      "ingredientId": 6,
+      "id": 84
+    },
+    {
+      "cocktailId": 26,
+      "ingredientId": 7,
+      "id": 85
+    },
+    {
+      "cocktailId": 27,
+      "id": 86
+    },
+    {
+      "cocktailId": 28,
+      "id": 87
+    },
+    {
+      "cocktailId": 29,
+      "ingredientId": 6,
+      "id": 88
+    },
+    {
+      "cocktailId": 29,
+      "ingredientId": 8,
+      "id": 89
+    },
+    {
+      "cocktailId": 29,
+      "ingredientId": 10,
+      "id": 90
+    },
+    {
+      "cocktailId": 29,
+      "ingredientId": 8,
+      "id": 91
+    },
+    {
+      "cocktailId": 29,
+      "ingredientId": 9,
+      "id": 92
+    },
+    {
+      "cocktailId": 29,
+      "ingredientId": 12,
+      "id": 93
+    },
+    {
+      "cocktailId": 29,
+      "ingredientId": 25,
+      "id": 94
     }
   ],
   "cocktailstyles": [

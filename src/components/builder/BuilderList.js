@@ -5,6 +5,7 @@ import { addCocktail } from '../../modules/CocktailManager'
 import { addCocktailIngredient } from '../../modules/BuilderManager'
 import { getAllTypes } from '../../modules/IngredientManager'
 import { Container, Form, Button } from 'react-bootstrap'
+import shaker from './emptyshaker.png'
 
 export const BuilderList = () => {
     const [reload, setReload] = useState(false);
@@ -67,28 +68,40 @@ export const BuilderList = () => {
         setReload(false)
     }, [reload])
     return (
-        <Container>
+        <Container className="justified-content-center">
             <h2 className="cocktailform-name">Cocktail Builder</h2>
-            {array.map((number, index) => <BuilderCard
-                key={index}
-                index={index}
-                ingredientArray={ingredientArray}
-                type={number}
-                reload={reload}
-            />)}
-            <Form.Group>
-                <Form.Label>Add Ingredient</Form.Label>
-                <Form.Control as="select" name="typeId" id="typeId" onChange={handleInputChange} className="form-control" >
-                    <option value="0">Type</option>
-                    {types.map(t => (
-                        <option key={t.id} value={t.id}>
-                            {t.name}
-                        </option>
-                    ))}
-                </Form.Control>
-            </Form.Group>
             <Button onClick={() => setReload(true)}>Shake it UP!!! &#x27f3;</Button>
-            <Button onClick={handleSaveCocktail}>Save Your Creation</Button>
+                <div className="shakerbox">
+                        <img
+                        src={shaker}
+                       
+                        className="imagetop"
+                        alt="React"
+                    />
+                    <div className="cocktail-shaker">
+
+                        {array.map((number, index) => <BuilderCard
+                        key={index}
+                        index={index}
+                        ingredientArray={ingredientArray}
+                        type={number}
+                        reload={reload}
+                        />)}
+                    </div>
+                        <Form.Group classname="ontop">
+                            <Form.Control as="select" name="typeId" id="typeId" onChange={handleInputChange} className="form-control" >
+                                <option value="0">+ Add Ingredient</option>
+                                {types.map(t => (
+                                    <option key={t.id} value={t.id}>
+                                        {t.name}
+                                    </option>
+                                ))}
+                            </Form.Control>
+                        </Form.Group>
+                </div>
+            
+            
+            <Button className="savebutton" onClick={handleSaveCocktail}>Save Your Creation</Button>
         </Container>
     )
 }
