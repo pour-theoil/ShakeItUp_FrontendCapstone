@@ -50,7 +50,6 @@ export const EditCocktailForm = () => {
 
     //query for the ingredients from the cocktailingredients table
     const getIngredients = () =>{
-        console.log(cocktail.id)
         getAllIngredients(cocktailId)
         .then(ingredients => setIngredients(ingredients))
         
