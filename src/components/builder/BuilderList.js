@@ -82,14 +82,14 @@ export const BuilderList = () => {
                 handleToggle()
                 setReload(true)
                                     }}>Shake it UP!!! &#x27f3;</Button>
-                <div className={`shakerbox${ shake ? '-active': ""}`} isActive={shake} onAnimationEnd={()=>setShake(false)}>
+                <div className={`shakerbox${ shake ? '-active': ""}`} onAnimationEnd={()=>setShake(false)}>
                         <img
                         src={shaker}
 
                         className="imagetop"
                         alt="React"
                     />
-                    <div className="cocktail-shaker">
+                    <div className="cocktail-shaker" onClick={(event)=>{console.log(event.target.value)}}>
                         <div className="messageBottom shake">
 
                         {array.map((number, index) => <BuilderCard
@@ -101,8 +101,8 @@ export const BuilderList = () => {
                         />)}
                         </div>
                     </div>
-                                </div>
-                        <Form.Group classname="ontop">
+                </div>
+                        <Form.Group>
                             <Form.Control as="select" name="typeId" id="typeId" onChange={handleInputChange} className="form-control" >
                                 <option value="0">+ Add Ingredient</option>
                                 {types.map(t => (

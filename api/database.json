@@ -38,11 +38,12 @@
       "name": "Twinkie"
     },
     {
+      "name": "",
       "id": 6
     },
     {
       "id": 7,
-      "name": "Lemon"
+      "name": "French sour"
     },
     {
       "id": 8
@@ -60,116 +61,18 @@
       "id": 11
     },
     {
+      "name": "",
       "id": 12
     },
     {
+      "name": "",
       "id": 13
-    },
-    {
-      "name": "",
-      "id": 14
-    },
-    {
-      "id": 15,
-      "name": "Lemon"
-    },
-    {
-      "id": 16,
-      "name": "Logan Demmy"
-    },
-    {
-      "name": "",
-      "id": 17
-    },
-    {
-      "name": "",
-      "id": 18
-    },
-    {
-      "name": "",
-      "id": 19
-    },
-    {
-      "id": 20,
-      "name": "Lemon"
-    },
-    {
-      "name": "",
-      "id": 21
-    },
-    {
-      "name": "",
-      "id": 22
-    },
-    {
-      "name": "",
-      "id": 23
-    },
-    {
-      "name": "",
-      "id": 24
-    },
-    {
-      "name": "",
-      "id": 25
-    },
-    {
-      "name": "",
-      "id": 26
-    },
-    {
-      "name": "",
-      "id": 27
-    },
-    {
-      "name": "",
-      "id": 28
-    },
-    {
-      "name": "",
-      "id": 29
-    },
-    {
-      "name": "",
-      "id": 30
-    },
-    {
-      "name": "",
-      "id": 31
-    },
-    {
-      "name": "",
-      "id": 32
-    },
-    {
-      "name": "",
-      "id": 33
-    },
-    {
-      "name": "",
-      "id": 34
-    },
-    {
-      "name": "",
-      "id": 35
-    },
-    {
-      "name": "",
-      "id": 36
-    },
-    {
-      "name": "",
-      "id": 37
-    },
-    {
-      "name": "",
-      "id": 38
     }
   ],
   "ingredients": [
     {
       "id": 2,
-      "name": "Lemon",
+      "name": "Sochu",
       "typeId": "1",
       "abv": "4",
       "alcoholic": false
@@ -416,27 +319,33 @@
   "types": [
     {
       "id": 1,
-      "name": "Spirit"
+      "name": "Spirit",
+      "color": "danger"
     },
     {
       "id": 2,
-      "name": "Modifier"
+      "name": "Modifier",
+      "color": "info"
     },
     {
       "id": 3,
-      "name": "Acid"
+      "name": "Acid",
+      "color": "warning"
     },
     {
       "id": 4,
-      "name": "Sweetener"
+      "name": "Sweetener",
+      "color": "primary"
     },
     {
       "id": 5,
-      "name": "Pantry"
+      "name": "Pantry",
+      "color": "success"
     },
     {
       "id": 6,
-      "name": "Bitters"
+      "name": "Bitters",
+      "color": "secondary"
     }
   ],
   "menus": [
@@ -522,6 +431,16 @@
       "cocktailId": "20",
       "menuId": "2",
       "id": 10
+    },
+    {
+      "cocktailId": "7",
+      "menuId": "1",
+      "id": 11
+    },
+    {
+      "cocktailId": "8",
+      "menuId": 0,
+      "id": 12
     }
   ],
   "cocktailingredients": [
@@ -1105,6 +1024,67 @@
       "cocktailId": 38,
       "ingredientId": 2,
       "id": 118
+    },
+    {
+      "cocktailId": 6,
+      "id": 119
+    },
+    {
+      "cocktailId": 7,
+      "ingredientId": 11,
+      "id": 120
+    },
+    {
+      "cocktailId": 7,
+      "ingredientId": 10,
+      "id": 121
+    },
+    {
+      "cocktailId": 7,
+      "ingredientId": 4,
+      "id": 122
+    },
+    {
+      "cocktailId": 8,
+      "id": 123
+    },
+    {
+      "cocktailId": 9,
+      "id": 124
+    },
+    {
+      "cocktailId": 10,
+      "id": 125
+    },
+    {
+      "cocktailId": 11,
+      "ingredientId": 10,
+      "id": 126
+    },
+    {
+      "cocktailId": 11,
+      "ingredientId": 6,
+      "id": 127
+    },
+    {
+      "cocktailId": 12,
+      "ingredientId": 10,
+      "id": 128
+    },
+    {
+      "cocktailId": 13,
+      "ingredientId": 16,
+      "id": 129
+    },
+    {
+      "cocktailId": 13,
+      "ingredientId": 10,
+      "id": 130
+    },
+    {
+      "cocktailId": 13,
+      "ingredientId": 2,
+      "id": 131
     }
   ],
   "cocktailstyles": [

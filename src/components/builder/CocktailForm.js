@@ -4,7 +4,7 @@ import { updateCocktail, deleteCocktail } from '../../modules/CocktailManager'
 import { getAllMenus } from '../../modules/MenuManager'
 import { getAllIngredients, addCocktailMenu } from '../../modules/BuilderManager'
 import { IngredientCard} from './IngredientCard'
-import { Form, Button, Row, Col, Container } from "react-bootstrap";
+import { Form, Button, Row, Col, Container, Card } from "react-bootstrap";
  
 
 export const EditCocktailForm = () => {
@@ -92,7 +92,6 @@ export const EditCocktailForm = () => {
     return(
         <Container className="cocktailform">
         <h3 className="cocktailform-name"> New Cocktail</h3>
-        <Row>
             <Form.Group className="cocktailform-group">
                 <Form.Label htmlFor="name">Cocktail Name</Form.Label>
                 <Form.Control  type="text" 
@@ -115,12 +114,13 @@ export const EditCocktailForm = () => {
                     ))}
                 </Form.Control>
             </Form.Group>
-            
-            {ingredients.map(ingredient => <IngredientCard  key={ingredient.id}
+            <Card>
+
+                {ingredients.map(ingredient => <IngredientCard  key={ingredient.id}
                 ingredient={ingredient} />)}
+            </Card>
             
             
-        </Row>
         <Col>
             <Button className="article-btn"
             onClick={handleSaveEvent}>
