@@ -2,10 +2,10 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Card, Row, Col, Button } from 'react-bootstrap'
 
-export const IngredientCard = ({ingredient, deleteSetIngredient}) => {
+export const IngredientCard = ({bg, ingredient, deleteSetIngredient}) => {
     return(
         <>
-            <Card>
+            <Card className="ingredient-card" bg={bg}>
                 <Row>
                     <Col xs={8}>
                         <Card.Title>{ingredient.name}</Card.Title>
