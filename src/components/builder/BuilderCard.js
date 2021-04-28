@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getRandomId } from '../../modules/BuilderManager'
 import './IngredientCard.css'
+import '../../scss/_variables.scss'
 import { Card, Col, Form, Row } from 'react-bootstrap'
 
 
@@ -41,16 +42,15 @@ export const BuilderCard = ({type, reload, ingredientArray, index}) => {
     },[reload])
 
 
+
     return (
         <>
-            <Card className="card-margin">
-                
+            <Card bg={ingredient.type?.color} className="card-margin">
                     <Col>
                         <Card.Title>{ingredient?.name}</Card.Title>
-                        <Card.Subtitle>({ingredient.type?.name})</Card.Subtitle>
-                    </Col>
-            {/* <Form.Check type="radio" className="inplock" onClick={handleInputChange} /> */}
-                 
+                        <Card.Subtitle>({ingredient.type?.name})<Form.Check onClick={handleInputChange} type="checkbox"></Form.Check></Card.Subtitle>
+                        
+                    </Col>    
             </Card>
         </>
         )

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Card, Row, Col, Button } from 'react-bootstrap'
 
 export const IngredientCard = ({bg, ingredient, deleteSetIngredient}) => {
+    console.log(ingredient)
     return(
         <>
             <Card className="ingredient-card" bg={bg}>

@@ -1,7 +1,7 @@
 const url = "http://localhost:8088"
 
 export const getAllIngredients = () => {
-    return fetch(`${url}/ingredients`)
+    return fetch(`${url}/ingredients?_expand=type`)
     .then(response => response.json())
 }
 
