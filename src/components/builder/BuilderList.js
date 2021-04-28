@@ -70,7 +70,7 @@ export const BuilderList = () => {
     useEffect(()=>{
         setReload(true)
     },[array])
-    console.log(shake)
+    
 
     useEffect(() => {
         setReload(false)

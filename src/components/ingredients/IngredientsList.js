@@ -4,6 +4,7 @@ import { useHistory } from 'react-router-dom'
 import { IngredientCard } from './IngredientCard'
 import { Container, Button, Row } from 'react-bootstrap'
 import './ingredients.css'
+import "../../scss/_variables.scss"
 
 export const IngredientList = () => {
     const [ ingredients, setIngredients ] = useState([])
@@ -37,12 +38,15 @@ export const IngredientList = () => {
     return (
         <>
             <Container>
+            <h3 className="cocktailform-name">Ingredients List</h3>
                 <Container>
+
                     {ingredients.map( ingredient => {
-                                                const mybackgroun = cyleBackgroundColor()
+                                                const mybackground = cyleBackgroundColor()
+                                                console.log(mybackground)
                                                 return (
                                                     <IngredientCard ingredient={ingredient}
-                                                                    bgcolor={mybackgroun}
+                                                                    bg={mybackground}
                                                                     key={ingredient.id}
                                                                     deleteSetIngredient={deleteSetIngredient}
                                                                      />)}
