@@ -5,7 +5,7 @@ import '../../scss/_variables.scss'
 import { Card, Col, Form, Row } from 'react-bootstrap'
 
 
-export const BuilderCard = ({type, reload, ingredientArray, index}) => {
+export const BuilderCard = ({type, reload, setIngredientArray, ingredientArray, index, colorArray}) => {
     const [ingredient, setIngredient] = useState({})
     const [locked, setLocked] = useState(true)
     
@@ -17,7 +17,10 @@ export const BuilderCard = ({type, reload, ingredientArray, index}) => {
     }
     //Array of ingredients to be saved.
     const updateIngredientArray = () => {
-        ingredientArray[index] = ingredient
+        let arraytemp = [...ingredientArray]
+        arraytemp[index] = ingredient
+        setIngredientArray(arraytemp)
+        console.log(arraytemp)
     }
 
     
@@ -45,12 +48,13 @@ export const BuilderCard = ({type, reload, ingredientArray, index}) => {
 
     return (
         <>
-            <Card bg={ingredient.type?.color} className="card-margin">
+            <Card bg={colorArray[type]} className="card-margin">
                     <Col>
                         <Card.Title>{ingredient?.name}</Card.Title>
-                        <Card.Subtitle>({ingredient.type?.name})<Form.Check onClick={handleInputChange} type="checkbox"></Form.Check></Card.Subtitle>
+                        <Card.Subtitle>({ingredient.type?.name})</Card.Subtitle>
                         
-                    </Col>    
+                    </Col> 
+                    <Form.Control type="checkbox" onClick={handleInputChange} hidden></Form.Control>
             </Card>
         </>
         )

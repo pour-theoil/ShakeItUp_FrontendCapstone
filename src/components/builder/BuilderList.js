@@ -15,9 +15,10 @@ export const BuilderList = () => {
     const history = useHistory()
     //relate to the tpes of ingredients
     const [array, setArray] = useState([])
-    const ingredientArray = [array]
+    const [ingredientArray, setIngredientArray] = useState([])
     const [shake, setShake] = useState(false)
 
+    //When a new type is chosen it is added to the list
     const handleInputChange = (event) => {
         const newArray = [...array]
         let selectedValue = event.target.value
@@ -34,6 +35,7 @@ export const BuilderList = () => {
         getAllTypes()
             .then(type => setTypes(type))
     }
+    
 
     // save the cocktail first, then create the many to many relationships with the drink
     const handleSaveCocktail = () => {
@@ -52,10 +54,13 @@ export const BuilderList = () => {
             })
     }
 
+
     const handleToggle = () => {
        setShake(true)
     };
 
+    // array to add specific colors to individual cards
+    const colorArray = ['primary', 'light', 'warning', 'success', 'danger', 'info']
 
     useEffect(() => {
         if (cocktail.id) {
@@ -89,13 +94,15 @@ export const BuilderList = () => {
                         className="imagetop"
                         alt="React"
                     />
-                    <div className="cocktail-shaker" onClick={(event)=>{console.log(event.target.value)}}>
+                    <div className="cocktail-shaker">
                         <div className="messageBottom shake">
 
                         {array.map((number, index) => <BuilderCard
+                        colorArray={colorArray}
+                        ingredientArray={ingredientArray}
                         key={index}
                         index={index}
-                        ingredientArray={ingredientArray}
+                        setIngredientArray={setIngredientArray}
                         type={number}
                         reload={reload}
                         />)}

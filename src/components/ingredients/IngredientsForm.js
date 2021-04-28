@@ -41,6 +41,7 @@ export const IngredientEntry = () => {
     }
     
 
+
     const handleCancelSave = (click) => {
         click.preventDefault()
         history.push('/ingredients')
