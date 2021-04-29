@@ -48,7 +48,7 @@ export const BuilderCard = ({type, reload, setIngredientArray, ingredientArray, 
 
     return (
         <>
-            <Card bg={colorArray[type]} className="card-margin">
+            <Card bg={colorArray[type-1]} className="card-margin">
                     <Col>
                         <Card.Title>{ingredient?.name}</Card.Title>
                         <Card.Subtitle>({ingredient.type?.name})</Card.Subtitle>

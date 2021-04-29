@@ -1,3 +1,7 @@
 #addingredient {
     position: fixed;
 }
+
+.ingredient-card {
+    margin-top: .35em;
+}

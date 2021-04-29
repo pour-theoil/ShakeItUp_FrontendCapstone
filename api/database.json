@@ -116,6 +116,33 @@
     {
       "name": "",
       "id": 25
+    },
+    {
+      "name": "",
+      "id": 26
+    },
+    {
+      "name": "",
+      "id": 27
+    },
+    {
+      "id": 28
+    },
+    {
+      "id": 29,
+      "name": "Lemon"
+    },
+    {
+      "name": "",
+      "id": 30
+    },
+    {
+      "id": 31,
+      "name": "French 75"
+    },
+    {
+      "name": "",
+      "id": 32
     }
   ],
   "ingredients": [
@@ -295,13 +322,6 @@
       "alcoholic": false
     },
     {
-      "id": 27,
-      "name": "Nutmeg",
-      "typeId": "5",
-      "abv": "0",
-      "alcoholic": false
-    },
-    {
       "id": 28,
       "name": "Cardammon",
       "typeId": "5",
@@ -459,18 +479,7 @@
       "name": "Autumn"
     }
   ],
-  "cocktailmenus": [
-    {
-      "cocktailId": "12",
-      "menuId": "1",
-      "id": 8
-    },
-    {
-      "cocktailId": "13",
-      "menuId": "1",
-      "id": 9
-    }
-  ],
+  "cocktailmenus": [],
   "cocktailingredients": [
     {
       "cocktailId": 14,
@@ -559,6 +568,111 @@
       "cocktailId": 25,
       "ingredientId": 7,
       "id": 18
+    },
+    {
+      "cocktailId": 26,
+      "ingredientId": 22,
+      "id": 19
+    },
+    {
+      "cocktailId": 26,
+      "ingredientId": 10,
+      "id": 20
+    },
+    {
+      "cocktailId": 26,
+      "ingredientId": 6,
+      "id": 21
+    },
+    {
+      "cocktailId": 26,
+      "ingredientId": 5,
+      "id": 22
+    },
+    {
+      "cocktailId": 28,
+      "ingredientId": 19,
+      "id": 23
+    },
+    {
+      "cocktailId": 28,
+      "ingredientId": 17,
+      "id": 24
+    },
+    {
+      "cocktailId": 28,
+      "ingredientId": 10,
+      "id": 25
+    },
+    {
+      "cocktailId": 28,
+      "ingredientId": 6,
+      "id": 26
+    },
+    {
+      "cocktailId": 29,
+      "ingredientId": 21,
+      "id": 27
+    },
+    {
+      "cocktailId": 29,
+      "ingredientId": 20,
+      "id": 28
+    },
+    {
+      "cocktailId": 29,
+      "ingredientId": 10,
+      "id": 29
+    },
+    {
+      "cocktailId": 30,
+      "ingredientId": 12,
+      "id": 30
+    },
+    {
+      "cocktailId": 30,
+      "ingredientId": 15,
+      "id": 31
+    },
+    {
+      "cocktailId": 31,
+      "ingredientId": 14,
+      "id": 32
+    },
+    {
+      "cocktailId": 31,
+      "ingredientId": 11,
+      "id": 33
+    },
+    {
+      "cocktailId": 31,
+      "ingredientId": 4,
+      "id": 34
+    },
+    {
+      "cocktailId": 31,
+      "ingredientId": 6,
+      "id": 35
+    },
+    {
+      "cocktailId": 32,
+      "ingredientId": 31,
+      "id": 36
+    },
+    {
+      "cocktailId": 32,
+      "ingredientId": 28,
+      "id": 37
+    },
+    {
+      "cocktailId": 32,
+      "ingredientId": 20,
+      "id": 38
+    },
+    {
+      "cocktailId": 32,
+      "ingredientId": 5,
+      "id": 39
     }
   ],
   "cocktailstyles": [

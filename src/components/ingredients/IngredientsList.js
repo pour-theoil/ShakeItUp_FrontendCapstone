@@ -21,6 +21,8 @@ export const IngredientList = () => {
         .then(() => getIngredients())
     }
 
+    const colorArray = ['primary', 'light', 'warning', 'success', 'danger', 'info']
+
     useEffect(() => {
         getIngredients()
     }, [])
@@ -36,6 +38,7 @@ export const IngredientList = () => {
                                 
                                                 return (
                                                     <IngredientCard ingredient={ingredient}
+                                                                    colorArray={colorArray}
                                                                     key={ingredient.id}
                                                                     deleteSetIngredient={deleteSetIngredient}
                                                                      />)}

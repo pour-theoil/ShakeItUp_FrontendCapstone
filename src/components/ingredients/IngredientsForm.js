@@ -52,7 +52,7 @@ export const IngredientEntry = () => {
     },[])
 
     return (
-        <Container>
+        <Container className="justified-content-center">
             <h2> New Ingredient</h2>
             <Form>
                 <Form.Group>
