@@ -11,7 +11,7 @@ export const NavBar = () => {
     return (
         <Navbar fixed="top" bg="dark" variant="tabs" className="justify-content-between">
             <NavDropdown title="Nav" id="collasible-nav-dropdown" >
-                <NavDropdown.Item href="/home">Shake It UP</NavDropdown.Item>
+                <NavDropdown.Item href="/">Shake It UP</NavDropdown.Item>
                 <NavDropdown.Item href="/menus">Menus</NavDropdown.Item>
                 <NavDropdown.Item href="/ingredients">Ingredients</NavDropdown.Item>
                 <NavDropdown.Divider />
