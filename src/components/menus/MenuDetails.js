@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { getCocktails, getMenuById, deleteMenuCocktail } from '../../modules/MenuManager'
 import { CocktailCard } from './CocktailCard'
-import { Container, Button, Row, Card } from 'react-bootstrap'
+import { Container, Button, Row } from 'react-bootstrap'
 
 export const MenuDetails = () => {
     const [cocktails, setCocktails] = useState([])
@@ -41,10 +41,9 @@ export const MenuDetails = () => {
     return (
         <>
               <Container className="justified-content-center">
-                <Card>
-                    <Card.Title className="menu-title">{menu[0]?.name}</Card.Title>
-                    <Card.Subtitle>Season: {menu[0]?.season.name}</Card.Subtitle>
-                </Card>
+                
+                    <h2 className="menu-title">{menu[0]?.name}</h2>
+                    <h5>Season: {menu[0]?.season.name}</h5>
                 <Container className="cocktails-card">
                     {cocktails.map(cocktail => <CocktailCard   cocktail={cocktail}
                                                                 key={cocktail.id}
@@ -52,8 +51,8 @@ export const MenuDetails = () => {
                 </Container>
                 <Row className="create-event">
                     <Button type="Button"
-                            variant="outline-primary"
-                            className="article-btn"
+                            variant="primary"
+                            className="fixed-button"
                             onClick={() => {history.push('/')}}> + Cocktail</Button>
                 </Row>
             </Container>

@@ -4,4 +4,6 @@
 
 .ingredient-card {
     margin-top: .35em;
+    padding: .4em;
+    border-radius: .5em !important;
 }
