@@ -1,14 +1,15 @@
 @font-face{
   font-family: headers;
-  src: url('https://www.behance.net/gallery/68465539/Eighties-font/modules/642679625');
+  src: url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@900&display=swap');
 }
 
 body {
   color: aliceblue !important;
   background-color: black !important;
+  
   text-align: center;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, headers, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;

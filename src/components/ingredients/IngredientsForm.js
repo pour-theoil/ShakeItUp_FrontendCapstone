@@ -53,11 +53,11 @@ export const IngredientEntry = () => {
 
     return (
         <Container className="justified-content-center">
-            <h2> New Ingredient</h2>
+            <h2 className="cocktailform-name"> New Ingredient</h2>
             <Form>
                 <Form.Group>
                     <Form.Label>Ingredient Name</Form.Label>
-                    <Form.Contorl  type="text" 
+                    <Form.Control  type="text" 
                             id="name" 
                             onChange={handleInputChange} 
                             autoFocus 
@@ -86,14 +86,13 @@ export const IngredientEntry = () => {
                             className="form-control"
                             placeholder="abv"
                             value={ingredient.abv} />
-                            <label htmlFor="abv">%</label>
                 </Form.Group>
                 </Form>
-                <Button className="article-btn"
+                <Button 
 				onClick={handleSaveEvent}>
 				Save Entry
                 </Button>
-                <Button className="article-btn"
+                <Button
                     onClick={handleCancelSave}>
                     Cancel
                 </Button>

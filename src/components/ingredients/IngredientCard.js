@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Card, Row, Col, Button } from 'react-bootstrap'
 
 export const IngredientCard = ({colorArray, ingredient, deleteSetIngredient}) => {
-    console.log(ingredient)
+    
     return(
         <>
             <Card className="ingredient-card" bg={colorArray[ingredient.typeId-1]}>
@@ -14,7 +14,7 @@ export const IngredientCard = ({colorArray, ingredient, deleteSetIngredient}) =>
                     </Col>
                     <Col>
                         <Link to={`/ingredients/${ingredient.id}/edit`}><Button variant="outline-secondary" size="sm" block>Edit</Button></Link>
-                        <Button variant="outline-danger" onClick={() => deleteSetIngredient(ingredient.id)} size="sm" block>Delete</Button>
+                        <Button variant="outline-dark" onClick={() => deleteSetIngredient(ingredient.id)} size="sm" block>Delete</Button>
                     </Col>
                 </Row>
             </Card>

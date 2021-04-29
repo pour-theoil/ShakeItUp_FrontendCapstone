@@ -58,14 +58,13 @@ export const EditCocktailForm = () => {
         
     }
     
-    console.log("what ingredients", ingredients)
     //save the menu and the cocktail states after they have been updated
     const handleSaveEvent = (click) => {
         click.preventDefault()
         if (cocktail.name === "" || cocktail.menuId === 0) {
             window.alert("Please fill in all fields")
         } else {
-            console.log(cocktail)
+            
             updateCocktail(cocktail)
             .then(()=> {
                 addCocktailMenu(cocktailmenu)})

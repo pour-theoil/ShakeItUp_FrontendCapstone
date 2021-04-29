@@ -17,13 +17,13 @@ export const MenuList = () => {
     }
 
     const timeconverter = (time) => {
-        console.log(time)
+
         let myDate = new Date(time)
         let shortend = myDate.toLocaleDateString()
         return shortend;
     }
 
-    const colorArray = ['primary', 'light', 'warning', 'success', 'danger', 'info']
+    const colorArray = ['light', 'dark', 'success', 'danger', 'info']
 
 
     useEffect(() => {

@@ -151,6 +151,111 @@
     {
       "id": 34,
       "name": "Raspberry Mule"
+    },
+    {
+      "id": 35,
+      "name": "Disgusting"
+    },
+    {
+      "name": "",
+      "id": 36
+    },
+    {
+      "id": 37,
+      "name": "Life of 2 Melletti"
+    },
+    {
+      "name": "",
+      "id": 38
+    },
+    {
+      "name": "",
+      "id": 39
+    },
+    {
+      "name": "",
+      "id": 40
+    },
+    {
+      "name": "",
+      "id": 41
+    },
+    {
+      "name": "",
+      "id": 42
+    },
+    {
+      "id": 43
+    },
+    {
+      "name": "",
+      "id": 44
+    },
+    {
+      "name": "",
+      "id": 45
+    },
+    {
+      "name": "",
+      "id": 46
+    },
+    {
+      "name": "",
+      "id": 47
+    },
+    {
+      "id": 48
+    },
+    {
+      "name": "",
+      "id": 49
+    },
+    {
+      "name": "",
+      "id": 50
+    },
+    {
+      "name": "",
+      "id": 51
+    },
+    {
+      "id": 52
+    },
+    {
+      "name": "",
+      "id": 53
+    },
+    {
+      "id": 54
+    },
+    {
+      "id": 55
+    },
+    {
+      "id": 56
+    },
+    {
+      "id": 57
+    },
+    {
+      "id": 58
+    },
+    {
+      "id": 59
+    },
+    {
+      "id": 60
+    },
+    {
+      "id": 61
+    },
+    {
+      "name": "",
+      "id": 62
+    },
+    {
+      "name": "",
+      "id": 63
     }
   ],
   "ingredients": [
@@ -372,13 +477,6 @@
       "alcoholic": false
     },
     {
-      "id": 34,
-      "name": "Oaxacan",
-      "typeId": "6",
-      "abv": "47",
-      "alcoholic": false
-    },
-    {
       "id": 35,
       "name": "Allspice",
       "typeId": "6",
@@ -391,6 +489,20 @@
       "typeId": "6",
       "abv": "47",
       "alcoholic": false
+    },
+    {
+      "name": "Meyer Lemon",
+      "typeId": "3",
+      "alcoholic": false,
+      "abv": "44",
+      "id": 37
+    },
+    {
+      "name": "OaxacaN Bitters",
+      "typeId": "6",
+      "alcoholic": false,
+      "abv": "44",
+      "id": 38
     }
   ],
   "types": [
@@ -467,6 +579,14 @@
       "date": 1619460010161,
       "notes": "Gotta Get Ready for a nice fall Menu",
       "id": 6
+    },
+    {
+      "name": "Brenda's Taco Shop",
+      "seasonId": "1",
+      "Notes": "",
+      "date": 1619723961710,
+      "notes": "This is a nice menu to try",
+      "id": 7
     }
   ],
   "seasons": [
@@ -494,9 +614,9 @@
       "id": 1
     },
     {
-      "cocktailId": "34",
+      "cocktailId": "37",
       "menuId": "1",
-      "id": 2
+      "id": 4
     }
   ],
   "cocktailingredients": [
@@ -727,6 +847,381 @@
       "cocktailId": 34,
       "ingredientId": 4,
       "id": 46
+    },
+    {
+      "cocktailId": 35,
+      "ingredientId": 25,
+      "id": 48
+    },
+    {
+      "cocktailId": 35,
+      "ingredientId": 15,
+      "id": 49
+    },
+    {
+      "cocktailId": 35,
+      "ingredientId": 3,
+      "id": 50
+    },
+    {
+      "cocktailId": 35,
+      "ingredientId": 8,
+      "id": 51
+    },
+    {
+      "cocktailId": 36,
+      "ingredientId": 16,
+      "id": 52
+    },
+    {
+      "cocktailId": 36,
+      "ingredientId": 12,
+      "id": 53
+    },
+    {
+      "cocktailId": 36,
+      "ingredientId": 9,
+      "id": 54
+    },
+    {
+      "cocktailId": 36,
+      "ingredientId": 5,
+      "id": 55
+    },
+    {
+      "cocktailId": 37,
+      "ingredientId": 12,
+      "id": 56
+    },
+    {
+      "cocktailId": 37,
+      "ingredientId": 10,
+      "id": 57
+    },
+    {
+      "cocktailId": 37,
+      "ingredientId": 10,
+      "id": 58
+    },
+    {
+      "cocktailId": 37,
+      "ingredientId": 11,
+      "id": 59
+    },
+    {
+      "cocktailId": 37,
+      "ingredientId": 2,
+      "id": 60
+    },
+    {
+      "cocktailId": 38,
+      "ingredientId": 9,
+      "id": 61
+    },
+    {
+      "cocktailId": 38,
+      "ingredientId": 6,
+      "id": 62
+    },
+    {
+      "cocktailId": 40,
+      "ingredientId": 10,
+      "id": 63
+    },
+    {
+      "cocktailId": 41,
+      "ingredientId": 18,
+      "id": 64
+    },
+    {
+      "cocktailId": 41,
+      "ingredientId": 13,
+      "id": 65
+    },
+    {
+      "cocktailId": 41,
+      "ingredientId": 8,
+      "id": 66
+    },
+    {
+      "cocktailId": 42,
+      "ingredientId": 23,
+      "id": 67
+    },
+    {
+      "cocktailId": 42,
+      "ingredientId": 22,
+      "id": 68
+    },
+    {
+      "cocktailId": 42,
+      "ingredientId": 15,
+      "id": 69
+    },
+    {
+      "cocktailId": 42,
+      "ingredientId": 9,
+      "id": 70
+    },
+    {
+      "cocktailId": 43,
+      "ingredientId": 22,
+      "id": 71
+    },
+    {
+      "cocktailId": 43,
+      "ingredientId": 22,
+      "id": 72
+    },
+    {
+      "cocktailId": 43,
+      "ingredientId": 15,
+      "id": 73
+    },
+    {
+      "cocktailId": 43,
+      "ingredientId": 6,
+      "id": 74
+    },
+    {
+      "cocktailId": 44,
+      "ingredientId": 13,
+      "id": 75
+    },
+    {
+      "cocktailId": 44,
+      "ingredientId": 13,
+      "id": 76
+    },
+    {
+      "cocktailId": 44,
+      "ingredientId": 37,
+      "id": 77
+    },
+    {
+      "cocktailId": 44,
+      "ingredientId": 9,
+      "id": 78
+    },
+    {
+      "cocktailId": 44,
+      "ingredientId": 11,
+      "id": 79
+    },
+    {
+      "cocktailId": 45,
+      "ingredientId": 22,
+      "id": 80
+    },
+    {
+      "cocktailId": 45,
+      "ingredientId": 14,
+      "id": 81
+    },
+    {
+      "cocktailId": 45,
+      "ingredientId": 14,
+      "id": 82
+    },
+    {
+      "cocktailId": 45,
+      "ingredientId": 15,
+      "id": 83
+    },
+    {
+      "cocktailId": 45,
+      "ingredientId": 37,
+      "id": 84
+    },
+    {
+      "cocktailId": 46,
+      "ingredientId": 12,
+      "id": 85
+    },
+    {
+      "cocktailId": 46,
+      "ingredientId": 9,
+      "id": 86
+    },
+    {
+      "cocktailId": 46,
+      "ingredientId": 4,
+      "id": 87
+    },
+    {
+      "cocktailId": 47,
+      "ingredientId": 23,
+      "id": 88
+    },
+    {
+      "cocktailId": 47,
+      "ingredientId": 13,
+      "id": 89
+    },
+    {
+      "cocktailId": 47,
+      "ingredientId": 8,
+      "id": 90
+    },
+    {
+      "cocktailId": 47,
+      "ingredientId": 6,
+      "id": 91
+    },
+    {
+      "cocktailId": 48,
+      "ingredientId": 11,
+      "id": 92
+    },
+    {
+      "cocktailId": 48,
+      "ingredientId": 5,
+      "id": 93
+    },
+    {
+      "cocktailId": 48,
+      "ingredientId": 5,
+      "id": 94
+    },
+    {
+      "cocktailId": 49,
+      "ingredientId": 25,
+      "id": 95
+    },
+    {
+      "cocktailId": 49,
+      "ingredientId": 17,
+      "id": 96
+    },
+    {
+      "cocktailId": 50,
+      "ingredientId": 25,
+      "id": 97
+    },
+    {
+      "cocktailId": 50,
+      "ingredientId": 17,
+      "id": 98
+    },
+    {
+      "cocktailId": 50,
+      "ingredientId": 15,
+      "id": 99
+    },
+    {
+      "cocktailId": 50,
+      "ingredientId": 4,
+      "id": 100
+    },
+    {
+      "cocktailId": 51,
+      "ingredientId": 25,
+      "id": 101
+    },
+    {
+      "cocktailId": 51,
+      "ingredientId": 17,
+      "id": 102
+    },
+    {
+      "cocktailId": 51,
+      "ingredientId": 15,
+      "id": 103
+    },
+    {
+      "cocktailId": 51,
+      "ingredientId": 4,
+      "id": 104
+    },
+    {
+      "cocktailId": 52,
+      "ingredientId": 25,
+      "id": 105
+    },
+    {
+      "cocktailId": 52,
+      "ingredientId": 17,
+      "id": 106
+    },
+    {
+      "cocktailId": 52,
+      "ingredientId": 15,
+      "id": 107
+    },
+    {
+      "cocktailId": 52,
+      "ingredientId": 4,
+      "id": 108
+    },
+    {
+      "cocktailId": 52,
+      "ingredientId": 6,
+      "id": 109
+    },
+    {
+      "cocktailId": 52,
+      "ingredientId": 6,
+      "id": 110
+    },
+    {
+      "cocktailId": 53,
+      "ingredientId": 29,
+      "id": 111
+    },
+    {
+      "cocktailId": 53,
+      "ingredientId": 12,
+      "id": 112
+    },
+    {
+      "cocktailId": 53,
+      "ingredientId": 8,
+      "id": 113
+    },
+    {
+      "cocktailId": 53,
+      "ingredientId": 4,
+      "id": 114
+    },
+    {
+      "cocktailId": 60,
+      "ingredientId": 3,
+      "id": 115
+    },
+    {
+      "cocktailId": 62,
+      "ingredientId": 19,
+      "id": 116
+    },
+    {
+      "cocktailId": 62,
+      "ingredientId": 10,
+      "id": 117
+    },
+    {
+      "cocktailId": 62,
+      "ingredientId": 11,
+      "id": 118
+    },
+    {
+      "cocktailId": 62,
+      "ingredientId": 8,
+      "id": 119
+    },
+    {
+      "cocktailId": 62,
+      "ingredientId": 4,
+      "id": 120
+    },
+    {
+      "cocktailId": 63,
+      "ingredientId": 10,
+      "id": 121
+    },
+    {
+      "cocktailId": 63,
+      "ingredientId": 7,
+      "id": 122
     }
   ],
   "cocktailstyles": [

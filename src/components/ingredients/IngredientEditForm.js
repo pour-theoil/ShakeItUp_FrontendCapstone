@@ -33,7 +33,7 @@ export const EditIngredientForm = () => {
             abv: ingredient.abv,
             alcoholic: ingredient.alcoholic
         }
-        console.log(ingredient)
+        
         updateIngredient(editedIngredient)
             .then(() => history.push('/ingredients'))
     }
@@ -56,8 +56,8 @@ export const EditIngredientForm = () => {
     }, [ingredientId])
 
     return (
-        <Container>
-            <h2>Edit Ingredient</h2>
+        <Container className="justified-content-center">
+            <h2 className="cocktailform-name">Edit Ingredient</h2>
 
             <Form>
                     <Form.Group >
@@ -82,7 +82,8 @@ export const EditIngredientForm = () => {
                             ))}
                         </Form.Control>
                     </Form.Group>
-                    <Form.Group>
+                
+                        <Form.Group>
                         <label htmlFor="abv">ABV of Ingredient</label>
                         <input type="text"
                             id="abv"
@@ -91,16 +92,16 @@ export const EditIngredientForm = () => {
                             className="form-control"
                             placeholder="abv"
                             value={ingredient.abv} />
-                        <label htmlFor="abv">%</label>
                     </Form.Group>
+                
                     <Row>
                     <Button
                         disabled={isLoading}
-                        variant="outline-secondary"
+                        
                         onClick={updateExistingIngredient}
                     >Submit</Button>
                     <Button 
-                        variant="outline-danger"
+                        
                         onClick={handleCancelSave}>
                         Cancel
                     </Button>
