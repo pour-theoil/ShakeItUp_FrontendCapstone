@@ -49,8 +49,8 @@ export const MenuEntry = () => {
     },[])
 
     return (
-        <Container>
-            <h3 className="menuform-name"> New Menu</h3>
+        <Container className="justified-content-center">
+            <h3 className="cocktailform-name"> New Menu</h3>
             <Form>
                 <Form.Group>
                     <Form.Label>Menu Name</Form.Label>

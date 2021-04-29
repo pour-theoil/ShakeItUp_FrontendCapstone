@@ -22,15 +22,20 @@ export const MenuList = () => {
         return shortend;
     }
 
+    const colorArray = ['primary', 'light', 'warning', 'success', 'danger', 'info']
+
+
     useEffect(() => {
         getMenus()
     },[])
 
     return (
         <>
-            <Container>
+            <Container className="justified-content-center">
+            <h2 className="cocktailform-name">Menus</h2>
                 <Container>
                     {menus.map(menu => <MenuEntry   menu={menu}
+                                                    colorArray={colorArray}
                                                     key={menu.id}
                                                     timeconverter={timeconverter} />)}
                 </Container>

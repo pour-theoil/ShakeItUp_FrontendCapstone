@@ -2,11 +2,11 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { Card, Row, Col, Button } from 'react-bootstrap'
 
-export const IngredientCard = ({bg, ingredient, deleteSetIngredient}) => {
+export const IngredientCard = ({colorArray, ingredient, deleteSetIngredient}) => {
     console.log(ingredient)
     return(
         <>
-            <Card className="ingredient-card" bg={bg}>
+            <Card className="ingredient-card" bg={colorArray[ingredient.typeId-1]}>
                 <Row>
                     <Col xs={8}>
                         <Card.Title>{ingredient.name}</Card.Title>

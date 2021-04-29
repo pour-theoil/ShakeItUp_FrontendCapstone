@@ -40,7 +40,7 @@ export const MenuDetails = () => {
     
     return (
         <>
-              <Container>
+              <Container className="justified-content-center">
                 <Card>
                     <Card.Title className="menu-title">{menu[0]?.name}</Card.Title>
                     <Card.Subtitle>Season: {menu[0]?.season.name}</Card.Subtitle>

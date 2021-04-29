@@ -1,7 +1,7 @@
 
 /* css for the ingredient card */
 .card-margin{
-  margin-top: .35em;
+  margin-top: .45em;
   padding: .25em;
   text-align: center !important;
   
@@ -19,7 +19,7 @@
 }
 
 .cocktailform {
-  background-color: #ff5b5b;
+
   padding: 1em;
 }
 
@@ -30,31 +30,38 @@
   align-content: center;
 }
 
+.messageBottom {
+  bottom:0px;
+  overflow:auto;
+  position:absolute;
+  width:100%;
+}
+
+.shakerbox{
+  margin-top: .5em;
+  height: 85%;
+}
+
+.shakerbox-active{
+  margin-top: .5em;
+  height: 85%;
+}
 .cocktail-shaker {
   border-top: black solid 1em;
   text-align: center !important;
   position: relative;
   bottom: 0px;
   z-index: 2;
-  min-height: 27em;
+  min-height: 25.4em;
+  height: 100%;
   border-radius: 2em;
+  border-top: aliceblue 3em solid !important;
   background-color: aliceblue;
 }
-
-.messageBottom {
-bottom:0px;
-overflow:auto;
-position:absolute;
-width:100%;
-}
-
-.shakerbox{
-  margin-top: .5em;
-}
-.shakerbox img {
+.imagetop {
   position: absolute;
-  height: 28em;
-  left: -0.2em;
+  height: 54%;
+  left: 1em;
   width: auto;
   z-index: 3;
   pointer-events: none;
@@ -62,15 +69,11 @@ width:100%;
 
 .shakerbox-active img {
   position: absolute;
-  height: 28em;
-  left: -0.2em;
+  height: 100%;
   width: auto;
   z-index: 3;
 }
 
-.shakerbox-active{
-  margin-top: .5em;
-}
 
 #typeId {
   text-align: center !important;

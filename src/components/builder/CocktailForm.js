@@ -51,7 +51,10 @@ export const EditCocktailForm = () => {
     //query for the ingredients from the cocktailingredients table
     const getIngredients = () =>{
         getAllIngredients(cocktailId)
-        .then(ingredients => setIngredients(ingredients))
+        .then(ingredients => {
+            ingredients.reverse()
+            setIngredients(ingredients)
+        })
         
     }
     
@@ -89,8 +92,9 @@ export const EditCocktailForm = () => {
     },[])
 
     return(
-        <Container className="cocktailform">
+        <>
         <h3 className="cocktailform-name"> New Cocktail</h3>
+        <Container className="cocktailform">
             <Form.Group className="cocktailform-group">
                 <Form.Label htmlFor="name">Cocktail Name</Form.Label>
                 <Form.Control  type="text" 
@@ -113,11 +117,8 @@ export const EditCocktailForm = () => {
                     ))}
                 </Form.Control>
             </Form.Group>
-            <Card>
-
                 {ingredients.map(ingredient => <IngredientCard  key={ingredient.id}
                 ingredient={ingredient} />)}
-            </Card>
             
             
         <Col>
@@ -125,12 +126,13 @@ export const EditCocktailForm = () => {
             onClick={handleSaveEvent}>
             Save Entry
             </Button>
-        </Col>
         <Button className="article-btn"
             onClick={handleCancelSave}>
             Cancel
         </Button>
+                </Col>
     </Container>
+    </>
     )
 
 }
