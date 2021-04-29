@@ -13,7 +13,7 @@ import { Container } from 'react-bootstrap'
 export const ApplicationViews = () => {
     return (
         <Container>
-            <Route exact path="/home">
+            <Route exact path="/">
                 <BuilderList />
             </Route>
 

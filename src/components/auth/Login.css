@@ -14,3 +14,8 @@ main {
   color: purple;
   background-color: black;
 }
+
+.link--register {
+  margin-top: 1em;
+  padding: 0 3em 0 3em;
+}

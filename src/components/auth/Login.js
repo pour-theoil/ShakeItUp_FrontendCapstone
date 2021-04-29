@@ -1,6 +1,8 @@
 import React, { useRef, useState } from "react"
+import { Container } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import "./Login.css"
+import { Row, Button, Form, Col } from 'react-bootstrap' 
 
 
 export const Login = () => {
@@ -39,18 +41,18 @@ export const Login = () => {
     }
 
     return (
-        <main className="container--login">
+        <Container className="container--login">
             <dialog className="dialog dialog--auth" open={existDialog}>
                 <div>User does not exist</div>
                 <button className="button--close" onClick={e => setExistDialog(false)}>Close</button>
             </dialog>
             <section>
-                <form className="form--login" onSubmit={handleLogin}>
+                <Form className="form--login" onSubmit={handleLogin}>
                     <h1>Shake It Up</h1>
-                    <h2>Let us make you a drink</h2>
+                    <h2>For Cocktail Creatives</h2>
                     <fieldset>
-                        <label htmlFor="inputEmail"> Email address </label>
-                        <input type="email"
+        
+                        <Form.Control type="email"
                             id="email"
                             className="form-control"
                             placeholder="Email address"
@@ -59,15 +61,19 @@ export const Login = () => {
                             onChange={handleInputChange} />
                     </fieldset>
                     <fieldset>
-                        <button type="submit">
+                        <Row className="link--register">
+                            <Col>
+                            <Button type="submit">
                             Sign in
-                        </button>
+                            </Button>
+                            </Col>
+                            <Col>
+                                <Link to="/register">Register for an account</Link>
+                            </Col>
+                        </Row>
                     </fieldset>
-                </form>
+                </Form>
             </section>
-            <section className="link--register">
-                <Link to="/register">Register for an account</Link>
-            </section>
-        </main>
+        </Container>
     )
 }
