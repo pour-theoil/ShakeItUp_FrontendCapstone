@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { addMenu, getAllSeasons } from '../../modules/MenuManager'
-import { Form, Button, Row, Container } from "react-bootstrap";
+import { Form, Button, Container } from "react-bootstrap";
 
 export const MenuEntry = () => {
     const [menu, setMenu] = useState({

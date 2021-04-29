@@ -3,6 +3,7 @@ import { getAllMenus, deleteMenu } from '../../modules/MenuManager'
 import { useHistory } from 'react-router-dom'
 import { MenuEntry } from './MenuCard'
 import { Container, Button, Row } from 'react-bootstrap'
+import './Menu.css'
 
 export const MenuList = () => {
     const [menus, setMenus] = useState([])
@@ -40,8 +41,8 @@ export const MenuList = () => {
                                                     timeconverter={timeconverter} />)}
                 </Container>
                 <Row>
-                    <Button 
-                            variant="outline-primary"
+                    <Button className="fixed-button"
+                            variant="primary"
                             onClick={() => {history.push('/menus/create')}}> + Menu</Button>
                 </Row>
             </Container>

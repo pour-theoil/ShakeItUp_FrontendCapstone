@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getRandomId } from '../../modules/BuilderManager'
 import './IngredientCard.css'
 import '../../scss/_variables.scss'
-import { Card, Col, Form, Row } from 'react-bootstrap'
+import { Card, Col, Form } from 'react-bootstrap'
 
 
 export const BuilderCard = ({type, reload, setIngredientArray, ingredientArray, index, colorArray}) => {

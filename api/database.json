@@ -143,12 +143,20 @@
     {
       "name": "",
       "id": 32
+    },
+    {
+      "id": 33,
+      "name": "Mule Drink"
+    },
+    {
+      "id": 34,
+      "name": "Raspberry Mule"
     }
   ],
   "ingredients": [
     {
       "id": 2,
-      "name": "Lemon",
+      "name": "White Rum",
       "typeId": "1",
       "abv": "4",
       "alcoholic": false
@@ -479,7 +487,18 @@
       "name": "Autumn"
     }
   ],
-  "cocktailmenus": [],
+  "cocktailmenus": [
+    {
+      "cocktailId": "33",
+      "menuId": "1",
+      "id": 1
+    },
+    {
+      "cocktailId": "34",
+      "menuId": "1",
+      "id": 2
+    }
+  ],
   "cocktailingredients": [
     {
       "cocktailId": 14,
@@ -673,6 +692,41 @@
       "cocktailId": 32,
       "ingredientId": 5,
       "id": 39
+    },
+    {
+      "cocktailId": 33,
+      "ingredientId": 18,
+      "id": 40
+    },
+    {
+      "cocktailId": 33,
+      "ingredientId": 11,
+      "id": 41
+    },
+    {
+      "cocktailId": 33,
+      "ingredientId": 5,
+      "id": 42
+    },
+    {
+      "cocktailId": 34,
+      "ingredientId": 22,
+      "id": 43
+    },
+    {
+      "cocktailId": 34,
+      "ingredientId": 8,
+      "id": 44
+    },
+    {
+      "cocktailId": 34,
+      "ingredientId": 10,
+      "id": 45
+    },
+    {
+      "cocktailId": 34,
+      "ingredientId": 4,
+      "id": 46
     }
   ],
   "cocktailstyles": [
