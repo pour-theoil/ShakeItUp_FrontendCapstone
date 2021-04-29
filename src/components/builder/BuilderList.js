@@ -45,16 +45,16 @@ export const BuilderList = () => {
     const handleSaveCocktail = () => {
         addCocktail(cocktail)
             .then(cocktailobj => {
-                setCocktail(cocktailobj)
-                ingredientArray.forEach(ingredient => {
+                Promise.all(ingredientArray.map(ingredient => {
                     const cocktailingredients = {
                         cocktailId: cocktailobj.id,
                         ingredientId: ingredient.id
                     }
-
-                    addCocktailIngredient(cocktailingredients)
-                })
-
+                    return addCocktailIngredient(cocktailingredients)
+                    
+                })).then(()=>setCocktail(cocktailobj))
+                
+                
             })
     }
 
@@ -100,7 +100,7 @@ export const BuilderList = () => {
                     />
                     <div className="cocktail-shaker">
                         <div className="messageBottom shake">
-
+                    
                         {array.map((number, index) => <BuilderCard
                         colorArray={colorArray}
                         ingredientArray={ingredientArray}
@@ -113,7 +113,7 @@ export const BuilderList = () => {
                         </div>
                     </div>
                 </div>
-                        <Form.Group>
+                        <Form.Group className="add-ingredient">
                             <Form.Control id={`${numIngredients > 4 ? "disabledSelect": ""}`} as="select" onChange={handleInputChange} className="form-control" >
                                 <option value="0">+ Add Ingredient</option>
                                 {types.map(t => (

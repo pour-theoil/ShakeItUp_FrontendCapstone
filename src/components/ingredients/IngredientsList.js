@@ -47,10 +47,10 @@ export const IngredientList = () => {
                     }
                 </Container>
                 <Row className="create-event">
-                    <Button type="button"
+                    <Button 
                             variant="primary"
                             className="fixed-button"
-                            onClick={() => {history.push('/ingredients/create')}}> + Ingredient</Button>
+                            onClick={() => {history.push('/ingredients/create')}}>+ Ingredient</Button>
                 </Row>
             </Container>
         </>

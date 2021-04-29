@@ -92,17 +92,16 @@ export const EditIngredientForm = () => {
                             className="form-control"
                             placeholder="abv"
                             value={ingredient.abv} />
-                        <label htmlFor="abv">%</label>
                     </Form.Group>
                 
                     <Row>
                     <Button
                         disabled={isLoading}
-                        variant="outline-secondary"
+                        
                         onClick={updateExistingIngredient}
                     >Submit</Button>
                     <Button 
-                        variant="outline-danger"
+                        
                         onClick={handleCancelSave}>
                         Cancel
                     </Button>

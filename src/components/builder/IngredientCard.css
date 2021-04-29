@@ -114,6 +114,9 @@
     fill: none;
     transform: translate3d(0, 0, 0);
   }
+  .add-ingredient {
+    width: 50%;
+  }
   .btn-lock svg .bling {
     stroke: #fff;
     stroke-width: 2.5;
