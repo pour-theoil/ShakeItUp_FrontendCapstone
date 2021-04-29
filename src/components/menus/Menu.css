@@ -1,0 +1,6 @@
+.fixed-button {
+    position: fixed !important;
+    bottom: 3em;
+    right: 2em;
+    z-index: 4;
+}
