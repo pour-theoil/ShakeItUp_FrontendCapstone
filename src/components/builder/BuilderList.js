@@ -9,6 +9,7 @@ import shaker from './emptyshaker.png'
 
 export const BuilderList = () => {
     const [reload, setReload] = useState(false);
+    const [numIngredients, setNumIngredients] = useState(0)
     const [cocktail, setCocktail] = useState({
         name: ""
     })
@@ -17,9 +18,12 @@ export const BuilderList = () => {
     const [array, setArray] = useState([])
     const [ingredientArray, setIngredientArray] = useState([])
     const [shake, setShake] = useState(false)
-
+    console.log(numIngredients)
     //When a new type is chosen it is added to the list
     const handleInputChange = (event) => {
+        let newNumIngredients = numIngredients
+        newNumIngredients++
+        setNumIngredients(newNumIngredients)
         const newArray = [...array]
         let selectedValue = event.target.value
         newArray.push(selectedValue)
@@ -110,7 +114,7 @@ export const BuilderList = () => {
                     </div>
                 </div>
                         <Form.Group>
-                            <Form.Control as="select" name="typeId" id="typeId" onChange={handleInputChange} className="form-control" >
+                            <Form.Control id={`${numIngredients > 4 ? "disabledSelect": ""}`} as="select" onChange={handleInputChange} className="form-control" >
                                 <option value="0">+ Add Ingredient</option>
                                 {types.map(t => (
                                     <option key={t.id} value={t.id}>

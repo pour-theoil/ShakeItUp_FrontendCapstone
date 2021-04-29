@@ -151,6 +151,14 @@
     {
       "id": 34,
       "name": "Raspberry Mule"
+    },
+    {
+      "id": 35,
+      "name": "Disgusting"
+    },
+    {
+      "name": "",
+      "id": 36
     }
   ],
   "ingredients": [
@@ -494,9 +502,9 @@
       "id": 1
     },
     {
-      "cocktailId": "34",
+      "cocktailId": "35",
       "menuId": "1",
-      "id": 2
+      "id": 3
     }
   ],
   "cocktailingredients": [
@@ -727,6 +735,51 @@
       "cocktailId": 34,
       "ingredientId": 4,
       "id": 46
+    },
+    {
+      "cocktailId": 35,
+      "ingredientId": 34,
+      "id": 47
+    },
+    {
+      "cocktailId": 35,
+      "ingredientId": 25,
+      "id": 48
+    },
+    {
+      "cocktailId": 35,
+      "ingredientId": 15,
+      "id": 49
+    },
+    {
+      "cocktailId": 35,
+      "ingredientId": 3,
+      "id": 50
+    },
+    {
+      "cocktailId": 35,
+      "ingredientId": 8,
+      "id": 51
+    },
+    {
+      "cocktailId": 36,
+      "ingredientId": 16,
+      "id": 52
+    },
+    {
+      "cocktailId": 36,
+      "ingredientId": 12,
+      "id": 53
+    },
+    {
+      "cocktailId": 36,
+      "ingredientId": 9,
+      "id": 54
+    },
+    {
+      "cocktailId": 36,
+      "ingredientId": 5,
+      "id": 55
     }
   ],
   "cocktailstyles": [

@@ -1,10 +1,15 @@
 
 /* css for the ingredient card */
 .card-margin{
-  margin-top: .45em;
+  margin-top: .33em;
   padding: .25em;
   text-align: center !important;
   
+}
+
+.type-shaker {
+  margin-top: -1.2em !important;
+  font-size: x-small !important;
 }
 
 .cocktailform-name{
@@ -38,11 +43,15 @@
 }
 
 .shakerbox{
+  align-self: center;
   margin-top: .5em;
   height: 85%;
+  width: 80%;
 }
 
 .shakerbox-active{
+  align-self: center;
+  width: 80%;
   margin-top: .5em;
   height: 85%;
 }
@@ -55,13 +64,12 @@
   min-height: 25.4em;
   height: 100%;
   border-radius: 2em;
-  border-top: aliceblue 3em solid !important;
   background-color: aliceblue;
 }
+
 .imagetop {
   position: absolute;
-  height: 54%;
-  left: 1em;
+  height: 55%;
   width: auto;
   z-index: 3;
   pointer-events: none;
@@ -72,10 +80,14 @@
   height: 100%;
   width: auto;
   z-index: 3;
+
 }
 
+#disabledSelect {
+  visibility: hidden;
+}
 
-#typeId {
+.form-control {
   text-align: center !important;
   margin-top: 2em;
   z-index: 5;

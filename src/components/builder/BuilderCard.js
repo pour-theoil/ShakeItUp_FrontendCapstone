@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getRandomId } from '../../modules/BuilderManager'
 import './IngredientCard.css'
 import '../../scss/_variables.scss'
-import { Card, Col, Form } from 'react-bootstrap'
+import { Card, Col, Button } from 'react-bootstrap'
 
 
 export const BuilderCard = ({type, reload, setIngredientArray, ingredientArray, index, colorArray}) => {
@@ -20,7 +20,6 @@ export const BuilderCard = ({type, reload, setIngredientArray, ingredientArray, 
         let arraytemp = [...ingredientArray]
         arraytemp[index] = ingredient
         setIngredientArray(arraytemp)
-        console.log(arraytemp)
     }
 
     
@@ -48,13 +47,15 @@ export const BuilderCard = ({type, reload, setIngredientArray, ingredientArray, 
 
     return (
         <>
-            <Card bg={colorArray[type-1]} className="card-margin">
+            <Card  className="card-margin">
+                    <Button variant={colorArray[type-1]} onClick={handleInputChange}>
+
                     <Col>
                         <Card.Title>{ingredient?.name}</Card.Title>
-                        <Card.Subtitle>({ingredient.type?.name})</Card.Subtitle>
-                        
+                        <Card.Subtitle className="type-shaker">({ingredient.type?.name})</Card.Subtitle>
                     </Col> 
-                    <Form.Control type="checkbox" onClick={handleInputChange} hidden></Form.Control>
+                    </Button>
+                    
             </Card>
         </>
         )
