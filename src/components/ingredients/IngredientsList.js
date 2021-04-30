@@ -15,6 +15,7 @@ export const IngredientList = () => {
         .then(ingredients => {
             setIngredients(ingredients)})
     } 
+    console.log(ingredients)
 
     const deleteSetIngredient = (id) => {
         deleteIngredient(id)
