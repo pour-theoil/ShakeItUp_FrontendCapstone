@@ -5,8 +5,11 @@
 /.pnp
 .pnp.js
 
+fbKey.js
+
 # testing
 /coverage
+firebaseConfig.js
 
 # production
 /build

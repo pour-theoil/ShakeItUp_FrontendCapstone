@@ -15,7 +15,7 @@ export const NavBar = () => {
                 <NavDropdown.Item href="/menus">Menus</NavDropdown.Item>
                 <NavDropdown.Item href="/ingredients">Ingredients</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item onSelect={()=>handleLogOut()} href="/home"><Button>Log Out</Button></NavDropdown.Item>
+                <NavDropdown.Item onSelect={()=>handleLogOut()} href="/login"><Button>Log Out</Button></NavDropdown.Item>
             </NavDropdown>
             <img
                 src={image}
