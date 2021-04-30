@@ -1,5 +1,5 @@
 // const url = "http://localhost:8088"
-const url = "https://git.heroku.com/ld-shakeitup.git"
+const url = "https://ld-shakeitup.herokuapp.com/"
 
 export const getAllIngredients = () => {
     return fetch(`${url}/ingredients?_expand=type`)
