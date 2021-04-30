@@ -1,5 +1,5 @@
-import React from 'react'
-import { Route } from 'react-router-dom'
+import React, { useContext } from 'react'
+import { Route, Switch, Redirect } from 'react-router-dom'
 import { EditIngredientForm } from './ingredients/IngredientEditForm'
 import { IngredientList } from './ingredients/IngredientsList'
 import { IngredientEntry } from './ingredients/IngredientsForm'
@@ -8,43 +8,67 @@ import { MenuList } from './menus/MenuList'
 import { MenuEntry } from './menus/MenuForm'
 import { MenuDetails } from './menus/MenuDetails'
 import { EditCocktailForm } from './builder/CocktailForm' 
-import { Container } from 'react-bootstrap'
+import { FirebaseContext } from './auth/FirebaseProvider'
+import Login from './auth/Login'
+import Register from './auth/Register'
 
-export const ApplicationViews = () => {
+
+export default function ApplicationViews() {
+    const { isLoggedIn } = useContext(FirebaseContext)
+
     return (
-        <Container>
+        <main>
+
+        <Switch>
             <Route exact path="/">
-                <BuilderList />
+                {isLoggedIn ? <BuilderList /> : <Redirect to="/login" />}
+                
             </Route>
 
             <Route exact path="/cocktail/:cocktailId(\d+)/add">
-                <EditCocktailForm />
+                {isLoggedIn ? <EditCocktailForm /> : <Redirect to="/login" />}
+                
             </Route>
 
             <Route exact path="/ingredients">
-                <IngredientList />
+                {isLoggedIn ? <IngredientList /> : <Redirect to="/login" />}
+                
             </Route>
 
             <Route exact path="/ingredients/:ingredientId(\d+)/edit">
-                <EditIngredientForm />
+                {isLoggedIn ? <EditIngredientForm /> : <Redirect to="/login" />}
+                
             </Route>
 
             <Route path='/ingredients/create'>
-                <IngredientEntry />
+            {isLoggedIn ? <IngredientEntry /> : <Redirect to="/login" />}
+               
             </Route>
             
             <Route exact path='/menus'>
-                <MenuList />
+            {isLoggedIn ?  <MenuList /> : <Redirect to="/login" />}
+               
             </Route>
 
             <Route exact path="/menus/:menuId(\d+)">
-                <MenuDetails />
+            {isLoggedIn ? <MenuDetails /> : <Redirect to="/login" />}
+                
             </Route>
 
             <Route path='/menus/create'>
-                <MenuEntry />
+            {isLoggedIn ? <MenuEntry /> : <Redirect to="/login" />}
+                
             </Route>
 
-        </Container>
+            <Route path="/login">
+                <Login />
+            </Route>
+
+            <Route path="/register">
+                <Register />
+            </Route>
+
+        </Switch>
+        </main>
     )
 }

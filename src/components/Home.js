@@ -1,33 +1,22 @@
 import React from "react"
-import { Route, Redirect } from "react-router-dom"
-import { ApplicationViews } from "./ApplicationViews"
+import { BrowserRouter as Router } from "react-router-dom"
+import  ApplicationViews  from "./ApplicationViews"
 import { NavBar } from "./nav/NavBar"
-import { Login } from "./auth/Login"
-import { Register } from "./auth/Register"
 import './Home.css'
+import { FirebaseProvider } from "./auth/FirebaseProvider"
 
-export const Home = () => (
-  <>
-    <Route
-      render={() => {
-        if (sessionStorage.getItem("shakeitup_user")) {
-          return (
-            <>
-              <NavBar />
-              <ApplicationViews />
-            </>
-          )
-        } else {
-          return <Redirect to="/login" />;
-        }
-      }}
-    />
+function App() {
 
-    <Route path="/login">
-      <Login />
-    </Route>
-    <Route path="/register">
-      <Register />
-    </Route>
-  </>
-)
+  return (
+    <div className="App">
+      <Router>
+        <FirebaseProvider>
+          <NavBar />
+          <ApplicationViews />
+        </FirebaseProvider>
+      </Router>
+    </div>
+  )
+}
+
+export default App;

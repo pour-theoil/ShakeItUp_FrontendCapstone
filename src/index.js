@@ -1,17 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { BrowserRouter as Router } from "react-router-dom";
-import { Home } from './components/Home';
+import App from './components/Home'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/custom.scss'
 
+import { firebaseConfig } from "./components/auth/firebaseConfig";
+import firebase from "firebase/app";
+
+firebase.initializeApp(firebaseConfig);
+
 ReactDOM.render(
-  <React.StrictMode>
-    <Router>
-      <Home /> 
-    </Router>
-  </React.StrictMode>,
+    <App />,
   document.getElementById('root')
 );
 

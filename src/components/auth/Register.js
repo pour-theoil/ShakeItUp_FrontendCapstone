@@ -1,87 +1,72 @@
-import React, { useState } from "react"
-import { useHistory } from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { Button, Form, Container, Col, Row } from 'react-bootstrap';
+import { useHistory, Link } from "react-router-dom";
+import { FirebaseContext } from "./FirebaseProvider";
 
-import "./Login.css"
+export default function Register() {
+  const history = useHistory();
+  const { register } = useContext(FirebaseContext);
 
-export const Register = () => {
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const [confirmPassword, setConfirmPassword] = useState();
 
-    const [registerUser, setRegisterUser] = useState({ firstName: "", lastName: "", email: "" })
-    const [conflictDialog, setConflictDialog] = useState(false)
-
-    const history = useHistory()
-
-    const handleInputChange = (event) => {
-        const newUser = { ...registerUser }
-        newUser[event.target.id] = event.target.value
-        setRegisterUser(newUser)
+  const registerClick = (e) => {
+    e.preventDefault();
+    if (password && password !== confirmPassword) {
+      alert("Passwords don't match. Oops.");
+    } else {
+      const userProfile = { name, email };
+      register(userProfile, password)
+        .then(() => history.push("/"));
     }
+  };
 
-    const existingUserCheck = () => {
-        // If your json-server URL is different, please change it below!
-        return fetch(`http://localhost:8088/users?email=${registerUser.email}`)
-            .then(res => res.json())
-            .then(user => !!user.length)
-    }
+  return (
+    <>
+    <Container fluid="xl">
+    <Row>
+      <Col className="m-2" md={6}>
+      <Form onSubmit={registerClick}>
+              <h5 className="username">Create Your Chris-List Account</h5>
+              <fieldset>
 
-    const handleRegister = (e) => {
-        e.preventDefault()
+              <Form.Group>
+                <Form.Label>Name</Form.Label>
+                <Form.Control placeholder="User Name" id="name" type="text" onChange={e => setName(e.target.value)} />
+              </Form.Group>
 
-        existingUserCheck()
-            .then((userExists) => {
-                if (!userExists) {
-                    // If your json-server URL is different, please change it below!
-                    fetch("http://localhost:8088/users", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify({
-                            email: registerUser.email,
-                            name: `${registerUser.firstName} ${registerUser.lastName}`
-                        })
-                    })
-                        .then(res => res.json())
-                        .then(createdUser => {
-                            if (createdUser.hasOwnProperty("id")) {
-                                // The user id is saved under the key shakeitup_user_user in session Storage. Change below if needed!
-                                sessionStorage.setItem("shakeitup_user", createdUser.id)
-                                history.push("/")
-                            }
-                        })
-                }
-                else {
-                    setConflictDialog(true)
-                }
-            })
+              <Form.Group controlId="email">
+                <Form.Label>Email</Form.Label>
+                <Form.Control type="text" placeholder="name@example.com" onChange={e => setEmail(e.target.value)} />
+                <Form.Text className="text-muted">
+                  We'll never share your email with anyone else.
+                </Form.Text>
+              </Form.Group>
 
-    }
+              <Form.Group controlId="password">
+                <Form.Label>Password</Form.Label>
+                <Form.Control type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} />
+              </Form.Group>
 
-    return (
-        <main style={{ textAlign: "center" }}>
+              <Form.Group controlId="confirmPassword">
+                <Form.Label>Confirm Password</Form.Label>
+                <Form.Control type="password" placeholder="Confirm password" onChange={e => setConfirmPassword(e.target.value)} />
+              </Form.Group>
+              
+              <Button variant="primary" type="submit">Continue</Button>
+            </fieldset>
+          </Form>
+    </Col>
 
-            <dialog className="dialog dialog--password" open={conflictDialog}>
-                <div>Account with that email address already exists</div>
-                <button className="button--close" onClick={e => setConflictDialog(false)}>Close</button>
-            </dialog>
-
-            <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Please Register for Application Name</h1>
-                <fieldset>
-                    <label htmlFor="firstName"> First Name </label>
-                    <input type="text" name="firstName" id="firstName" className="form-control" placeholder="First name" required autoFocus value={registerUser.firstName} onChange={handleInputChange} />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="lastName"> Last Name </label>
-                    <input type="text" name="lastName" id="lastName" className="form-control" placeholder="Last name" required value={registerUser.lastName} onChange={handleInputChange} />
-                </fieldset>
-                <fieldset>
-                    <label htmlFor="inputEmail"> Email address </label>
-                    <input type="email" name="email" id="email" className="form-control" placeholder="Email address" required value={registerUser.email} onChange={handleInputChange} />
-                </fieldset>
-                <fieldset>
-                    <button type="submit"> Sign in </button>
-                </fieldset>
-            </form>
-        </main>
-    )
+      <Col className="m-2">
+      <h5 className="username">Already have an account?</h5>
+          <Link to="/login" className="btn btn-block btn-outline-success">Sign in</Link>
+       
+     </Col>
+    </Row>
+    </Container>
+  </>
+  );
 }
