@@ -1,6 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react'
 import firebase from 'firebase'
-import { firebaseConfig } from './firebaseConfig';
 import { Spinner } from 'react-bootstrap';
 import 'firebase/auth'
 
@@ -65,7 +64,7 @@ export const FirebaseProvider = (props) => {
 
     const checkUser = (userId) => {
         console.log("checkUser", userId)
-        fetch(`${firebaseConfig.databaseURL}/users.json/?orderby="uid"&equalTo="${firebase.auth().currentUser.uid}"`)
+        fetch(`${firebase.auth()}/users.json/?orderby="uid"&equalTo="${firebase.auth().currentUser.uid}"`)
         .then(result => result.json())
         .then(parsedResponse => {
             let resultArray = Object.keys(parsedResponse)

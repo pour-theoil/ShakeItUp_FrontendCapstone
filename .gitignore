@@ -9,7 +9,7 @@ fbKey.js
 
 # testing
 /coverage
-firebaseapikey.js
+firebaseConfig.js
 
 # production
 /build
