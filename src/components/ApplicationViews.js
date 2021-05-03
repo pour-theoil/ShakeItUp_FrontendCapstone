@@ -15,6 +15,7 @@ import Register from './auth/Register'
 
 export default function ApplicationViews() {
     const { isLoggedIn } = useContext(FirebaseContext)
+    console.log(isLoggedIn)
 
     return (
         <main>
@@ -25,7 +26,7 @@ export default function ApplicationViews() {
                 
             </Route>
 
-            <Route exact path="/cocktail/:cocktailId(\d+)/add">
+            <Route path="/cocktail/:cocktailId(\d+)/add">
                 {isLoggedIn ? <EditCocktailForm /> : <Redirect to="/login" />}
                 
             </Route>
@@ -35,7 +36,7 @@ export default function ApplicationViews() {
                 
             </Route>
 
-            <Route exact path="/ingredients/:ingredientId(\d+)/edit">
+            <Route path="/ingredients/:ingredientId(\d+)/edit">
                 {isLoggedIn ? <EditIngredientForm /> : <Redirect to="/login" />}
                 
             </Route>
