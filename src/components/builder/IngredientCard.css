@@ -47,6 +47,7 @@
   margin-top: .5em;
   height: 85%;
   width: 80%;
+  max-width: 280px;
 }
 
 .shakerbox-active{
@@ -54,6 +55,7 @@
   width: 80%;
   margin-top: .5em;
   height: 85%;
+  max-width: 280px;
 }
 .cocktail-shaker {
   border-top: black solid 1em;
@@ -61,7 +63,7 @@
   position: relative;
   bottom: 0px;
   z-index: 2;
-  min-height: 25.8em;
+  min-height: 27em;
   height: 100%;
   border-radius: 2em;
   background-color: aliceblue;
@@ -76,6 +78,13 @@
   pointer-events: none;
 }
 
+.shakerbox-active img {
+  position: absolute;
+  height: 97%;
+  width: auto;
+  z-index: 3;
+
+}
 
 .shakerbox-active img {
   position: absolute;
