@@ -1,12 +1,12 @@
+import { firebaseConfig } from "./components/auth/firebaseConfig";
+import firebase from "firebase/app";
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './components/Home'
+import App from './App'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './scss/custom.scss'
 
-import { firebaseConfig } from "./components/auth/firebaseConfig";
-import firebase from "firebase/app";
 
 firebase.initializeApp(firebaseConfig);
 
@@ -19,3 +19,4 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 // reportWebVitals();
+                         

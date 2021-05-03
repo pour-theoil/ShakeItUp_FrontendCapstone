@@ -35,7 +35,7 @@ export const MenuList = () => {
             <Container className="justified-content-center">
             <h2 className="cocktailform-name">Menus</h2>
                 <Container>
-                    {menus.map(menu => <MenuEntry   menu={menu}
+                    {menus?.map(menu => <MenuEntry   menu={menu}
                                                     colorArray={colorArray}
                                                     key={menu.id}
                                                     timeconverter={timeconverter} />)}
