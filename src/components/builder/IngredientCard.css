@@ -7,6 +7,10 @@
   
 }
 
+.savebutton {
+  margin-top: 2em;
+}
+
 .type-shaker {
   margin-top: -1.2em !important;
   font-size: x-small !important;
@@ -24,8 +28,9 @@
 }
 
 .cocktailform {
-
+  max-width: 300px !important;
   padding: 1em;
+  justify-content: center;
 }
 
 .justified-content-center{
@@ -48,6 +53,11 @@
   height: 85%;
   width: 80%;
   max-width: 280px;
+
+}
+.add-ingredient {
+  width: 11em !important;
+  padding-left: 6em;
 }
 
 .shakerbox-active{
@@ -59,6 +69,7 @@
 }
 .cocktail-shaker {
   border-top: black solid 1em;
+  margin-bottom: black solid 1em;
   text-align: center !important;
   position: relative;
   bottom: 0px;
@@ -72,7 +83,7 @@
 .imagetop {
   margin-top: 1em;
   position: absolute;
-  height: 51%;
+  height: 55%;
   width: auto;
   z-index: 3;
   pointer-events: none;
@@ -86,13 +97,12 @@
 
 }
 
-.shakerbox-active img {
-  position: absolute;
-  height: 97%;
-  width: auto;
-  z-index: 3;
-
+.cocktail-shaker .btn {
+  border: 0 !important;
+  height: 3.4em;
 }
+
+
 
 #disabledSelect {
   visibility: hidden;
