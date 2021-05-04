@@ -4,8 +4,9 @@ import { BuilderCard } from "./BuilderCard";
 import { addCocktail } from '../../modules/CocktailManager'
 import { addCocktailIngredient } from '../../modules/BuilderManager'
 import { getAllTypes } from '../../modules/IngredientManager'
-import { Container, Form, Button } from 'react-bootstrap'
+import { Container, Form, Button, Image } from 'react-bootstrap'
 import shaker from './emptyshaker.png'
+import plus from './plussign.svg'
 
 export const BuilderList = () => {
     const [reload, setReload] = useState(false);
@@ -18,7 +19,9 @@ export const BuilderList = () => {
     const [array, setArray] = useState([])
     const [ingredientArray, setIngredientArray] = useState([])
     const [shake, setShake] = useState(false)
-    console.log(numIngredients)
+    
+
+    
     //When a new type is chosen it is added to the list
     const handleInputChange = (event) => {
         let newNumIngredients = numIngredients
@@ -39,7 +42,7 @@ export const BuilderList = () => {
         getAllTypes()
             .then(type => setTypes(type))
     }
-    
+
 
     // save the cocktail first, then create the many to many relationships with the drink
     const handleSaveCocktail = () => {
@@ -51,16 +54,16 @@ export const BuilderList = () => {
                         ingredientId: ingredient.id
                     }
                     return addCocktailIngredient(cocktailingredients)
-                    
-                })).then(()=>setCocktail(cocktailobj))
-                
-                
+
+                })).then(() => setCocktail(cocktailobj))
+
+
             })
     }
 
 
     const handleToggle = () => {
-       setShake(true)
+        setShake(true)
     };
 
     // array to add specific colors to individual cards
@@ -75,11 +78,11 @@ export const BuilderList = () => {
     useEffect(() => {
         getTypes()
     }, [])
-    
-    useEffect(()=>{
+
+    useEffect(() => {
         setReload(true)
-    },[array])
-    
+    }, [array])
+
 
     useEffect(() => {
         setReload(false)
@@ -90,41 +93,44 @@ export const BuilderList = () => {
             <Button onClick={() => {
                 handleToggle()
                 setReload(true)
-                                    }}>Shake it UP!!! &#x27f3;</Button>
-                <div className={`shakerbox${ shake ? '-active': ""}`} onAnimationEnd={()=>setShake(false)}>
-                        <img
-                        src={shaker}
-
-                        className="imagetop"
-                        alt="React"
-                    />
-                    <div className="cocktail-shaker">
-                        <div className="messageBottom shake">
+            }}>Shake it UP!!! &#x27f3;</Button>
+            <div className={`shakerbox${shake ? '-active' : ""}`} onAnimationEnd={() => setShake(false)}>
+                <Image
+                    src={shaker}
+                    // fluid
+                    className="imagetop"
+                    alt="React"
+                />
+                <div className="cocktail-shaker">
+                    <div className="messageBottom shake">
                     
-                        {array.map((number, index) => <BuilderCard
-                        colorArray={colorArray}
-                        ingredientArray={ingredientArray}
-                        key={index}
-                        index={index}
-                        setIngredientArray={setIngredientArray}
-                        type={number}
-                        reload={reload}
-                        />)}
-                        </div>
-                    </div>
-                </div>
+
                         <Form.Group className="add-ingredient">
-                            <Form.Control id={`${numIngredients > 4 ? "disabledSelect": ""}`} as="select" onChange={handleInputChange} className="form-control" >
-                                <option value="0">+ Add Ingredient</option>
-                                {types.map(t => (
-                                    <option key={t.id} value={t.id}>
-                                        {t.name}
-                                    </option>
-                                ))}
+                            <Form.Control id={`${numIngredients > 4 ? "disabledSelect" : ""}`} as="select" onChange={handleInputChange} className="form-control" >
+                            <option value="0">Add</option>
+                            {types.map(t => (
+                                <option key={t.id} value={t.id}>
+                                    {t.name}
+                                </option>
+                            ))}
                             </Form.Control>
                         </Form.Group>
-            
-            
+                    
+                        {array.map((number, index) => <BuilderCard
+                            colorArray={colorArray}
+                            ingredientArray={ingredientArray}
+                            key={index}
+                            index={index}
+                            setIngredientArray={setIngredientArray}
+                            type={number}
+                            reload={reload}
+                        />)}
+                    </div>
+                </div>
+            </div>
+
+
+
             <Button className="savebutton" onClick={handleSaveCocktail}>Save Your Creation</Button>
         </Container>
     )
