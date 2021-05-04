@@ -7,8 +7,9 @@ import { BuilderList } from './builder/BuilderList'
 import { MenuList } from './menus/MenuList'
 import { MenuEntry } from './menus/MenuForm'
 import { MenuDetails } from './menus/MenuDetails'
-import { EditCocktailForm } from './builder/CocktailForm' 
+import { CocktailAddForm } from './builder/CocktailForm' 
 import { FirebaseContext } from './auth/FirebaseProvider'
+import { CocktailEditForm } from './menus/CocktailEditForm'
 import Login from './auth/Login'
 import Register from './auth/Register'
 
@@ -26,8 +27,13 @@ export default function ApplicationViews() {
                 
             </Route>
 
-            <Route path="/cocktail/:cocktailId(\d+)/add">
-                {isLoggedIn ? <EditCocktailForm /> : <Redirect to="/login" />}
+            <Route path="/cocktails/:cocktailId(\d+)/add">
+                {isLoggedIn ? <CocktailAddForm /> : <Redirect to="/login" />}
+                
+            </Route>
+
+            <Route path="/cocktails/:cocktailId(\d+)/edit">
+                {isLoggedIn ? <CocktailEditForm /> : <Redirect to="/login" />}
                 
             </Route>
 

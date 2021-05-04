@@ -86,13 +86,14 @@ export const MenuEntry = () => {
                 </Form.Group>
                 </Form>
                 <Button className="article-btn"
-				onClick={handleSaveEvent}>
-				Save Entry
-                </Button>
-                <Button className="article-btn"
-				onClick={handleCancelSave}>
-				Cancel
-                </Button>
+                onClick={handleSaveEvent}>
+                Save Entry
+            </Button>
+            <Button className="article-btn"
+                variant="warning"
+                onClick={handleCancelSave}>
+                Cancel
+            </Button>
         </Container>
     )
 }

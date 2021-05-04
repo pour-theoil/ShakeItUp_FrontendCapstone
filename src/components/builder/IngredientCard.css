@@ -35,6 +35,7 @@
 
 .justified-content-center{
   display: flex;
+  max-width: 360px !important;
   flex-direction: column;
   justify-content: center;
   align-content: center;
@@ -94,15 +95,15 @@
   height: 97%;
   width: auto;
   z-index: 3;
-
 }
 
+.article-btn {
+  margin: .5em;
+}
 .cocktail-shaker .btn {
   border: 0 !important;
   height: 3.4em;
 }
-
-
 
 #disabledSelect {
   visibility: hidden;
@@ -115,13 +116,61 @@
   pointer-events: auto;
 }
 
-/* .inplock {
-  position: fixed;
-  z-index: 1111 !important;
+/* for small screens */
+/* @media only screen and (max-width: 425px) {
+  .imagetop {
+    margin-top: 1em;
+    position: absolute;
+    max-height: 38%;
+    width: auto;
+    z-index: 3;
+    pointer-events: none;
+  }
+
+  .cocktail-shaker {
+    border-top: black solid 1em;
+    margin-bottom: black solid 1em;
+    text-align: center !important;
+    position: relative;
+    bottom: 0px;
+    z-index: 2;
+    min-height: 20em;
+    height: 100%;
+    border-radius: 2em;
+    background-color: aliceblue;
+  }
+  .shakerbox{
+    align-self: center;
+    margin-top: .5em;
+    height: 85%;
+    width: 80%;
+    max-width: 240px;
+  
+  }
+  .add-ingredient {
+    width: 11em !important;
+    justify-self: center;
+  }
+  
+  .shakerbox-active{
+    align-self: center;
+    width: 80%;
+    margin-top: .5em;
+    height: 85%;
+    max-width: 280px;
+  }
+
+  .justified-content-center{
+    display: flex;
+    max-width: 80%;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
 } */
 /* css for the lock box */
 .btn-lock {
-    display: inline-block;
+  display: inline-block;
     background: #ff5b5b;
     width: 2em;
     height: 2em;
