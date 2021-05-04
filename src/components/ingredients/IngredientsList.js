@@ -30,7 +30,7 @@ export const IngredientList = () => {
     
     return (
         <>
-            <Container>
+            <Container className="justified-content-center">
             <h3 className="cocktailform-name">Ingredients List</h3>
                 <Container>
 

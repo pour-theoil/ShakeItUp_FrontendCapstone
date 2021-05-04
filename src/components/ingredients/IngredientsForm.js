@@ -10,21 +10,21 @@ export const IngredientEntry = () => {
         alcoholic: false,
         abv: ""
     })
-    const [types, setTypes] = useState([]) 
-    
+    const [types, setTypes] = useState([])
+
     const getTypes = () => {
         getAllTypes()
-        .then(type => setTypes(type))
+            .then(type => setTypes(type))
     }
 
     const history = useHistory()
 
     const handleInputChange = (event) => {
-        const newIngredient = {...ingredient}
+        const newIngredient = { ...ingredient }
         let selectedValue = event.target.value
         // if (event.target.id.includes("Id")) {
-		// 	selectedValue = parseInt(selectedValue)
-		// }
+        // 	selectedValue = parseInt(selectedValue)
+        // }
         newIngredient[event.target.id] = selectedValue
         setIngredient(newIngredient)
     }
@@ -35,11 +35,11 @@ export const IngredientEntry = () => {
             window.alert("Please fill in all fields")
         } else {
             addIngredient(ingredient)
-            .then(()=> history.push('/ingredients'))
+                .then(() => history.push('/ingredients'))
         }
 
     }
-    
+
 
 
     const handleCancelSave = (click) => {
@@ -49,7 +49,7 @@ export const IngredientEntry = () => {
 
     useEffect(() => {
         getTypes()
-    },[])
+    }, [])
 
     return (
         <Container className="justified-content-center">
@@ -57,46 +57,46 @@ export const IngredientEntry = () => {
             <Form>
                 <Form.Group>
                     <Form.Label>Ingredient Name</Form.Label>
-                    <Form.Control  type="text" 
-                            id="name" 
-                            onChange={handleInputChange} 
-                            autoFocus 
-                            required
-                            className="form-control"
-                            placeholder="Name"
-                            value={ingredient.name} />
+                    <Form.Control type="text"
+                        id="name"
+                        onChange={handleInputChange}
+                        autoFocus
+                        required
+                        className="form-control"
+                        placeholder="Name"
+                        value={ingredient.name} />
                 </Form.Group>
-                <Form.Group>   
+                <Form.Group>
                     <Form.Label>Ingredient Type</Form.Label>
                     <Form.Control as="select" value={ingredient.typeId} name="typeId" id="typeId" onChange={handleInputChange} className="form-control" >
-						<option value="0">Type</option>
-						{types.map(t => (
-							<option key={t.id} value={t.id}>
-								{t.name}
-							</option>
-						))}
-					</Form.Control>
+                        <option value="0">Type</option>
+                        {types.map(t => (
+                            <option key={t.id} value={t.id}>
+                                {t.name}
+                            </option>
+                        ))}
+                    </Form.Control>
                 </Form.Group>
-                <Form.Group>  
+                <Form.Group>
                     <Form.Label>ABV of Ingredient</Form.Label>
-                    <Form.Control  type="text" 
-                            id="abv" 
-                            required
-                            onChange={handleInputChange} 
-                            className="form-control"
-                            placeholder="abv"
-                            value={ingredient.abv} />
+                    <Form.Control type="text"
+                        id="abv"
+                        required
+                        onChange={handleInputChange}
+                        className="form-control"
+                        placeholder="abv"
+                        value={ingredient.abv} />
                 </Form.Group>
-                </Form>
-                <Button className="article-btn"
-            onClick={handleSaveEvent}>
-            Save Entry
+            </Form>
+            <Button className="article-btn"
+                onClick={handleSaveEvent}>
+                Save Entry
             </Button>
-        <Button className="article-btn"
-            variant="warning"
-            onClick={handleCancelSave}>
-            Cancel
-        </Button>
+            <Button className="article-btn"
+                variant="warning"
+                onClick={handleCancelSave}>
+                Cancel
+            </Button>
         </Container>
     )
 }
