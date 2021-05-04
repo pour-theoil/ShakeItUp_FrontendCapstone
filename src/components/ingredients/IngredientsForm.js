@@ -88,14 +88,15 @@ export const IngredientEntry = () => {
                             value={ingredient.abv} />
                 </Form.Group>
                 </Form>
-                <Button 
-				onClick={handleSaveEvent}>
-				Save Entry
-                </Button>
-                <Button
-                    onClick={handleCancelSave}>
-                    Cancel
-                </Button>
+                <Button className="article-btn"
+            onClick={handleSaveEvent}>
+            Save Entry
+            </Button>
+        <Button className="article-btn"
+            variant="warning"
+            onClick={handleCancelSave}>
+            Cancel
+        </Button>
         </Container>
     )
 }

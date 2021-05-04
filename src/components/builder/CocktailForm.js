@@ -91,11 +91,13 @@ export const EditCocktailForm = () => {
     },[])
 
     return(
-        <>
+        
+        <Container className="justified-content-center">
         <h3 className="cocktailform-name"> New Cocktail</h3>
-        <Container className="cocktailform">
-            <Form.Group className="cocktailform-group">
-                <Form.Label htmlFor="name">Cocktail Name</Form.Label>
+            <Form>
+
+            <Form.Group>
+                {/* <Form.Label htmlFor="name">Cocktail Name</Form.Label> */}
                 <Form.Control  type="text" 
                         id="name" 
                         onChange={handleCocktailChange} 
@@ -105,8 +107,8 @@ export const EditCocktailForm = () => {
                         placeholder="Name"
                         value={cocktail.name} />
             </Form.Group>
-            <Form.Group className="cocktailform-group">   
-                <Form.Label htmlFor="menuId">Select Menu</Form.Label>
+            <Form.Group>   
+                {/* <Form.Label htmlFor="menuId">Select Menu</Form.Label> */}
                 <Form.Control as="select" value={cocktailmenu.menuId} name="menuId" id="menuId" onChange={handleMenuChange} className="form-control" >
                     <option value="0">Menu</option>
                     {menus.map(t => (
@@ -120,18 +122,20 @@ export const EditCocktailForm = () => {
                 ingredient={ingredient} />)}
             
             
-        <Col>
+    
+            </Form>
             <Button className="article-btn"
-            onClick={handleSaveEvent}>
-            Save Entry
+                onClick={handleSaveEvent}>
+                Save Entry
             </Button>
-        <Button className="article-btn"
-            onClick={handleCancelSave}>
-            Cancel
-        </Button>
-                </Col>
+            <Button className="article-btn"
+                variant="warning"
+                onClick={handleCancelSave}>
+                Cancel
+            </Button>
+                
     </Container>
-    </>
+
     )
 
 }

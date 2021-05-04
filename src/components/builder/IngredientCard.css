@@ -35,6 +35,7 @@
 
 .justified-content-center{
   display: flex;
+  max-width: 80%;
   flex-direction: column;
   justify-content: center;
   align-content: center;
@@ -97,6 +98,9 @@
 
 }
 
+.article-btn {
+  margin: .5em;
+}
 .cocktail-shaker .btn {
   border: 0 !important;
   height: 3.4em;
