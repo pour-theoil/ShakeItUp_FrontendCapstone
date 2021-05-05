@@ -10,6 +10,7 @@ import { MenuDetails } from './menus/MenuDetails'
 import { CocktailAddForm } from './builder/CocktailForm' 
 import { FirebaseContext } from './auth/FirebaseProvider'
 import { CocktailEditForm } from './menus/CocktailEditForm'
+import { CocktailList } from './cocktials/CocktailList'
 import Login from './auth/Login'
 import Register from './auth/Register'
 
@@ -40,6 +41,10 @@ export default function ApplicationViews() {
             <Route exact path="/ingredients">
                 {isLoggedIn ? <IngredientList /> : <Redirect to="/login" />}
                 
+            </Route>
+
+            <Route exact path="/cocktails">
+                {isLoggedIn ? <CocktailList /> : <Redirect to="/login" />}
             </Route>
 
             <Route path="/ingredients/:ingredientId(\d+)/edit">
