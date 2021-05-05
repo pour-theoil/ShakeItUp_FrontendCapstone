@@ -71,7 +71,7 @@ export const BuilderList = () => {
 
     useEffect(() => {
         if (cocktail.id) {
-            history.push(`/cocktail/${cocktail.id}/add`)
+            history.push(`/cocktails/${cocktail.id}/add`)
         }
     }, [cocktail])
 

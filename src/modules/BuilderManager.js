@@ -36,6 +36,16 @@ export const getAllIngredients = (id) => {
     .then(response => response.json())
 }
 
+export const updateCocktailIngredients = (obj) => {
+    return fetch(`${url}/cocktailingredients/${obj.id}`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(obj)
+    }).then(response => response.json())
+}
+
 export const addCocktailMenu = (obj) => {
     return fetch(`${url}/cocktailmenus`, {
         method: "POST",

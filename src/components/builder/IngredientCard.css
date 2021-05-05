@@ -81,14 +81,17 @@
   background-color: aliceblue;
 }
 
-.imagetop {
-  margin-top: 1em;
-  position: absolute;
-  height: 55%;
-  width: auto;
-  z-index: 3;
-  pointer-events: none;
-}
+
+
+  .imagetop {
+    margin-top: 1em;
+    position: absolute;
+    height: 61.5%;
+    width: auto;
+    z-index: 3;
+    pointer-events: none;
+  }
+
 
 .shakerbox-active img {
   position: absolute;
@@ -117,14 +120,22 @@
 }
 
 /* for small screens */
-/* @media only screen and (max-width: 425px) {
+@media screen and (max-device-width: 360px)
+              and (-webkit-device-pixel-ratio: 3){
   .imagetop {
     margin-top: 1em;
     position: absolute;
-    max-height: 38%;
+    max-height: 95% !important;
     width: auto;
     z-index: 3;
     pointer-events: none;
+  }
+
+  .shakerbox-active img {
+    position: absolute;
+    height: 97%;
+    width: auto;
+    z-index: 3;
   }
 
   .cocktail-shaker {
@@ -134,7 +145,7 @@
     position: relative;
     bottom: 0px;
     z-index: 2;
-    min-height: 20em;
+    min-height: 19em;
     height: 100%;
     border-radius: 2em;
     background-color: aliceblue;
@@ -149,7 +160,7 @@
   }
   .add-ingredient {
     width: 11em !important;
-    justify-self: center;
+    
   }
   
   .shakerbox-active{
@@ -167,141 +178,17 @@
     justify-content: center;
     align-content: center;
   }
-} */
-/* css for the lock box */
-.btn-lock {
-  display: inline-block;
-    background: #ff5b5b;
-    width: 2em;
-    height: 2em;
-    box-sizing: border-box;
-    padding: .6em 0 0 .68em;
-    border-radius: 50%;
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-  }
-  .btn-lock svg {
-    fill: none;
-    transform: translate3d(0, 0, 0);
-  }
-  .add-ingredient {
-    width: 50%;
-  }
-  .btn-lock svg .bling {
-    stroke: #fff;
-    stroke-width: 2.5;
-    stroke-linecap: round;
-    stroke-dasharray: 3;
-    stroke-dashoffset: 15;
-    transition: all 0.3s ease;
-  }
-  .btn-lock svg .lock {
-    stroke: #fff;
-    stroke-width: 4;
-    stroke-linejoin: round;
-    stroke-linecap: round;
-    stroke-dasharray: 36;
-    transition: all 0.4s ease;
-  }
-  .btn-lock svg .lockb {
-    fill: #fff;
-    fill-rule: evenodd;
-    clip-rule: evenodd;
-    transform: rotate(8deg);
-    transform-origin: 14px 20px;
-    transition: all 0.2s ease;
-  }
-  #inpLock {
-    display: none;
-  }
-  #inpLock:checked + label {
-    background: #20cca5;
-  }
-  #inpLock:checked + label svg {
-    opacity: 1;
-  }
-  #inpLock:checked + label svg .bling {
-    animation: bling 0.3s linear forwards;
-    animation-delay: 0.2s;
-  }
-  #inpLock:checked + label svg .lock {
-    stroke-dasharray: 48;
-    animation: locked 0.3s linear forwards;
-  }
-  #inpLock:checked + label svg .lockb {
-    transform: rotate(0);
-    transform-origin: 14px 22px;
-  }
-  @-moz-keyframes bling {
-    50% {
-      stroke-dasharray: 3;
-      stroke-dashoffset: 12;
-    }
-    100% {
-      stroke-dasharray: 3;
-      stroke-dashoffset: 9;
-    }
-  }
-  @-webkit-keyframes bling {
-    50% {
-      stroke-dasharray: 3;
-      stroke-dashoffset: 12;
-    }
-    100% {
-      stroke-dasharray: 3;
-      stroke-dashoffset: 9;
-    }
-  }
-  @-o-keyframes bling {
-    50% {
-      stroke-dasharray: 3;
-      stroke-dashoffset: 12;
-    }
-    100% {
-      stroke-dasharray: 3;
-      stroke-dashoffset: 9;
-    }
-  }
-  @keyframes bling {
-    50% {
-      stroke-dasharray: 3;
-      stroke-dashoffset: 12;
-    }
-    100% {
-      stroke-dasharray: 3;
-      stroke-dashoffset: 9;
-    }
-  }
-  @-moz-keyframes locked {
-    50% {
-      transform: translateY(1px);
-    }
-  }
-  @-webkit-keyframes locked {
-    50% {
-      transform: translateY(1px);
-    }
-  }
-  @-o-keyframes locked {
-    50% {
-      transform: translateY(1px);
-    }
-  }
-  @keyframes locked {
-    50% {
-      transform: translateY(1px);
-    }
-  }
-  
+}
+
 
 /* Cocktail shaker shake */
 
 .shakerbox-active{
   /* Start the shake animation and make the animation last for 0.5 seconds */
-  animation: shake 0.1s;
+  animation: shake .1s;
 
   /* When the animation is finished, start again */
-  animation-iteration-count: 4;
+  animation-iteration-count: 5;
 }
 
 @keyframes shake {
