@@ -95,6 +95,7 @@ export const BuilderList = () => {
                 setReload(true)
             }}>Shake it UP!!! &#x27f3;</Button>
             <div className={`shakerbox${shake ? '-active' : ""}`} onAnimationEnd={() => setShake(false)}>
+                
                 <Image
                     src={shaker}
                     // fluid

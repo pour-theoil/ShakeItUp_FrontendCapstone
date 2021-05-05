@@ -22,7 +22,7 @@ export const CocktailList = () => {
               })
             setCocktails(cocktails)})
     } 
-    console.log(cocktails)
+    
 
     const deleteSetCocktail = (id) => {
         deleteCocktail(id)

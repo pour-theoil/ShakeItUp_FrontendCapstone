@@ -68,6 +68,7 @@
   height: 85%;
   max-width: 280px;
 }
+
 .cocktail-shaker {
   border-top: black solid 1em;
   margin-bottom: black solid 1em;
@@ -86,11 +87,21 @@
   .imagetop {
     margin-top: 1em;
     position: absolute;
-    height: 51%;
+    height: 45%;
     width: auto;
     z-index: 3;
     pointer-events: none;
   }
+/* uncomment for web deploy */
+  /* .imagetop {
+    margin-top: 1em;
+    position: absolute;
+    height: 61.5%;
+    width: auto;
+    z-index: 3;
+    pointer-events: none;
+  } */
+
 
 
 .shakerbox-active img {
@@ -120,7 +131,7 @@
 }
 
 /* for small screens */
-@media screen and (max-device-width: 360px)
+/* @media screen and (max-device-width: 360px)
               and (-webkit-device-pixel-ratio: 3){
   .imagetop {
     margin-top: 1em;
@@ -178,14 +189,14 @@
     justify-content: center;
     align-content: center;
   }
-}
+} */
 
 
 /* Cocktail shaker shake */
 
 .shakerbox-active{
   /* Start the shake animation and make the animation last for 0.5 seconds */
-  animation: shake .1s;
+  animation: shake .2s;
 
   /* When the animation is finished, start again */
   animation-iteration-count: 5;

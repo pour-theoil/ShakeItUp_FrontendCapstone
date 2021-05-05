@@ -7,9 +7,11 @@ export const getAllCocktails = () => {
 }
 
 export const getCocktialById = (id) => {
-    return fetch(`${url}/cocktails/${id}`)
+    return fetch(`${url}/cocktailmenus?cocktailId=${id}&_expand=cocktail`)
     .then(response => response.json())
 }
+
+
 
 export const deleteCocktail = (id) => {
     return fetch(`${url}/cocktails/${id}`, {

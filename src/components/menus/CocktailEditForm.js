@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { updateCocktail, getCocktialById } from '../../modules/CocktailManager'
 import { getAllMenus } from '../../modules/MenuManager'
-import { getAllIngredients, addCocktailMenu } from '../../modules/BuilderManager'
+import { getAllIngredients, updateCocktailMenu } from '../../modules/BuilderManager'
 import { IngredientCard} from '../builder/IngredientCard'
 import { Form, Button, Container} from "react-bootstrap";
  
@@ -14,23 +14,31 @@ export const CocktailEditForm = () => {
     const {cocktailId } = useParams()
     const history  = useHistory()
     const [saveIngredients, setSaveIngredients] = useState(false)
-    
-    
-    //set state of the cocktail object
-    const [cocktail, setCocktail] = useState({})
-    
-    
-    //set state for the menu relationship
-    const [cocktailmenu, setCocktailMenu] = useState({
+    const [cocktailmenu, setCocktailMenu] = useState({})
+    const [newCocktailMenu, setNewCocktailMenu] = useState({
         cocktailId: cocktailId,
-        menuId: 0
-    }
-    )
+    })
+
+    //set state of the cocktail object
+    const [cocktail, setCocktail] = useState({
+        id: cocktailId,
+    })
+
+    //set state for the menu relationship
     const getCocktail = () => {
         getCocktialById(cocktailId)
-        .then(response => setCocktail(response))
+        .then(response => {
+            setCocktailMenu(response)
+            const tempMenu = {...newCocktailMenu}
+            tempMenu.id = response[0]?.id
+            tempMenu.menuId = response[0]?.menuId
+            setNewCocktailMenu(tempMenu)
+            const tempCocktail = {...cocktail}
+            tempCocktail.name = response[0].cocktail.name
+            setCocktail(tempCocktail)
+        })
     }
-    console.log(cocktail)
+    
     //Get menus to populate the drop down of the app
     const getMenus = () => {
         getAllMenus()
@@ -47,11 +55,10 @@ export const CocktailEditForm = () => {
 
     //Handle changes for the menu state
     const handleMenuChange = (event) => {
-        const newCocktailMenu = {...cocktailmenu}
+        const selectCocktailMenu = {...newCocktailMenu}
         let selectedValue = event.target.value
-        newCocktailMenu[event.target.id] = selectedValue
-        setCocktailMenu(newCocktailMenu)
-        
+        selectCocktailMenu[event.target.id] = selectedValue
+        setNewCocktailMenu(selectCocktailMenu)
     }
 
 
@@ -64,6 +71,7 @@ export const CocktailEditForm = () => {
         })
         
     }
+    
     
 
     //save the menu and the cocktail states after they have been updated
@@ -78,8 +86,8 @@ export const CocktailEditForm = () => {
             setSaveIngredients(true)
             updateCocktail(cocktail)
             .then(()=> {
-                addCocktailMenu(cocktailmenu)})
-            .then(()=> history.push(`/menus/${cocktailmenu.menuId}`))
+                updateCocktailMenu(newCocktailMenu)})
+            .then(()=> history.push(`/menus/${newCocktailMenu.menuId}`))
         }
 
     }
@@ -87,7 +95,7 @@ export const CocktailEditForm = () => {
     //Delete the cocktail object
     const handleCancelSave = (click) => {
         click.preventDefault()
-        history.push(`/menus/${cocktailmenu.menuId}`)
+        history.push(`/menus/${newCocktailMenu.menuId}`)
     }
 
     //Get available menus
@@ -104,6 +112,8 @@ export const CocktailEditForm = () => {
         getIngredients()
     },[])
 
+    console.log(cocktailmenu[0]?.menuId)
+
     return(
         
         <Container className="justified-content-center">
@@ -119,12 +129,11 @@ export const CocktailEditForm = () => {
                         required
                         className="form-control"
                         placeholder="Name"
-                        defaultValue={cocktail?.name} />
+                        defaultValue={cocktailmenu[0]?.cocktail.name} />
             </Form.Group>
             <Form.Group>   
                 <Form.Label htmlFor="menuId">Select Menu</Form.Label>
-                <Form.Control as="select" value={cocktailmenu.menuId} name="menuId" id="menuId" onChange={handleMenuChange} className="form-control" >
-                    <option value={cocktailmenu?.id}>Menu</option>
+                <Form.Control as="select" defaultValue={cocktailmenu[0]?.menuId} name="menuId" id="menuId" onChange={handleMenuChange} className="form-control" >
                     {menus.map(t => (
                         <option key={t.id} value={t.id}>
                             {t.name}

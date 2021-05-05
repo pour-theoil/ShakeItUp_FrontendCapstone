@@ -55,3 +55,13 @@ export const addCocktailMenu = (obj) => {
         body: JSON.stringify(obj)
     }).then(response => response.json())
 }
+
+export const updateCocktailMenu = (obj) => {
+    return fetch(`${url}/cocktailmenus/${obj.id}`, {
+        method: "Put",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(obj)
+    }).then(response => response.json())
+}
