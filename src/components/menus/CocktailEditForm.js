@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
-import { updateCocktail, deleteCocktail, getCocktialById } from '../../modules/CocktailManager'
+import { updateCocktail, getCocktialById } from '../../modules/CocktailManager'
 import { getAllMenus } from '../../modules/MenuManager'
 import { getAllIngredients, addCocktailMenu } from '../../modules/BuilderManager'
 import { IngredientCard} from '../builder/IngredientCard'
@@ -8,15 +8,17 @@ import { Form, Button, Container} from "react-bootstrap";
  
 
 export const CocktailEditForm = () => {
+    const [isLoading, setIsLoading] = useState(false)
     const [menus, setMenus] = useState([])
     const [ingredients, setIngredients] = useState([])
     const {cocktailId } = useParams()
     const history  = useHistory()
-    console.log(cocktailId)
+    const [saveIngredients, setSaveIngredients] = useState(false)
+    
     
     //set state of the cocktail object
     const [cocktail, setCocktail] = useState({})
-    console.log(cocktail)
+    
     
     //set state for the menu relationship
     const [cocktailmenu, setCocktailMenu] = useState({
@@ -28,7 +30,7 @@ export const CocktailEditForm = () => {
         getCocktialById(cocktailId)
         .then(response => setCocktail(response))
     }
-    
+    console.log(cocktail)
     //Get menus to populate the drop down of the app
     const getMenus = () => {
         getAllMenus()
@@ -49,7 +51,7 @@ export const CocktailEditForm = () => {
         let selectedValue = event.target.value
         newCocktailMenu[event.target.id] = selectedValue
         setCocktailMenu(newCocktailMenu)
-        console.log(cocktailmenu)
+        
     }
 
 
@@ -62,13 +64,18 @@ export const CocktailEditForm = () => {
         })
         
     }
-    console.log(ingredients)
+    
+
+    //save the menu and the cocktail states after they have been updated
     //save the menu and the cocktail states after they have been updated
     const handleSaveEvent = (click) => {
         click.preventDefault()
-        if (cocktail.name === "" || cocktail.menuId === 0) {
-            window.alert("Please fill in all fields")
-        } else {    
+        setIsLoading(true)
+        if (cocktail.name === undefined || cocktail.name === "") {
+            window.alert("Please fill in a Name for the cocktail")
+            setIsLoading(false)
+        } else {
+            setSaveIngredients(true)
             updateCocktail(cocktail)
             .then(()=> {
                 addCocktailMenu(cocktailmenu)})
@@ -80,8 +87,7 @@ export const CocktailEditForm = () => {
     //Delete the cocktail object
     const handleCancelSave = (click) => {
         click.preventDefault()
-        deleteCocktail(cocktailId)
-        .then(()=> history.push(`/menus/${cocktailmenu.menuId}`))
+        history.push(`/menus/${cocktailmenu.menuId}`)
     }
 
     //Get available menus
@@ -127,14 +133,15 @@ export const CocktailEditForm = () => {
                 </Form.Control>
             </Form.Group>
                 {ingredients.map(ingredient => <IngredientCard  key={ingredient?.id}
-                ingredient={ingredient} />)}
+                                                                ingredient={ingredient} 
+                                                                saveIngredients={saveIngredients} />)}
             
             
     
             </Form>
             <Button className="article-btn"
                 onClick={handleSaveEvent}>
-                Save Entry
+                Update Cocktail
             </Button>
             <Button className="article-btn"
                 variant="warning"

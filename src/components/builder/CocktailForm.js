@@ -11,7 +11,9 @@ export const CocktailAddForm = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [menus, setMenus] = useState([])
     const [ingredients, setIngredients] = useState([])
+    const [saveIngredients, setSaveIngredients] = useState(false)
     const {cocktailId} = useParams()
+
     const history  = useHistory()
     
     //set state of the cocktail object
@@ -58,17 +60,20 @@ export const CocktailAddForm = () => {
         
     }
     
+    
     //save the menu and the cocktail states after they have been updated
     const handleSaveEvent = (click) => {
         click.preventDefault()
-        if (cocktail.name === "" || cocktail.menuId === 0) {
-            window.alert("Please fill in all fields")
+        setIsLoading(true)
+        if (cocktail.name === undefined || cocktail.name === "") {
+            window.alert("Please fill in a Name for the cocktail")
+            setIsLoading(false)
         } else {
-            
+            setSaveIngredients(true)
             updateCocktail(cocktail)
             .then(()=> {
                 addCocktailMenu(cocktailmenu)})
-            .then(()=> history.push('/'))
+            .then(()=> history.push(`/menus/${cocktailmenu.menuId}`))
         }
 
     }
@@ -105,7 +110,7 @@ export const CocktailAddForm = () => {
                         required
                         className="form-control"
                         placeholder="Name"
-                        value={cocktail.name} />
+                        defaultValue={cocktail.name} />
             </Form.Group>
             <Form.Group>   
                 {/* <Form.Label htmlFor="menuId">Select Menu</Form.Label> */}
@@ -118,13 +123,14 @@ export const CocktailAddForm = () => {
                     ))}
                 </Form.Control>
             </Form.Group>
-                {ingredients.map(ingredient => <IngredientCard  key={ingredient.id}
-                ingredient={ingredient} />)}
+                {ingredients.map( ingredient => <IngredientCard  key={ingredient.id}
+                                                                ingredient={ingredient}
+                                                                saveIngredients={saveIngredients} />)}
             
             
     
             </Form>
-            <Button className="article-btn"
+            <Button className="article-btn" disabled={isLoading}
                 onClick={handleSaveEvent}>
                 Save Entry
             </Button>
