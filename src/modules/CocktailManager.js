@@ -1,6 +1,11 @@
 // const url = "http://localhost:8088"
 const url = "https://ld-shakeitup.herokuapp.com"
 
+export const getAllCocktails = () => {
+    return fetch(`${url}/cocktails`)
+    .then(response => response.json())
+}
+
 export const getCocktialById = (id) => {
     return fetch(`${url}/cocktails/${id}`)
     .then(response => response.json())

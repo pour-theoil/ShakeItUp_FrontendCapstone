@@ -10,7 +10,7 @@ export const IngredientCard = ({colorArray, ingredient, deleteSetIngredient}) =>
                 <Row>
                     <Col xs={8}>
                         <Card.Title>{ingredient.name}</Card.Title>
-                        <Card.Subtitle>{ingredient.categoryId}</Card.Subtitle>
+                        <Card.Subtitle>({ingredient.type?.name})</Card.Subtitle>
                     </Col>
                     <Col>
                         <Link to={`/ingredients/${ingredient.id}/edit`}><Button variant="outline-secondary" size="sm" block>Edit</Button></Link>

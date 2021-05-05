@@ -23,7 +23,6 @@ export const IngredientCard = ({ingredient, saveIngredients}) => {
     }
 
     const addPourValues = () => {
-        console.log("running")
         updateCocktailIngredients(manyToMany)
     }
 

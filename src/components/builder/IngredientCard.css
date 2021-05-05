@@ -86,7 +86,7 @@
   .imagetop {
     margin-top: 1em;
     position: absolute;
-    height: 61.5%;
+    height: 51%;
     width: auto;
     z-index: 3;
     pointer-events: none;
