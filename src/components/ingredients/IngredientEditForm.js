@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { updateIngredient, getIngredientById } from '../../modules/IngredientManager'
 import { getAllTypes } from '../../modules/IngredientManager'
-import { Form, Button, Row, Container } from "react-bootstrap";
+import { Form, Button, Col, Container, Row } from "react-bootstrap";
 
 export const EditIngredientForm = () => {
     const [ingredient, setIngredient] = useState({})
@@ -54,44 +54,49 @@ export const EditIngredientForm = () => {
                 setIsLoading(false)
             })
     }, [ingredientId])
+    console.log(ingredient.typeId)
 
     return (
         <Container className="justified-content-center">
             <h3 className="cocktailform-name">Edit Ingredient</h3>
 
             <Form>
-                    <Form.Group >
-                        <Form.Label>Ingredient Name:</Form.Label>
+                    <Form.Group as={Row}>
+                        <Form.Label column xs={6}>Ingredient Name:</Form.Label>
+                        <Col xs={6}>
                         <Form.Control type="text"
-                            id="name"
                             onChange={handleFieldChange}
                             autoFocus
                             required
                             className="form-control"
                             placeholder="Name"
-                            value={ingredient.name} />
+                            defaultValue={ingredient.name} />
+                            </Col>
                     </Form.Group>
-                    <Form.Group>
-                        <Form.Label htmlFor="type">Ingredient Type</Form.Label>
-                        <Form.Control as="select" value={ingredient.typeId} name="typeId" id="typeId" onChange={handleFieldChange} className="form-control" >
-                            <option value="0">Type</option>
+                    <Form.Group as={Row}>
+                        <Form.Label column xs={6}>Ingredient Type:</Form.Label>
+                        <Col xs={6}>
+                        <Form.Control as="select" value={ingredient.typeId} name="typeId" onChange={handleFieldChange} className="form-control" >
                             {types.map(t => (
                                 <option key={t.id} value={t.id}>
                                     {t.name}
                                 </option>
                             ))}
                         </Form.Control>
+                        </Col>
                     </Form.Group>
                 
-                        <Form.Group>
-                        <label htmlFor="abv">ABV of Ingredient</label>
-                        <input type="text"
-                            id="abv"
+                    <Form.Group as={Row}>
+                        <Form.Label column xs={6}>ABV of Ingredient:</Form.Label>
+                        <Col xs={6}>
+                        <Form.Control type="text"
                             required
                             onChange={handleFieldChange}
                             className="form-control"
                             placeholder="abv"
-                            value={ingredient.abv} />
+                            defaultValue={ingredient.abv}>
+                            </Form.Control>
+                        </Col>
                     </Form.Group>
                 </Form>
                 <Button className="article-btn"

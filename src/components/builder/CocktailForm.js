@@ -4,7 +4,7 @@ import { updateCocktail, deleteCocktail } from '../../modules/CocktailManager'
 import { getAllMenus } from '../../modules/MenuManager'
 import { getAllIngredients, addCocktailMenu } from '../../modules/BuilderManager'
 import { IngredientCard} from './IngredientCard'
-import { Form, Button, Container } from "react-bootstrap";
+import { Form, Button, Container, Row, Col } from "react-bootstrap";
  
 
 export const CocktailAddForm = () => {
@@ -101,8 +101,9 @@ export const CocktailAddForm = () => {
         <h3 className="cocktailform-name"> New Cocktail</h3>
             <Form>
 
-            <Form.Group>
-                {/* <Form.Label htmlFor="name">Cocktail Name</Form.Label> */}
+            <Form.Group as={Row}>
+                <Form.Label column xs={5}>Cocktail Name:</Form.Label>
+                <Col xs={7}>
                 <Form.Control  type="text" 
                         id="name" 
                         onChange={handleCocktailChange} 
@@ -111,9 +112,12 @@ export const CocktailAddForm = () => {
                         className="form-control"
                         placeholder="Name"
                         defaultValue={cocktail.name} />
+                        </Col>
             </Form.Group>
-            <Form.Group>   
-                {/* <Form.Label htmlFor="menuId">Select Menu</Form.Label> */}
+            <Form.Group as={Row}> 
+                <Form.Label column xs={5}>Select Menu:</Form.Label>
+                <Col xs={6}>
+
                 <Form.Control as="select" value={cocktailmenu.menuId} name="menuId" id="menuId" onChange={handleMenuChange} className="form-control" >
                     <option value="0">Menu</option>
                     {menus.map(t => (
@@ -122,6 +126,7 @@ export const CocktailAddForm = () => {
                         </option>
                     ))}
                 </Form.Control>
+                    </Col>
             </Form.Group>
                 {ingredients.map( ingredient => <IngredientCard  key={ingredient.id}
                                                                 ingredient={ingredient}

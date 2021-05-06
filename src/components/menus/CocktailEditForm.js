@@ -4,7 +4,7 @@ import { updateCocktail, getCocktialById } from '../../modules/CocktailManager'
 import { getAllMenus } from '../../modules/MenuManager'
 import { getAllIngredients, updateCocktailMenu } from '../../modules/BuilderManager'
 import { IngredientCard} from '../builder/IngredientCard'
-import { Form, Button, Container} from "react-bootstrap";
+import { Form, Button, Container, Row, Col} from "react-bootstrap";
  
 
 export const CocktailEditForm = () => {
@@ -119,9 +119,9 @@ export const CocktailEditForm = () => {
         <Container className="justified-content-center">
         <h3 className="cocktailform-name"> Edit Cocktail</h3>
             <Form>
-
-            <Form.Group>
-                {/* <Form.Label htmlFor="name">Cocktail Name</Form.Label> */}
+            <Form.Group as={Row}>
+                <Form.Label column xs={5}>Cocktail Name:</Form.Label>
+                <Col xs={7}>
                 <Form.Control  type="text" 
                         id="name" 
                         onChange={handleCocktailChange} 
@@ -130,9 +130,12 @@ export const CocktailEditForm = () => {
                         className="form-control"
                         placeholder="Name"
                         defaultValue={cocktailmenu[0]?.cocktail.name} />
+                        </Col>
             </Form.Group>
-            <Form.Group>   
-                <Form.Label htmlFor="menuId">Select Menu</Form.Label>
+            <Form.Group as={Row}>   
+                <Form.Label column xs={5}>Select Menu:</Form.Label>
+                <Col xs={7}>
+
                 <Form.Control as="select" defaultValue={cocktailmenu[0]?.menuId} name="menuId" id="menuId" onChange={handleMenuChange} className="form-control" >
                     {menus.map(t => (
                         <option key={t.id} value={t.id}>
@@ -140,6 +143,7 @@ export const CocktailEditForm = () => {
                         </option>
                     ))}
                 </Form.Control>
+                    </Col>
             </Form.Group>
                 {ingredients.map(ingredient => <IngredientCard  key={ingredient?.id}
                                                                 ingredient={ingredient} 
