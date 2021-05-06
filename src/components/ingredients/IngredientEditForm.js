@@ -57,7 +57,7 @@ export const EditIngredientForm = () => {
 
     return (
         <Container className="justified-content-center">
-            <h2 className="cocktailform-name">Edit Ingredient</h2>
+            <h3 className="cocktailform-name">Edit Ingredient</h3>
 
             <Form>
                     <Form.Group >
@@ -93,21 +93,17 @@ export const EditIngredientForm = () => {
                             placeholder="abv"
                             value={ingredient.abv} />
                     </Form.Group>
+                </Form>
+                <Button className="article-btn"
+                onClick={updateExistingIngredient}>
+                Update Cocktail
+            </Button>
+            <Button className="article-btn"
+                variant="warning"
+                onClick={handleCancelSave}>
+                Cancel
+            </Button>
                 
-                    <Row>
-                    <Button
-                        disabled={isLoading}
-                        
-                        onClick={updateExistingIngredient}
-                    >Submit</Button>
-                    <Button 
-                        
-                        onClick={handleCancelSave}>
-                        Cancel
-                    </Button>
-                    </Row>
-                
-            </Form>
         </Container>
     )
 }

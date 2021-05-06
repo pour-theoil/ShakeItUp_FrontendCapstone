@@ -1,14 +1,12 @@
 import React, {useState, useEffect} from 'react'
-import { useParams, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { getAllCocktails, deleteCocktail } from '../../modules/CocktailManager'
 import { CocktailCard } from './CocktailCard'
 import { Container, Button, Row } from 'react-bootstrap'
 
 export const CocktailList = () => {
     const [cocktails, setCocktails] = useState([])
-    const [menu, setMenu] = useState([])
     const history = useHistory()
-    const {menuId} = useParams()
 
     const getCocktails = () => {
         getAllCocktails()
