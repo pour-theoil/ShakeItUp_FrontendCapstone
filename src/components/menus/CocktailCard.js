@@ -16,6 +16,7 @@ export const CocktailCard = ({ cocktail, removeCocktailFromMenu }) => {
         }
         )
     }
+ 
     useEffect(()=>{
         getIngredients()
     },[])
@@ -27,12 +28,12 @@ export const CocktailCard = ({ cocktail, removeCocktailFromMenu }) => {
                     <Accordion.Toggle as={Card.Subtitle} eventKey="0">{ingredients.join(", ")}</Accordion.Toggle>
                     <Accordion.Collapse eventKey="0">
                     <Row fluid="true">
-                        <Col xs={5}></Col>
+                       
                         <Col xs={2}>
                             <Button variant="outline-primary" className="article-btn" onClick={() => history.push(`/menus/cocktail/${cocktail.cocktail.id}/edit/`)}>Edit</Button>
                         </Col>
-                        <Col xs={2}>
-                            <Button variant="outline-warning" className="article-btn" onClick={removeCocktailFromMenu}>Delete</Button>
+                        <Col xs={10}>
+                            <Button variant="outline-warning" className="article-btn" onClick={()=> removeCocktailFromMenu(cocktail.id)}>Remove from Menu</Button>
                         </Col>
                     </Row>
                     </Accordion.Collapse>

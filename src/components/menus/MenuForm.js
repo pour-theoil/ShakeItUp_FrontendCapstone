@@ -7,7 +7,6 @@ export const MenuEntry = () => {
     const [menu, setMenu] = useState({
         name: "",
         seasonId: 0,
-        Notes: "", 
         date: Date.now()
     })
 
