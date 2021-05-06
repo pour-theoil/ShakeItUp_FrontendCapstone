@@ -23,8 +23,11 @@ export const CocktailList = () => {
     
 
     const deleteSetCocktail = (id) => {
-        deleteCocktail(id)
-        .then(() => getCocktails())
+        if (window.confirm("Are you sure you want to delete?")){
+            deleteCocktail(id)
+            .then(() => getCocktails())
+
+        }
     }
 
     const colorArray = ['primary', 'light', 'warning', 'success', 'danger', 'info']
@@ -38,8 +41,10 @@ export const CocktailList = () => {
             <Container className="justified-content-center">
             <h3 className="cocktailform-name">Cocktail List</h3>
                 <Container className="cocktails-card">
-                    {cocktails.map(cocktail => <CocktailCard   cocktail={cocktail}
+                    {cocktails.map(cocktail => <CocktailCard    deleteSetCocktail={deleteSetCocktail}
+                                                                cocktail={cocktail}
                                                                 key={cocktail.id}
+                                                                colorArray={colorArray}
                                                                 />)}
                 </Container>
                 <Row className="create-event">

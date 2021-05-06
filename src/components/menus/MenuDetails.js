@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 import { useParams, useHistory } from 'react-router-dom'
-import { getCocktails, getMenuById, deleteMenuCocktail } from '../../modules/MenuManager'
+import { getCocktails, getMenuById, deleteMenuCocktail, deleteMenu } from '../../modules/MenuManager'
 import { CocktailCard } from './CocktailCard'
 import { Container, Button, Row } from 'react-bootstrap'
 
@@ -17,8 +17,10 @@ export const MenuDetails = () => {
     }
 
     const removeCocktailFromMenu = (id) => {
-        deleteMenuCocktail(id)
-        .then(() => getMenuCocktails())
+        if (window.confirm("Are you sure you want to remove this cocktial?")){
+            deleteMenuCocktail(id)
+            .then(() => getMenuCocktails())
+        }
     }
     
     //get cocktails associated with that menu
@@ -27,6 +29,13 @@ export const MenuDetails = () => {
         .then(cocktail => setCocktails(cocktail))
     }
     
+    const deleteSetMenu = (id) => {
+        if (window.confirm("Are you sure you want to delete this menu?")){
+            deleteMenu(id)
+            .then(() => history.push('/menus'))
+
+        }
+    }
 
 
     useEffect(() => {
@@ -49,12 +58,12 @@ export const MenuDetails = () => {
                                                                 key={cocktail.id}
                                                                 removeCocktailFromMenu={removeCocktailFromMenu}/>)}
                 </Container>
-                <Row className="create-event">
-                    <Button type="Button"
+                <Button variant="outline-warning" className="article-btn" onClick={()=> deleteSetMenu(menuId)}>Delete Menu</Button>     
+                <Button type="Button"
                             variant="primary"
                             className="fixed-button"
                             onClick={() => {history.push('/')}}> + Cocktail</Button>
-                </Row>
+                
             </Container>
         </>
     )

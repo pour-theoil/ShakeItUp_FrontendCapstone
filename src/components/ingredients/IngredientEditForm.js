@@ -54,7 +54,7 @@ export const EditIngredientForm = () => {
                 setIsLoading(false)
             })
     }, [ingredientId])
-    console.log(ingredient.typeId)
+    
 
     return (
         <Container className="justified-content-center">
@@ -65,6 +65,7 @@ export const EditIngredientForm = () => {
                         <Form.Label column xs={6}>Ingredient Name:</Form.Label>
                         <Col xs={6}>
                         <Form.Control type="text"
+                            id="name"
                             onChange={handleFieldChange}
                             autoFocus
                             required
@@ -90,6 +91,7 @@ export const EditIngredientForm = () => {
                         <Form.Label column xs={6}>ABV of Ingredient:</Form.Label>
                         <Col xs={6}>
                         <Form.Control type="text"
+                            id="abv"
                             required
                             onChange={handleFieldChange}
                             className="form-control"
@@ -101,7 +103,7 @@ export const EditIngredientForm = () => {
                 </Form>
                 <Button className="article-btn"
                 onClick={updateExistingIngredient}>
-                Update Cocktail
+                Update Ingredient
             </Button>
             <Button className="article-btn"
                 variant="warning"
