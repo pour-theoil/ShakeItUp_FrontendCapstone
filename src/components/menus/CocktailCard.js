@@ -29,7 +29,7 @@ export const CocktailCard = ({ cocktail, removeCocktailFromMenu }) => {
                     <Row fluid="true">
                         <Col xs={5}></Col>
                         <Col xs={2}>
-                            <Button variant="outline-primary" className="article-btn" onClick={() => history.push(`/cocktails/${cocktail.cocktail.id}/edit/`)}>Edit</Button>
+                            <Button variant="outline-primary" className="article-btn" onClick={() => history.push(`/menus/cocktail/${cocktail.cocktail.id}/edit/`)}>Edit</Button>
                         </Col>
                         <Col xs={2}>
                             <Button variant="outline-warning" className="article-btn" onClick={removeCocktailFromMenu}>Delete</Button>

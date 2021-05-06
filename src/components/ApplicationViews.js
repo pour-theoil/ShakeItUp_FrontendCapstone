@@ -5,6 +5,7 @@ import { IngredientList } from './ingredients/IngredientsList'
 import { IngredientEntry } from './ingredients/IngredientsForm'
 import { BuilderList } from './builder/BuilderList'
 import { MenuList } from './menus/MenuList'
+import { SingleCocktailEditForm } from './cocktials/CocktailEdit'
 import { MenuEntry } from './menus/MenuForm'
 import { MenuDetails } from './menus/MenuDetails'
 import { CocktailAddForm } from './builder/CocktailForm' 
@@ -33,8 +34,13 @@ export default function ApplicationViews() {
                 
             </Route>
 
-            <Route path="/cocktails/:cocktailId(\d+)/edit">
+            <Route path="/menus/cocktail/:cocktailId(\d+)/edit">
                 {isLoggedIn ? <CocktailEditForm /> : <Redirect to="/login" />}
+                
+            </Route>
+
+            <Route path="/cocktails/:cocktailId(\d+)/edit">
+                {isLoggedIn ? <SingleCocktailEditForm /> : <Redirect to="/login" />}
                 
             </Route>
 

@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
-import { updateCocktail, getCocktialById } from '../../modules/CocktailManager'
+import { updateCocktail, getCocktialById, getSingleCocktail } from '../../modules/CocktailManager'
 import { getAllMenus } from '../../modules/MenuManager'
 import { getAllIngredients, updateCocktailMenu } from '../../modules/BuilderManager'
 import { IngredientCard} from '../builder/IngredientCard'
 import { Form, Button, Container, Row, Col} from "react-bootstrap";
  
 
-export const CocktailEditForm = () => {
+export const SingleCocktailEditForm = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [menus, setMenus] = useState([])
     const [ingredients, setIngredients] = useState([])
-    const {cocktailId } = useParams()
+    const { cocktailId } = useParams()
     const history  = useHistory()
     const [saveIngredients, setSaveIngredients] = useState(false)
     const [cocktailmenu, setCocktailMenu] = useState({})
@@ -28,16 +28,36 @@ export const CocktailEditForm = () => {
     const getCocktail = () => {
         getCocktialById(cocktailId)
         .then(response => {
-            setCocktailMenu(response)
-            const tempMenu = {...newCocktailMenu}
-            tempMenu.id = response[0]?.id
-            tempMenu.menuId = response[0]?.menuId
-            setNewCocktailMenu(tempMenu)
-            const tempCocktail = {...cocktail}
-            tempCocktail.name = response[0]?.cocktail.name
-            setCocktail(tempCocktail)
-        })
+            
+            if (response.length === 0) {
+                
+                getSingleCocktail(cocktailId)
+                .then(response => {
+                    const temparray = []
+                    const menuobj = {
+                        menuId: 0,
+                        cocktailId: cocktailId,
+                    }
+                    
+                    menuobj.cocktail = response
+                    temparray[0] = menuobj
+                    setCocktailMenu(temparray)
+                    
+
+                })
+            } else {    
+                setCocktailMenu(response)
+                const tempMenu = {...newCocktailMenu}
+                tempMenu.id = response[0]?.id
+                tempMenu.menuId = response[0]?.menuId
+                setNewCocktailMenu(tempMenu)
+                const tempCocktail = {...cocktail}
+                tempCocktail.name = response[0]?.cocktail.name
+                setCocktail(tempCocktail)
+            }
+            })
     }
+   
     
     //Get menus to populate the drop down of the app
     const getMenus = () => {
@@ -112,7 +132,7 @@ export const CocktailEditForm = () => {
         getIngredients()
     },[])
 
-    console.log(cocktailmenu[0]?.menuId)
+    
 
     return(
         
@@ -137,6 +157,7 @@ export const CocktailEditForm = () => {
                 <Col xs={7}>
 
                 <Form.Control as="select" defaultValue={cocktailmenu[0]?.menuId} name="menuId" id="menuId" onChange={handleMenuChange} className="form-control" >
+                    <option value="0">Menu</option>
                     {menus.map(t => (
                         <option key={t.id} value={t.id}>
                             {t.name}
