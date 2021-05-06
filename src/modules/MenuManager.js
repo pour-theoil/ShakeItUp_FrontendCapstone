@@ -1,5 +1,5 @@
-// const url = "http://localhost:8088"
-const url = "https://ld-shakeitup.herokuapp.com"
+import  { urlHelper }  from "./ServerHelper";
+const url = urlHelper()
 
 export const getAllMenus = () => {
     return fetch(`${url}/menus`)

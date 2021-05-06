@@ -126,7 +126,7 @@
 
 .form-control {
   text-align: center !important;
-  margin-top: 2em;
+  /* margin-top: 2em; */
   z-index: 5;
   pointer-events: auto;
 }
