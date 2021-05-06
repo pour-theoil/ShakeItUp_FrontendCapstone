@@ -84,14 +84,15 @@
 
 
 
-  .imagetop {
+.imagetop {
     margin-top: 1em;
     position: absolute;
     height: 45%;
     width: auto;
     z-index: 3;
     pointer-events: none;
-  }
+}
+
 /* uncomment for web deploy */
   /* .imagetop {
     margin-top: 1em;
