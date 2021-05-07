@@ -14,7 +14,6 @@ export const SingleCocktailEditForm = () => {
     const { cocktailId } = useParams()
     const history  = useHistory()
     const [saveIngredients, setSaveIngredients] = useState(false)
-    const [cocktailmenu, setCocktailMenu] = useState({})
     const [newCocktailMenu, setNewCocktailMenu] = useState({
         cocktailId: cocktailId,
     })
@@ -28,25 +27,22 @@ export const SingleCocktailEditForm = () => {
     const getCocktail = () => {
         getCocktialById(cocktailId)
         .then(response => {
+            console.log(response)
             
             if (response.length === 0) {
                 
                 getSingleCocktail(cocktailId)
                 .then(response => {
-                    const temparray = []
                     const menuobj = {
                         menuId: 0,
                         cocktailId: cocktailId,
                     }
-                    
-                    menuobj.cocktail = response
-                    temparray[0] = menuobj
-                    setCocktailMenu(temparray)
+                    setNewCocktailMenu(menuobj)
+                    setCocktail(response)
                     
 
                 })
             } else {    
-                setCocktailMenu(response)
                 const tempMenu = {...newCocktailMenu}
                 tempMenu.id = response[0]?.id
                 tempMenu.menuId = response[0]?.menuId
@@ -91,7 +87,7 @@ export const SingleCocktailEditForm = () => {
         })
         
     }
-    
+
     
 
     //save the menu and the cocktail states after they have been updated
@@ -106,6 +102,7 @@ export const SingleCocktailEditForm = () => {
             setSaveIngredients(true)
             updateCocktail(cocktail)
             .then(()=> {
+                console.log(newCocktailMenu)
                 updateCocktailMenu(newCocktailMenu)})
             .then(()=> history.push(`/menus/${newCocktailMenu.menuId}`))
         }
@@ -132,6 +129,7 @@ export const SingleCocktailEditForm = () => {
         getIngredients()
     },[])
 
+    console.log(newCocktailMenu)
     
 
     return(
@@ -149,15 +147,15 @@ export const SingleCocktailEditForm = () => {
                         required
                         className="form-control"
                         placeholder="Name"
-                        defaultValue={cocktailmenu[0]?.cocktail.name} />
+                        defaultValue={cocktail.name} />
                         </Col>
             </Form.Group>
             <Form.Group as={Row}>   
                 <Form.Label column xs={5}>Select Menu:</Form.Label>
                 <Col xs={7}>
 
-                <Form.Control as="select" defaultValue={cocktailmenu[0]?.menuId} name="menuId" id="menuId" onChange={handleMenuChange} className="form-control" >
-                    <option value="0">Menu</option>
+                <Form.Control as="select" defaultValue={newCocktailMenu?.menuId} name="menuId" id="menuId" onChange={handleMenuChange} className="form-control" >
+                    <option value="0">No Menu</option>
                     {menus.map(t => (
                         <option key={t.id} value={t.id}>
                             {t.name}

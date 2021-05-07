@@ -11,13 +11,14 @@
   margin-top: 2em;
 }
 
+
 .type-shaker {
   margin-top: -1.2em !important;
   font-size: x-small !important;
 }
 
 .cocktailform-name{
-  margin-top: 3em !important;
+  margin-top: 2.5em !important;
   color: aliceblue;
   text-align: center;
 }
@@ -87,7 +88,7 @@
 .imagetop {
     margin-top: 1em;
     position: absolute;
-    height: 45%;
+    height: 26em;
     width: auto;
     z-index: 3;
     pointer-events: none;
@@ -107,13 +108,17 @@
 
 .shakerbox-active img {
   position: absolute;
-  height: 97%;
+  height: 26em;
   width: auto;
   z-index: 3;
 }
+.col{
+  margin: .2em;
+}
 
 .article-btn {
-  margin: .5em;
+  margin: .5em !important;
+  padding-left: .5em !important;
 }
 .cocktail-shaker .btn {
   border: 0 !important;

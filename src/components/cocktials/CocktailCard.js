@@ -16,7 +16,6 @@ export const CocktailCard = ({ cocktail, deleteSetCocktail, colorArray }) => {
         }
         )
     }
-    console.log(cocktail)
     useEffect(()=>{
         getIngredients()
     },[])
