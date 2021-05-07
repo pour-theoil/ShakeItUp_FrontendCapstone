@@ -77,7 +77,7 @@ export const EditIngredientForm = () => {
                     <Form.Group as={Row}>
                         <Form.Label column xs={6}>Ingredient Type:</Form.Label>
                         <Col xs={6}>
-                        <Form.Control as="select" value={ingredient.typeId} name="typeId" onChange={handleFieldChange} className="form-control" >
+                        <Form.Control as="select" value={ingredient.typeId} id='typeId' name="typeId" onChange={handleFieldChange} className="form-control" >
                             {types.map(t => (
                                 <option key={t.id} value={t.id}>
                                     {t.name}

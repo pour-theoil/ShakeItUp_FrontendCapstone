@@ -30,7 +30,7 @@ export const CocktailList = () => {
         }
     }
 
-    const colorArray = ['primary', 'light', 'warning', 'success', 'danger', 'info']
+    const colorArray = ['primary', 'light', 'dark', 'success', 'danger', 'info', 'light']
 
     useEffect(() => {
         getCocktails()
