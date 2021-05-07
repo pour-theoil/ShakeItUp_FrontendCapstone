@@ -136,7 +136,8 @@ export const CocktailEditForm = () => {
                 <Form.Label column xs={5}>Select Menu:</Form.Label>
                 <Col xs={7}>
 
-                <Form.Control as="select" defaultValue={cocktailmenu[0]?.menuId} name="menuId" id="menuId" onChange={handleMenuChange} className="form-control" >
+                <Form.Control as="select" defaultValue={newCocktailMenu?.menuId} name="menuId" id="menuId" onChange={handleMenuChange} className="form-control" >
+                    <option value="0">No Menu</option>
                     {menus.map(t => (
                         <option key={t.id} value={t.id}>
                             {t.name}

@@ -25,11 +25,11 @@ export default function Register() {
 
   return (
     <>
-    <Container fluid="xl">
-    <Row>
-      <Col className="m-2" md={6}>
+    <Container className="justified-content-center">
+    
+      
       <Form onSubmit={registerClick}>
-              <h5 className="username">Create Your Chris-List Account</h5>
+              <h3 className="cocktailform-name">Create Shake It Up Account</h3>
               <fieldset>
 
               <Form.Group>
@@ -58,14 +58,14 @@ export default function Register() {
               <Button variant="primary" type="submit">Continue</Button>
             </fieldset>
           </Form>
-    </Col>
+    
 
-      <Col className="m-2">
-      <h5 className="username">Already have an account?</h5>
+  
+      <h3 className="username">Already have an account?</h3>
           <Link to="/login" className="btn btn-block btn-outline-success">Sign in</Link>
        
-     </Col>
-    </Row>
+     
+    
     </Container>
   </>
   );
