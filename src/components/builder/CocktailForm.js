@@ -72,8 +72,9 @@ export const CocktailAddForm = () => {
             setSaveIngredients(true)
             updateCocktail(cocktail)
             .then(()=> {
-                addCocktailMenu(cocktailmenu)})
-            .then(()=> history.push(`/menus/${cocktailmenu.menuId}`))
+                return addCocktailMenu(cocktailmenu)})
+            .then(() => {
+                history.push(`/menus/${cocktailmenu.menuId}`)})
         }
 
     }
