@@ -7,7 +7,7 @@ export const IngredientCard = ({ ingredient, saveIngredients }) => {
         id: ingredient.id,
         cocktailId: ingredient.cocktailId,
         ingredientId: ingredient.ingredientId,
-        pour: 0
+        pour: ingredient.pour
     })
     //Handle changes for the cocktail state
 

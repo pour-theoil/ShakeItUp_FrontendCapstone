@@ -27,7 +27,7 @@ export const SingleCocktailEditForm = () => {
     const getCocktail = () => {
         getCocktialById(cocktailId)
         .then(response => {
-            console.log(response)
+            
             
             if (response.length === 0) {
                 
@@ -102,8 +102,7 @@ export const SingleCocktailEditForm = () => {
             setSaveIngredients(true)
             updateCocktail(cocktail)
             .then(()=> {
-                console.log(newCocktailMenu)
-                updateCocktailMenu(newCocktailMenu)})
+                return updateCocktailMenu(newCocktailMenu)})
             .then(()=> history.push(`/menus/${newCocktailMenu.menuId}`))
         }
 
@@ -129,7 +128,6 @@ export const SingleCocktailEditForm = () => {
         getIngredients()
     },[])
 
-    console.log(newCocktailMenu)
     
 
     return(
@@ -154,7 +152,7 @@ export const SingleCocktailEditForm = () => {
                 <Form.Label column xs={5}>Select Menu:</Form.Label>
                 <Col xs={7}>
 
-                <Form.Control as="select" defaultValue={newCocktailMenu?.menuId} name="menuId" id="menuId" onChange={handleMenuChange} className="form-control" >
+                <Form.Control as="select" value={newCocktailMenu?.menuId} name="menuId" id="menuId" onChange={handleMenuChange} className="form-control" >
                     <option value="0">No Menu</option>
                     {menus.map(t => (
                         <option key={t.id} value={t.id}>
