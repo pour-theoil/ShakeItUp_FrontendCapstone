@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Button, Form, Container, Col, Row } from 'react-bootstrap';
+import { Button, Form, Container } from 'react-bootstrap';
 import { useHistory, Link } from "react-router-dom";
 import { FirebaseContext } from "./FirebaseProvider";
 

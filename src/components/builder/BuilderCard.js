@@ -35,12 +35,14 @@ export const BuilderCard = ({type, reload, setIngredientArray, ingredientArray, 
         if(ingredient.id) {
             updateIngredientArray()
         } 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[ingredient, reload])
 
     useEffect(() => {
         if (reload) {
             newIngredient()
         }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[reload])
 
 

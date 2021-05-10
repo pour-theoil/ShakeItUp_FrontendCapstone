@@ -94,6 +94,7 @@ export const CocktailAddForm = () => {
     //Get ingredients for the cocktail
     useEffect(()=>{
         getIngredients()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     return(
@@ -117,7 +118,7 @@ export const CocktailAddForm = () => {
             </Form.Group>
             <Form.Group as={Row}> 
                 <Form.Label column xs={5}>Select Menu:</Form.Label>
-                <Col xs={6}>
+                <Col xs={7}>
 
                 <Form.Control as="select" value={cocktailmenu.menuId} name="menuId" id="menuId" onChange={handleMenuChange} className="form-control" >
                     <option value="0">Menu</option>

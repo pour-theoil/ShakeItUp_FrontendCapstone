@@ -3,6 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import "./Login.css"
 import { Row, Button, Form, Col, Container} from 'react-bootstrap'
 import { FirebaseContext } from './FirebaseProvider' 
+import googleicon from './googleicon.jpg'
 
 
 export default function Login() {
@@ -39,19 +40,21 @@ export default function Login() {
                     </Form.Group>
                     
                     </fieldset>
-                    <fieldset>
+              
                         <Row className="link--register">
-                            <Col>
+                            <Col xs={4}>
                             <Button type="submit">
                             Sign in
                             </Button>
                             </Col>
-                            <Col>
+                            <Col xs={5}>
                                 <Link to="/register">Register for an account</Link>
-                                {/* <Button block onClick={loginGoogle} variant="outline-success">Continue with Google</Button> */}
+                            </Col>
+                            <Col xs={3}>
+                                <Button className="nobackground"><img src={googleicon} alt="Google Icon" onClick={loginGoogle} width="35" height="35" /></Button>
                             </Col>
                         </Row>
-                    </fieldset>
+    
                 </Form>
         </Container>
     )

@@ -102,7 +102,7 @@ export const EditIngredientForm = () => {
                         </Col>
                     </Form.Group>
                 </Form>
-                <Button className="article-btn"
+                <Button className="article-btn" disabled={isLoading}
                 onClick={updateExistingIngredient}>
                 Update Ingredient
             </Button>
