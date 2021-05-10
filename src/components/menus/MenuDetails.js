@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { getCocktails, getMenuById, deleteMenuCocktail, deleteMenu } from '../../modules/MenuManager'
 import { CocktailCard } from './CocktailCard'
-import { Container, Button, Row } from 'react-bootstrap'
+import { Container, Button } from 'react-bootstrap'
 
 export const MenuDetails = () => {
     const [cocktails, setCocktails] = useState([])
@@ -40,10 +40,12 @@ export const MenuDetails = () => {
 
     useEffect(() => {
             getSetMenu()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[cocktails])
 
     useEffect(() => {
         getMenuCocktails()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     

@@ -18,6 +18,7 @@ export const CocktailCard = ({ cocktail, deleteSetCocktail, colorArray }) => {
     }
     useEffect(()=>{
         getIngredients()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
     return(
         <>

@@ -6,7 +6,7 @@ import { addCocktailIngredient } from '../../modules/BuilderManager'
 import { getAllTypes } from '../../modules/IngredientManager'
 import { Container, Form, Button, Image } from 'react-bootstrap'
 import shaker from './emptyshaker.png'
-import plus from './plussign.svg'
+
 
 export const BuilderList = () => {
     const [reload, setReload] = useState(false);
@@ -73,7 +73,7 @@ export const BuilderList = () => {
         if (cocktail.id) {
             history.push(`/cocktails/${cocktail.id}/add`)
         }
-    }, [cocktail])
+    }, [cocktail, history])
 
     useEffect(() => {
         getTypes()

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { addIngredient, getAllTypes } from '../../modules/IngredientManager'
-import { Form, Button, Row, Container } from "react-bootstrap";
+import { Form, Button,  Container } from "react-bootstrap";
 
 export const IngredientEntry = () => {
     const [ingredient, setIngredient] = useState({

@@ -105,11 +105,13 @@ export const CocktailEditForm = () => {
 
     useEffect(()=> {
         getCocktail()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     //Get ingredients for the cocktail
     useEffect(()=>{
         getIngredients()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
 
@@ -153,6 +155,7 @@ export const CocktailEditForm = () => {
     
             </Form>
             <Button className="article-btn"
+                disabled={isLoading}
                 onClick={handleSaveEvent}>
                 Update Cocktail
             </Button>
