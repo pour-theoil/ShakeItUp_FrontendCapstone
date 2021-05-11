@@ -229,6 +229,10 @@ legend {
   font-family: $font-family-sans-serif;
 }
 
+.nav-link.active {
+  background-color: $primary;
+}
+
 .breadcrumb {
   a {
     color: $navbar-dark-color;
