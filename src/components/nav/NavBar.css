@@ -1,3 +1,47 @@
 .d-inline-block {
     border-radius: .75em;
 }
+
+  
+.shakeitup {
+    font-size: 3em;
+    height: 100%;
+    margin: .3em  0 .3em 0;
+    text-align: center !important;
+    color: #871A85 !important;
+    font-family: Pacifico !important;
+    -webkit-animation: neon3 1.5s ease-in-out infinite alternate;
+    -moz-animation: neon3 1.5s ease-in-out infinite alternate;
+    animation: neon3 1.5s ease-in-out infinite alternate;
+  }
+  .nav-link.active {
+      background-color: #FFDD1B !important;
+      border: 1px solid #FFDD1B !important;
+  }
+  
+ .nav-tabs {
+     border-bottom: .5em solid #FFDD1B !important;
+     
+ }
+  
+ .bottom {
+     position: fixed !important;
+     bottom: 0 !important;
+     width: 100% !important;
+     background-color: black;
+     border-top: .5em black !important;
+ }
+.shakeitup:hover {
+    -webkit-animation: none;
+    -moz-animation: none;
+    animation: none;
+  }
+  
+  @keyframes neon3 {
+    from {
+        text-shadow: 0 0 7px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FFDD1B, 0 0 35px #FFDD1B, 0 0 40px #FFDD1B, 0 0 50px #FFDD1B, 0 0 75px #FFDD1B;
+      }
+      to {
+        text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 7px #fff, 0 0 10px #FFDD1B, 0 0 17px #FFDD1B, 0 0 20px #FFDD1B, 0 0 25px #FFDD1B, 0 0 38px #FFDD1B;
+      }
+    }

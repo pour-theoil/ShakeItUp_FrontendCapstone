@@ -5,14 +5,16 @@ import { NavBar } from "./components/nav/NavBar"
 import './Home.css'
 import { FirebaseProvider } from "./components/auth/FirebaseProvider"
 
+
 function App() {
 
   return (
     <div className="app">
       <Router>
         <FirebaseProvider>
-            <NavBar />
+            <h1 className="shakeitup">Shake It UP!</h1>
             <ApplicationViews />
+            <NavBar />
         </FirebaseProvider>
       </Router>
     </div>

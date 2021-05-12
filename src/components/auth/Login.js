@@ -22,15 +22,15 @@ export default function Login() {
     const handleLogin = (e) => {
         e.preventDefault()
         login(email, password)
-        .then(()=> history.push(""))
+        .then(()=> history.push("/home"))
         .catch(() => alert("Credentials are not recongnized"))
     }
 
     return (
         <Container className="container--login">
                 <Form className="form--login" onSubmit={handleLogin}>
-                    <h1>Shake It Up</h1>
-                    <h2>For Cocktail Creatives</h2>
+                    
+                    <h2>Log in to get shaking</h2>
                     <fieldset>
                     <Form.Group controlId="formBasicEmail" className="mb-2">
                         <Form.Control type="email" placeholder="Email Address" onChange={e => setEmail(e.target.value)} />

@@ -1,8 +1,9 @@
 .fixed-button {
     position: fixed !important;
-    bottom: 3em;
-    right: 2em;
+    bottom: 5em;
+    right: 1em;
     z-index: 4;
+    box-shadow: 0 0 10px 10px black;
 }
 
 .menu-title {
