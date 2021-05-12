@@ -12,7 +12,7 @@ function App() {
     <div className="app">
       <Router>
         <FirebaseProvider>
-            <h1 className="shakeitup">Shake It UP!</h1>
+            <h1 className="shakeitup">Shake It Up!</h1>
             <ApplicationViews />
             <NavBar />
         </FirebaseProvider>
