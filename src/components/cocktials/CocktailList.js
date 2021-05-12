@@ -39,7 +39,7 @@ export const CocktailList = () => {
     return (
         <>
             <Container className="justified-content-center">
-            <h3 className="cocktailform-name">Cocktail List</h3>
+            <h2 className="cocktailform-name">Cocktail List</h2>
                 <Container className="cocktails-card">
                     {cocktails.map(cocktail => <CocktailCard    deleteSetCocktail={deleteSetCocktail}
                                                                 cocktail={cocktail}

@@ -74,7 +74,7 @@ export const IngredientList = () => {
     return (
         <>
             <Container className="justified-content-center">
-            <h3 className="cocktailform-name">Ingredients List</h3>
+            <h2 className="cocktailform-name">Ingredients List</h2>
                 <Form.Group as={Row}>
                     <Form.Label column xs={6}>Filter by Type</Form.Label>
                     <Col xs={6}>
