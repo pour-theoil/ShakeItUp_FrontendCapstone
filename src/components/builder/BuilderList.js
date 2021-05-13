@@ -4,7 +4,7 @@ import { BuilderCard } from "./BuilderCard";
 import { addCocktail } from '../../modules/CocktailManager'
 import { addCocktailIngredient } from '../../modules/BuilderManager'
 import { getAllTypes } from '../../modules/IngredientManager'
-import { Container, Form, Button, Image } from 'react-bootstrap'
+import { Container, Form, Button, Image, Row, Col } from 'react-bootstrap'
 import shaker from './emptyshaker.png'
 
 
@@ -90,10 +90,7 @@ export const BuilderList = () => {
     return (
         <Container className="justified-content-center">
             <h2 className="cocktailform-name">Cocktail Builder</h2>
-            <Button variant="warning" className="shakebuttons" onClick={() => {
-                handleToggle()
-                setReload(true)
-            }}>Shake &#x27f3;</Button>
+       
             <div className={`shakerbox${shake ? '-active' : ""}`} onAnimationEnd={() => setShake(false)}>
                 
                 <Image
@@ -129,10 +126,15 @@ export const BuilderList = () => {
                     </div>
                 </div>
             </div>
-
-
-
+            <Row className="justify-content-center">
+            <Button variant="warning" className="shakebuttons" onClick={() => {
+                handleToggle()
+                setReload(true)
+            }}>Shake &#x27f3;</Button>
+        
             <Button variant="primary" className="builderbuttons" onClick={handleSaveCocktail}>Save</Button>
+       
+            </Row>
         </Container>
     )
 }

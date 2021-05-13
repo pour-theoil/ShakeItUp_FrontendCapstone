@@ -55,7 +55,7 @@ export const MenuDetails = () => {
                 
                     <h2 className="menu-title">{menu[0]?.name}</h2>
                     <h5>Season: {menu[0]?.season.name}</h5>
-                <Container className="cocktails-card">
+                <Container>
                     {cocktails.map(cocktail => <CocktailCard   cocktail={cocktail}
                                                                 key={cocktail.id}
                                                                 removeCocktailFromMenu={removeCocktailFromMenu}/>)}
