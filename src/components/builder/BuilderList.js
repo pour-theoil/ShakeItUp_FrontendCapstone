@@ -90,7 +90,7 @@ export const BuilderList = () => {
     return (
         <Container className="justified-content-center">
             <h2 className="cocktailform-name">Cocktail Builder</h2>
-            <Button variant="outline-info" className="shakebuttons" onClick={() => {
+            <Button variant="warning" className="shakebuttons" onClick={() => {
                 handleToggle()
                 setReload(true)
             }}>Shake &#x27f3;</Button>
@@ -132,7 +132,7 @@ export const BuilderList = () => {
 
 
 
-            <Button variant="outline-success" className="builderbuttons" onClick={handleSaveCocktail}>Save Your Creation</Button>
+            <Button variant="primary" className="builderbuttons" onClick={handleSaveCocktail}>Save</Button>
         </Container>
     )
 }
