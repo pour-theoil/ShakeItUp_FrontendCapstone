@@ -51,7 +51,7 @@ export const CocktailList = () => {
                     <Button 
                             variant="primary"
                             className="fixed-button"
-                            onClick={() => {history.push('/')}}>+ Cocktail</Button>
+                            onClick={() => {history.push('/home')}}>+ Cocktail</Button>
                 </Row>
             </Container>
         </>

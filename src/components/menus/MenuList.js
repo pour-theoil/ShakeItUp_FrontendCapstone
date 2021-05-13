@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getAllMenus, deleteMenu } from '../../modules/MenuManager'
+import { getAllMenus } from '../../modules/MenuManager'
 import { useHistory } from 'react-router-dom'
 import { MenuEntry } from './MenuCard'
 import { Container, Button, Row } from 'react-bootstrap'
@@ -23,7 +23,7 @@ export const MenuList = () => {
         return shortend;
     }
 
-    const colorArray = ['light', 'dark', 'success', 'danger', 'info']
+    const colorArray = ['warning', 'success', 'secondary', 'info']
 
 
     useEffect(() => {

@@ -18,7 +18,7 @@ import Register from './auth/Register'
 
 export default function ApplicationViews() {
     const { isLoggedIn } = useContext(FirebaseContext)
-    console.log(isLoggedIn)
+  
 
     return (
         <main>

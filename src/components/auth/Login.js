@@ -16,7 +16,7 @@ export default function Login() {
 
     const loginGoogle = () => {
         signInWithGoogle()
-            .then(response => history.push("/"))
+            .then(response => history.push("/home"))
     }
 
     const handleLogin = (e) => {

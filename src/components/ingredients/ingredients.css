@@ -4,3 +4,7 @@
     padding: .4em;
     border-radius: .5em !important;
 }
+
+.centeredtext {
+   text-align: center;
+}

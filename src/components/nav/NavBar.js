@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { useHistory, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import './NavBar.css'
 import menuicon from './MenuIcon.svg'
 import cocktailicon from './CocktailsIcon.svg'
@@ -11,13 +11,13 @@ import { FirebaseContext } from '../auth/FirebaseProvider'
 // import ingredients from './BottleGroup.svg'
 
 export const NavBar = () => {
-    const history = useHistory()
+   
     const { logout } = useContext(FirebaseContext)
     
     const handleLogOut = () => {
         logout()
     }
-    console.log(history)
+    
     return (
         <nav className="bottom">
             <ul className="nav nav-pills nav-fill">

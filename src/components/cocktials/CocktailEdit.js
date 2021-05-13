@@ -111,7 +111,7 @@ export const SingleCocktailEditForm = () => {
     //Delete the cocktail object
     const handleCancelSave = (click) => {
         click.preventDefault()
-        history.push(`/menus/${newCocktailMenu.menuId}`)
+        history.push(`/cocktails`)
     }
 
     //Get available menus

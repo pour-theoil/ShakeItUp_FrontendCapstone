@@ -83,7 +83,7 @@ export const CocktailAddForm = () => {
     const handleCancelSave = (click) => {
         click.preventDefault()
         deleteCocktail(cocktailId)
-        .then(()=> history.push('/'))
+        .then(()=> history.push('/home'))
     }
 
     //Get available menus
