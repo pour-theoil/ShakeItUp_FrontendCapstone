@@ -20,6 +20,8 @@ export const CocktailCard = ({ cocktail, deleteSetCocktail, colorArray }) => {
         getIngredients()
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
+
+ 
     return(
         <>
         <Accordion>

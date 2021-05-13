@@ -1,20 +1,31 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { Card, Row, Col, Button } from 'react-bootstrap'
+import React, {useEffect, useState} from 'react'
+import { useHistory } from 'react-router-dom'
+import { Card, Row, Col } from 'react-bootstrap'
+import { getIngredientCocktails } from '../../modules/IngredientManager'
 
-export const IngredientCard = ({colorArray, ingredient, deleteSetIngredient}) => {
-    
+export const IngredientCard = ({colorArray, ingredient }) => {
+    const [numDrinks, setNumDrinks] = useState()
+    const history = useHistory()
+
+    const numberOfDrinks = (iid) => {
+        getIngredientCocktails(iid)
+        .then(response => setNumDrinks(response.length))
+    }
+
+    useEffect(() => {
+        numberOfDrinks(ingredient.id)
+    },[ingredient])
+
     return(
         <>
-            <Card className="ingredient-card" bg={colorArray[ingredient.typeId-1]}>
+            <Card onClick={() => history.push(`/ingredients/${ingredient.id}/edit`)} className="ingredient-card" bg={colorArray[ingredient.typeId-1]}>
                 <Row>
                     <Col xs={8}>
                         <Card.Title>{ingredient.name}</Card.Title>
                         <Card.Subtitle>({ingredient.type?.name})</Card.Subtitle>
                     </Col>
                     <Col>
-                        <Link to={`/ingredients/${ingredient.id}/edit`}><Button variant="outline-secondary" size="sm" block>Edit</Button></Link>
-                        <Button variant="outline-dark" onClick={() => deleteSetIngredient(ingredient.id)} size="sm" block>Delete</Button>
+                        <Card.Text className="centeredtext"># Drinks: <br/> {numDrinks}</Card.Text>
                     </Col>
                 </Row>
             </Card>

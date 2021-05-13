@@ -43,7 +43,10 @@ export const getAllTypes = () => {
     .then(response => response.json())
 }
 
-
+export const getIngredientCocktails = (id) => {
+    return fetch(`${url}/cocktailingredients?ingredientId=${id}`)
+    .then(response => response.json())
+}
 
 // Possible coding for firebase...
 // // // import firebase from 'firebase/app';

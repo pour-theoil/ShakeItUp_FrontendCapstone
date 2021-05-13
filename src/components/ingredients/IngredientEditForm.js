@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
-import { updateIngredient, getIngredientById } from '../../modules/IngredientManager'
+import { updateIngredient, getIngredientById, deleteIngredient } from '../../modules/IngredientManager'
 import { getAllTypes } from '../../modules/IngredientManager'
 import { Form, Button, Col, Container, Row } from "react-bootstrap";
 
@@ -44,6 +44,11 @@ export const EditIngredientForm = () => {
         history.push('/ingredients')
     }
 
+    const deleteSetIngredient = (id) => {
+        deleteIngredient(id)
+        .then(() => history.push('/ingredients'))
+    }
+
     useEffect(() => {
         getTypes()
     },[])
@@ -59,7 +64,7 @@ export const EditIngredientForm = () => {
 
     return (
         <Container className="justified-content-center">
-            <h3 className="cocktailform-name">Edit Ingredient</h3>
+            <h2 className="cocktailform-name">Edit Ingredient</h2>
 
             <Form>
                     <Form.Group as={Row}>
@@ -78,7 +83,7 @@ export const EditIngredientForm = () => {
                     <Form.Group as={Row}>
                         <Form.Label column xs={6}>Ingredient Type:</Form.Label>
                         <Col xs={6}>
-                        <Form.Control as="select" defaultValue={ingredient.typeId} id='typeId' name="typeId" onChange={handleFieldChange} className="form-control" >
+                        <Form.Control as="select" value={ingredient.typeId} id='typeId' name="typeId" onChange={handleFieldChange} className="form-control" >
                             {types.map(t => (
                                 <option key={t.id} value={t.id}>
                                     {t.name}
@@ -106,6 +111,7 @@ export const EditIngredientForm = () => {
                 onClick={updateExistingIngredient}>
                 Update Ingredient
             </Button>
+            <Button variant="dark" className="article-btn" onClick={() => deleteSetIngredient(ingredient.id)} >Delete</Button>
             <Button className="article-btn"
                 variant="warning"
                 onClick={handleCancelSave}>

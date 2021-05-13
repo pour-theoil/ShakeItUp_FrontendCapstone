@@ -67,7 +67,7 @@ export const BuilderList = () => {
     };
 
     // array to add specific colors to individual cards
-    const colorArray = ['primary', 'light', 'warning', 'success', 'danger', 'info']
+    const colorArray = ['primary', 'secondary', 'warning', 'success', 'danger', 'info']
 
     useEffect(() => {
         if (cocktail.id) {
@@ -90,10 +90,10 @@ export const BuilderList = () => {
     return (
         <Container className="justified-content-center">
             <h2 className="cocktailform-name">Cocktail Builder</h2>
-            <Button onClick={() => {
+            <Button variant="warning" className="shakebuttons" onClick={() => {
                 handleToggle()
                 setReload(true)
-            }}>Shake it UP!!! &#x27f3;</Button>
+            }}>Shake &#x27f3;</Button>
             <div className={`shakerbox${shake ? '-active' : ""}`} onAnimationEnd={() => setShake(false)}>
                 
                 <Image
@@ -119,7 +119,7 @@ export const BuilderList = () => {
                     
                         {array.map((number, index) => <BuilderCard
                             colorArray={colorArray}
-                            ingredientArray={ingredientArray}
+                            ingredientArray={ingredientArray} 
                             key={index}
                             index={index}
                             setIngredientArray={setIngredientArray}
@@ -132,7 +132,7 @@ export const BuilderList = () => {
 
 
 
-            <Button className="savebutton" onClick={handleSaveCocktail}>Save Your Creation</Button>
+            <Button variant="primary" className="builderbuttons" onClick={handleSaveCocktail}>Save</Button>
         </Container>
     )
 }

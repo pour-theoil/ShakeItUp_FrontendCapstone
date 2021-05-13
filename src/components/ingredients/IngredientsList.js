@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { getAllIngredients, deleteIngredient, getAllTypes } from '../../modules/IngredientManager'
+import { getAllIngredients, getAllTypes } from '../../modules/IngredientManager'
 import { useHistory } from 'react-router-dom'
 import { IngredientCard } from './IngredientCard'
 import { Container, Button, Row, Form, Col } from 'react-bootstrap'
@@ -55,12 +55,8 @@ export const IngredientList = () => {
         })
     }
 
-    const deleteSetIngredient = (id) => {
-        deleteIngredient(id)
-        .then(() => getIngredients())
-    }
 
-    const colorArray = ['primary', 'light', 'warning', 'success', 'danger', 'info']
+    const colorArray = ['primary', 'secondary', 'warning', 'success', 'danger', 'info']
 
     useEffect(() => {
         getIngredients()
@@ -74,7 +70,7 @@ export const IngredientList = () => {
     return (
         <>
             <Container className="justified-content-center">
-            <h3 className="cocktailform-name">Ingredients List</h3>
+            <h2 className="cocktailform-name">Ingredients List</h2>
                 <Form.Group as={Row}>
                     <Form.Label column xs={6}>Filter by Type</Form.Label>
                     <Col xs={6}>
@@ -98,7 +94,7 @@ export const IngredientList = () => {
                                                     <IngredientCard ingredient={ingredient}
                                                                     colorArray={colorArray}
                                                                     key={ingredient.id}
-                                                                    deleteSetIngredient={deleteSetIngredient}
+                                                                
                                                                      />)}
 
                                                 )

@@ -32,7 +32,17 @@ ul li {
   padding-top: 1.25em;
 }
 
- ul img {
+/* css for the shake it up logo */
+.logo {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: black;
+  box-shadow: 0 5px 10px black;
+}
+
+ul img {
   width: auto;
   height: 60%;
  }
@@ -42,6 +52,7 @@ ul li {
      bottom: 0 !important;
      width: 100% !important;
      background-color: black;
+     box-shadow: 0 0 5px 10px black;
      border-bottom: #FFDD1B .5em solid !important;
  }
 .shakeitup:hover {

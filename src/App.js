@@ -4,7 +4,7 @@ import  ApplicationViews  from "./components/ApplicationViews"
 import { NavBar } from "./components/nav/NavBar"
 import './Home.css'
 import { FirebaseProvider } from "./components/auth/FirebaseProvider"
-
+import { Header } from './Header'
 
 function App() {
 
@@ -12,7 +12,7 @@ function App() {
     <div className="app">
       <Router>
         <FirebaseProvider>
-            <h1 className="shakeitup">Shake It Up!</h1>
+            <Header />
             <ApplicationViews />
             <NavBar />
         </FirebaseProvider>
