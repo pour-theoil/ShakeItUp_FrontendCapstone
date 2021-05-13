@@ -6,7 +6,9 @@
   text-align: center !important;
 }
 
-
+.cocktails-card {
+  margin-bottom: 10em;
+}
 
 
 .type-shaker {
@@ -49,7 +51,7 @@
 
 .shakerbox{
   align-self: center;
-  margin-top: .5em;
+  /* margin-top: .5em; */
   height: 85%;
   width: 80%;
   max-width: 280px;
@@ -63,7 +65,7 @@
 .shakerbox-active{
   align-self: center;
   width: 80%;
-  margin-top: .5em;
+  /* margin-top: .5em; */
   height: 85%;
   max-width: 280px;
 }
@@ -147,16 +149,21 @@
 }
 
 .shakebuttons {
-  width: 50%;
+  width: 75%;
   align-self: center;
+  margin-top: 1em;
+  box-shadow: 1px 2px 5px;
 }
 
 .builderbuttons {
   align-self: center;
-  margin-top: 1.5em;
-  width: 50%;
-  animation: flicker 1.5s infinite alternate ;  
+  width: 75%;
+  margin-top: .5em;
+  box-shadow: 1px 2px 5px;
+  margin-bottom: 2em;
 }
+
+
 
 
 

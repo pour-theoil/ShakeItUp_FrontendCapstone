@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams, useHistory } from 'react-router-dom'
 import { updateCocktail, getCocktialById, getSingleCocktail } from '../../modules/CocktailManager'
 import { getAllMenus } from '../../modules/MenuManager'
-import { getAllIngredients, updateCocktailMenu } from '../../modules/BuilderManager'
+import { addCocktailMenu, getAllIngredients, updateCocktailMenu } from '../../modules/BuilderManager'
 import { IngredientCard} from '../builder/IngredientCard'
 import { Form, Button, Container, Row, Col} from "react-bootstrap";
  
@@ -17,6 +17,7 @@ export const SingleCocktailEditForm = () => {
     const [newCocktailMenu, setNewCocktailMenu] = useState({
         cocktailId: cocktailId,
     })
+    const [menuStatus, setMenuStatus] = useState(false)
 
     //set state of the cocktail object
     const [cocktail, setCocktail] = useState({
@@ -39,7 +40,8 @@ export const SingleCocktailEditForm = () => {
                     }
                     setNewCocktailMenu(menuobj)
                     setCocktail(response)
-                    
+
+                    console.log("no Menu")
 
                 })
             } else {    
@@ -50,6 +52,8 @@ export const SingleCocktailEditForm = () => {
                 const tempCocktail = {...cocktail}
                 tempCocktail.name = response[0]?.cocktail.name
                 setCocktail(tempCocktail)
+                console.log("menu")
+                setMenuStatus(true)
             }
             })
     }
@@ -102,7 +106,13 @@ export const SingleCocktailEditForm = () => {
             setSaveIngredients(true)
             updateCocktail(cocktail)
             .then(()=> {
-                return updateCocktailMenu(newCocktailMenu)})
+                if(menuStatus) {
+                    return updateCocktailMenu(newCocktailMenu)
+                } else {
+                    return addCocktailMenu(newCocktailMenu)
+
+                }}
+            )
             .then(()=> history.push(`/menus/${newCocktailMenu.menuId}`))
         }
 

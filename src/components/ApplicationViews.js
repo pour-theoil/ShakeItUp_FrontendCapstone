@@ -18,12 +18,15 @@ import Register from './auth/Register'
 
 export default function ApplicationViews() {
     const { isLoggedIn } = useContext(FirebaseContext)
-  
-
+    
     return (
         <main>
 
         <Switch>
+        <Route exact path="/">
+                {isLoggedIn ? <BuilderList /> : <Redirect to="/login" />}
+                
+            </Route>
             
             <Route exact path="/home">
                 {isLoggedIn ? <BuilderList /> : <Redirect to="/login" />}

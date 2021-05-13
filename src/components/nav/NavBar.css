@@ -40,6 +40,8 @@ ul li {
   z-index: 1000;
   background-color: black;
   box-shadow: 0 5px 10px black;
+  /* border: .2em solid #FFDD1B !important;
+  border-radius: .5em; */
 }
 
 ul img {
