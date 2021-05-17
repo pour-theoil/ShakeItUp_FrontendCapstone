@@ -40,7 +40,6 @@ export const IngredientCard = ({ ingredient, saveIngredients }) => {
                     id="pour"
                     className="pourvalue"
                     onChange={handleInputChange}
-                    autoFocus
                     required
                     placeholder="pour"
                     defaultValue={ingredient.pour}

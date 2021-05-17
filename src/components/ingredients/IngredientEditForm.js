@@ -49,6 +49,10 @@ export const EditIngredientForm = () => {
         .then(() => history.push('/ingredients'))
     }
 
+    const makeCocktailWithIngredient = () => {
+        history.push(`/home/${ingredientId}`)
+    }
+
     useEffect(() => {
         getTypes()
     },[])
@@ -116,6 +120,11 @@ export const EditIngredientForm = () => {
                 variant="warning"
                 onClick={handleCancelSave}>
                 Cancel
+            </Button>
+            <Button className="article-btn"
+                variant="secondary"
+                onClick={makeCocktailWithIngredient}>
+                Make Cocktail 
             </Button>
                 
         </Container>

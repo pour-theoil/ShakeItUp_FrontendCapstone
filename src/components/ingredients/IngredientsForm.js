@@ -62,6 +62,7 @@ export const IngredientEntry = () => {
                         onChange={handleInputChange}
                         autoFocus
                         required
+                        autoComplete="off"
                         className="form-control"
                         placeholder="Name"
                         value={ingredient.name} />
@@ -82,6 +83,7 @@ export const IngredientEntry = () => {
                     <Form.Control type="text"
                         id="abv"
                         required
+                        autoComplete="off"
                         onChange={handleInputChange}
                         className="form-control"
                         placeholder="abv"

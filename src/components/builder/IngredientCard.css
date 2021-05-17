@@ -49,6 +49,9 @@
   width:100%;
 }
 
+.cancelsave {
+  margin-bottom: 3em;
+}
 .shakerbox{
   align-self: center;
   /* margin-top: .5em; */

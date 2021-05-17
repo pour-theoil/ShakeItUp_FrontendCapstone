@@ -108,6 +108,7 @@ export const CocktailAddForm = () => {
                 <Col xs={7}>
                 <Form.Control  type="text" 
                         id="name" 
+                        autoComplete="off"
                         onChange={handleCocktailChange} 
                         autoFocus 
                         required
@@ -141,7 +142,7 @@ export const CocktailAddForm = () => {
                 onClick={handleSaveEvent}>
                 Save Entry
             </Button>
-            <Button className="article-btn"
+            <Button className="article-btn cancelsave"
                 variant="warning"
                 onClick={handleCancelSave}>
                 Cancel

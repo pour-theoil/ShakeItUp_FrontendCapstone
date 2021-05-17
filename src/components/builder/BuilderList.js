@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { useHistory } from 'react-router-dom'
+import { useHistory, useParams } from 'react-router-dom'
 import { BuilderCard } from "./BuilderCard";
 import { addCocktail } from '../../modules/CocktailManager'
 import { addCocktailIngredient } from '../../modules/BuilderManager'
-import { getAllTypes } from '../../modules/IngredientManager'
-import { Container, Form, Button, Image, Row, Col } from 'react-bootstrap'
+import { getAllTypes, getIngredientById } from '../../modules/IngredientManager'
+import { Container, Form, Button, Image, Row } from 'react-bootstrap'
 import shaker from './emptyshaker.png'
 
 
 export const BuilderList = () => {
+    const { selectIngredient } = useParams()
     const [reload, setReload] = useState(false);
     const [numIngredients, setNumIngredients] = useState(0)
     const [cocktail, setCocktail] = useState({
@@ -19,9 +20,24 @@ export const BuilderList = () => {
     const [array, setArray] = useState([])
     const [ingredientArray, setIngredientArray] = useState([])
     const [shake, setShake] = useState(false)
-    
+    const [selectedIngredient, setSelectedIngredient] = useState({})
 
     
+    const handleSetIngredient = (IID) => {
+        if(IID !== undefined) {
+            getIngredientById(parseInt(IID))
+            .then(response => {
+                setSelectedIngredient(response)
+                let array = [...ingredientArray]
+                let arrayObj = {type: response.typeId,
+                                selected: true}
+                array.push(arrayObj)
+                setArray(array)
+                console.log("loading")
+            })
+        }
+    }
+
     //When a new type is chosen it is added to the list
     const handleInputChange = (event) => {
         let newNumIngredients = numIngredients
@@ -29,8 +45,10 @@ export const BuilderList = () => {
         setNumIngredients(newNumIngredients)
         const newArray = [...array]
         let selectedValue = event.target.value
-        newArray.push(selectedValue)
-        newArray.sort()
+        let arrayObj = {type: selectedValue,
+                        selected: false}
+        newArray.push(arrayObj)
+        newArray.sort(function (a, b){ return a.type - b.type})
         newArray.reverse()
         setArray(newArray)
         event.target.value = 0
@@ -48,6 +66,7 @@ export const BuilderList = () => {
     const handleSaveCocktail = () => {
         addCocktail(cocktail)
             .then(cocktailobj => {
+                console.log(ingredientArray)
                 Promise.all(ingredientArray.map(ingredient => {
                     const cocktailingredients = {
                         cocktailId: cocktailobj.id,
@@ -83,6 +102,9 @@ export const BuilderList = () => {
         setReload(true)
     }, [array])
 
+    useEffect(() => {
+        handleSetIngredient(selectIngredient)
+    },[selectIngredient])
 
     useEffect(() => {
         setReload(false)
@@ -114,13 +136,15 @@ export const BuilderList = () => {
                             </Form.Control>
                         </Form.Group>
                     
-                        {array.map((number, index) => <BuilderCard
+                        {array.map((arrayObj, index) => <BuilderCard
                             colorArray={colorArray}
                             ingredientArray={ingredientArray} 
                             key={index}
                             index={index}
+                            array={array}
                             setIngredientArray={setIngredientArray}
-                            type={number}
+                            arrayObj={arrayObj}
+                            selectedIngredient={selectedIngredient}
                             reload={reload}
                         />)}
                     </div>

@@ -58,6 +58,7 @@ export const MenuEntry = () => {
                             onChange={handleInputChange} 
                             autoFocus 
                             required
+                            autoComplete="off"
                             className="form-control"
                             placeholder="Name"
                             value={menu.name} />
@@ -78,6 +79,7 @@ export const MenuEntry = () => {
                     <Form.Control  type="text" 
                             id="notes" 
                             required
+                            autoComplete="off"
                             onChange={handleInputChange} 
                             className="form-control"
                             placeholder="notes"

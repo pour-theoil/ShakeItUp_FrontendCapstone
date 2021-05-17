@@ -128,6 +128,7 @@ export const CocktailEditForm = () => {
                         onChange={handleCocktailChange} 
                         autoFocus 
                         required
+                        autoComplete="off"
                         className="form-control"
                         placeholder="Name"
                         defaultValue={cocktailmenu[0]?.cocktail.name} />

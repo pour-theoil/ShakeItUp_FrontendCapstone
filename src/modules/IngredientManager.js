@@ -14,7 +14,7 @@ export const deleteIngredient = (ingredientId) => {
 }
 
 export const getIngredientById = (id) => {
-    return fetch(`${url}/ingredients/${id}`)
+    return fetch(`${url}/ingredients/${id}?_expand=type`)
     .then(response => response.json())
 }
 

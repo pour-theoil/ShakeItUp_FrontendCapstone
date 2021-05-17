@@ -33,6 +33,10 @@ export default function ApplicationViews() {
                 
             </Route>
 
+            <Route exact path="/home/:selectIngredient(\d+)">
+                {isLoggedIn ? <BuilderList /> : <Redirect to="/login" />}
+                
+            </Route>
 
             <Route path="/cocktails/:cocktailId(\d+)/add">
                 {isLoggedIn ? <CocktailAddForm /> : <Redirect to="/login" />}
