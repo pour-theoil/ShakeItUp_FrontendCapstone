@@ -33,7 +33,7 @@ export const BuilderList = () => {
                                 selected: true}
                 array.push(arrayObj)
                 setArray(array)
-                console.log("loading")
+               
             })
         }
     }
@@ -66,7 +66,7 @@ export const BuilderList = () => {
     const handleSaveCocktail = () => {
         addCocktail(cocktail)
             .then(cocktailobj => {
-                console.log(ingredientArray)
+                
                 Promise.all(ingredientArray.map(ingredient => {
                     const cocktailingredients = {
                         cocktailId: cocktailobj.id,
